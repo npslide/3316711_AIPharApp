@@ -1,0 +1,550 @@
+---
+title: "Machine Learning System"
+subtitle: "3316512 Pharmaceutical AI"
+author: Natapol Pornputtapong, PhD
+institute: Chulalongkorn University
+date: today # today | last-modified
+date-format: "DD MMM YYYY" # see https://momentjs.com/docs/#/displaying/format/
+pdf-engine: xelatex
+format:
+  rxquarto-revealjs:
+    self-contained: false # set to true to produce a single HTML file
+    transition: none # none | fade | slide | convex | concave | zoom
+    background-transition: none
+    scrollable: true
+---
+
+# 3316512 Pharmaceutical Artificial Intelligence
+
+## Course objectives
+
+1. อธิบายหลักการทำงานของปัญญาประดิษฐ์ การประยุกต์ใช้ และหลักการทางจริยธรรมได้
+2. พัฒนาโปรแกรมประยุกต์ปัญญาประดิษฐ์สำหรับงานทางเภสัชกรรมได้
+
+## Course outline
+
+1. Machine Learning Systems Design
+2. Data Engineering
+3. Training Data
+4. Feature Engineering
+5. Model Deployment Offline Evaluation and Prediction Service
+6. Model Monitoring
+7. Continual Learning and Test in Production
+8. Infrastructure and Tooling for MLOps
+9. The Human Side of Machine Learning
+10. Pharmaceutical guidelines for AI: Annex 22, GAMP 5, validation
+
+## Evaluation & Grade
+
+::: {style="font-size: 0.7em;"}
+- term project (100%)
+  - A >80%
+  - B+ >70%
+
+- criteria:
+  - พื้นฐาน AI
+    - **4. ประเมินผล**  ประเมินความเหมาะสมของการเลือกใช้เครื่องมือ AI
+    - **5. สร้างสรรค์**  บูรณาการระบบ AI เข้ากับระบบงานทางเภสัชกรรมได้
+  - การคิดเชิงวิพากษ์และการตรวจสอบความถูกต้อง 
+    - **4. ประเมินผล**  ประเมินตัวแบบ AI ที่สร้างขึ้นได้ รวมถึงข้อมูลที่นำมาใช้ในการสร้างตัวแบบ AI ว่ามี BIAS หรือไม่
+    - **5. สร้างสรรค์**  สร้างระบบตรวจสอบย้อนกลับ (Traceability) สำหรับตัวแบบ AI ที่สร้างขึ้น
+  - จริยธรรม กฎหมาย และความปลอดภัย
+    - **4. ประเมินผล** ตัดสินใจในฐานะผู้ตัดสินใจขั้นสุดท้าย (Human-in-the-loop) ว่าจะใช้หรือไม่ใช้ตัวแบบ AI ตามหลักจริยธรรม รวมถึงผลที่จะเกิดขึ้นจากการใช้ AI
+    - **5. สร้างสรรค์** เสนอแนวทางจัดการความเสี่ยง (Mitigation Strategies) และนโยบายการใช้ AI อย่างเป็นธรรมในองค์กร
+:::
+
+## General AI application
+
+- Generative AI
+  - Large language model (LLM)
+  - Text-to-image
+- Reinforcement learning
+  - Self-driving car
+- Classification
+  - image recognition
+- etc
+
+## ML VS Statistics ^[Ahmed Eldeeb, June 13, 2023]
+
+- Focus on predictive accuracy (ML > Stat)
+- Comfort with black box models (ML > Stat)
+- Emphasis on causality (ML < Stat)
+- Attention to small sample properties (ML < Stat)
+
+## AI based on capabilities
+
+  - **ANI**: Artificial Narrow Intelligence (Weak AI)
+  - **AGI**: Artificial General Intelligence (Strong AI)
+  - **ASI**: Artificial Super Intelligence
+
+## AI system ^[OECD]
+
+```{dot}
+digraph G {
+  rankdir=LR;
+  bgcolor="#E6EEF4";
+  node [style=filled, fontname="Noto Sans Thai"];
+
+  // Environment Context box
+  "Environment Context" [label="{Environment\nContext|{<f0>|<f1>}}", shape=record, style="filled", color="#FFE680" height=2];
+
+  // AI system box
+  subgraph cluster_ai {
+    label="AI System";
+    color="#C4E3B5";
+    bgcolor="#C4E3B5";
+    fontname="Noto Sans Thai";
+
+
+    // AI model ML box
+    "AI Model" [label="{{<f0>Data\nInput|<f1>Outcome\nOutput}|{-\>|\<-}|AI model\nML}", shape=record, style="filled", fillcolor="#A5D6A7" height=2];
+
+  }
+
+  // Connections between Environment Context and AI system
+  "Environment Context":f0 -> "AI Model":f0 [label="perceiving", fontsize=12];
+  "AI Model":f1 -> "Environment Context":f1 [label="acting", fontsize=12];
+}
+```
+
+## AI lifecycle ^[OECD]
+
+```{dot}
+digraph AILifecycle {
+  rankdir=LR;
+  layout=circo;
+  bgcolor="#F0F4F8";
+  node [style=filled, shape=box, fontname="Noto Sans Thai", fontsize=12];
+
+  // Nodes for each stage in the AI lifecycle
+  ddm [label="design, data & \n model" color="#AEDFF7" style="rounded,filled"];
+  vv [label="verification \n validation" color="#AEDFF7" style="rounded,filled"];
+  deployment [color="#AEDFF7", style="rounded,filled"];
+  om [label="operation & \n monitoring" color="#AEDFF7" style="rounded,filled"];
+
+
+  // Connecting stages in order of the AI lifecycle
+  ddm -> vv;
+  vv -> deployment;
+  deployment -> om;
+  om -> ddm;
+
+}
+```
+
+## AI, ML, DL, GenAI
+
+::: {.absolute top=100 left=0 width="1100" height="550" style="background: #49243E; border-radius: 20px;"}
+
+:::
+
+::: {.absolute top=120 left=50 style="color: white;"}
+AI: Artificial Intelligence
+<br /><br />
+the science and engineering of making intelligent machines, especially intelligent computer programs
+
+:::
+
+::: {.fragment fragment-index=1 .absolute top=200 left=50 width="1050" height="450" style="background: #704264; border-radius: 20px;"}
+
+:::
+
+::: {.fragment fragment-index=1 .absolute top=220 left=100 style="color: white;"}
+ML: Machine Learning
+<br /><br />
+design and train algorithms to learn from and act on data
+:::
+
+::: {.fragment fragment-index=2 .absolute top=300 left=100 width="1000" height="350" style="background: #BB8493; border-radius: 20px;"}
+:::
+
+::: {.fragment fragment-index=2 .absolute top=300 left=150 style="color: white;"}
+DL: Deep Learning
+<br /><br />
+multi-layered neural networks, called deep neural networks, to simulate the complex decision-making power of the human brain
+:::
+
+::: {.fragment fragment-index=3 .absolute top=380 left=150 width="950" height="270" style="background: #DBAFA0; border-radius: 20px;"}
+:::
+
+::: {.fragment fragment-index=3 .absolute top=400 left=200 style="color: white;"}
+GenAI: Generative Deep Learning
+<br /><br />
+a subset of AI used to produce text, images, videos, or others response to specific prompts. ^[https://en.wikipedia.org/wiki/Generative_artificial_intelligence]
+:::
+
+## [AI Use in Drug Development Stages]{.r-fit-text}^[The Science Advisory Board]
+
+```{python}
+import plotly.express as px
+import pandas as pd
+
+# Data for the chart
+data = {
+    "Stage": [
+        "Target identification and validation", "Safety tests", "Compound discovery",
+        "Lead optimization", "Preclinical studies, including experiment design and reagent selection",
+        "Formulation", "Clinical studies, including clinical trial recruitment", "Approval", "Marketing",
+        "Post-marketing, including post-marketing surveillance", "Post-approval surveillance", "Other", "None of the above"
+    ],
+    "Percentage": [40, 34, 29, 25, 21, 15, 15, 11, 6, 5, 5, 4, 3]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Create a horizontal bar chart
+fig = px.bar(df, y="Stage", x="Percentage", orientation='h', text="Percentage", 
+             labels={"Percentage": "Percentage", "Stage": "Stage"})
+
+# Update layout for aesthetics
+fig.update_traces(marker_color='#4361ee', textposition='outside')
+fig.update_layout(xaxis_title="Percentage", yaxis_title="Stage", xaxis_tickformat=".0f")
+
+# Show plot
+fig.show()
+```
+
+# Machine Learning System
+
+## The Rise of Machine Learning
+
+- ML has rapidly permeated aspects of life including communication, work, and healthcare.
+- **ML is a powerful tool** 
+- The algorithms are only a **small part of a production system**.
+
+## Defining an ML System
+
+- An ML system
+  - business requirements
+  - data stack
+  - infrastructure
+  - interface
+- Activities: developing, monitoring, and updating models
+- **MLOps** provides the tools and practices for bringing these systems into production.
+- **Systems design** ensures all stakeholders and components work together effectively.
+
+## MLOps
+
+- **Ops** in MLOps is short for **Development and Operations**.
+- Operationalizing ML involves **deploying, maintaining, and monitoring** it.
+- Considers the system **holistically** rather than in isolation.
+- Satisfy **specified objectives and requirements**
+
+## When to Use Machine Learning
+
+- Predictive problems
+- relationship between inputs and outputs is challenging to specify manually
+- can’t code it (e.g. Recognizing Speech/image/gestures)
+  - complex patterns from existing data
+  - Hand-coded rules (Software 1.0) are replaced by patterns learned from data (Software 2.0)
+- can’t scale it (e.g. Recommendations, Spam & Fraud detection) 
+- have to adapt/personalize (e.g. Personalized medication)
+- can’t track it (e.g. Automated robot control)
+
+## When ML Shines (Additional Factors)
+
+- The problem is **repetitive** and allows the machine to see many examples
+- The **cost of a wrong prediction is cheap**, such as in recommender systems
+- If one mistake is catastrophic, the **benefits on average must outweigh the costs**
+- The task is **at scale**, requiring a massive number of predictions
+- Patterns are **constantly changing**, making hardcoded rules too expensive to maintain
+
+## Characteristic: Complex Patterns
+
+- ML is useful only when there are **patterns to learn**.
+- If a pattern is simple (like a lookup table for zip codes), ML is **not needed**.
+- ML excels at tasks like **object detection and speech recognition** where patterns are intricate.
+- What is complex for humans (e.g., millions of calculations) is often easy for machines.
+- What is easy for humans (e.g., identifying a cat) is often **complex for machines**.
+
+## Characteristic: Existing Data
+
+- Since ML learns from data, **data must be available or collectable**.
+- Even "zero-shot" learning requires models to have been **trained on related tasks**.
+- Companies sometimes use a **"fake-it-til-you-make-it"** approach by using human predictions to generate initial data.
+- Continual learning allows models to learn from **incoming production data**.
+- Serving insufficiently trained models to users carries **significant risks**.
+
+## Characteristic: Predictive Problems
+
+- ML solves problems by **framing them as predictive tasks**.
+- "Predict" in this context means **estimating a value** for the future, present, or even the past.
+- Compute-intensive problems can be **approximated by ML models** to save time and resources.
+- ML can provide **cheap but approximate predictions** at scale.
+- Successful applications include **graphic rendering and image denoising**.
+
+## Characteristic: Unseen Data
+
+- Patterns learned from training data must **share patterns with unseen data**
+- This assumes the unseen data and training data come from **similar distributions**
+- If user behavior shifts, the model may **perform poorly**
+- Testing in production and monitoring are required to **validate these assumptions**
+- Models must be updated to keep up with **changing distributions**
+
+## When NOT to Use ML
+
+- **It is unethical** to use ML for certain tasks, such as biased automated grading
+- **Simpler solutions** (like heuristics or Software 1.0) work sufficiently well
+- The solution is **not cost-effective** given the up-front investment
+- However, complex problems can often be **broken down** into smaller components where some use ML
+- Dismissing technology because it isn't efficient *now* may lead to **falling behind competitors**
+
+## Enterprise ML Use Cases
+
+- Enterprise apps often have **stricter accuracy requirements** and more tolerance for latency
+- **Fraud detection** is one of the oldest enterprise applications, using anomaly detection
+- **Price optimization** maximizes objectives like revenue or margin for dynamic markets
+- **Demand forecasting** helps businesses prepare budgets and stock inventory
+- **Churn prediction** identifies customers likely to stop using a service to improve retention
+
+## Other Enterprise Applications
+
+- **Customer acquisition** models help target ads and identify potential users
+- **Automated support ticket classification** improves customer satisfaction by reducing wait times
+- **Brand monitoring** uses sentiment analysis to track public perception
+- **Healthcare** systems assist doctors in diagnosing diseases like skin cancer
+- Most enterprise use cases involve **reducing costs or automating internal processes**
+
+# Production ML
+
+## Research vs. Production: Goals
+
+- **Research** focuses on state-of-the-art performance on benchmark datasets
+- **Production** involves multiple stakeholders with **often conflicting requirements**
+- A product manager might prioritize **low latency**, while an engineer wants **high accuracy**
+- Models in production must be **compact and compact**, not just accurate
+- **Ensembling** is popular in research but often too complex for production
+
+## Computational Priorities
+
+- Research typically prioritizes **fast training and high throughput**
+- In production, the bottleneck is usually **fast inference and low latency**
+- **Latency** refers to the time from request to response
+- **Throughput** refers to how many queries are processed in a given time
+- In production, **latency matters more** as mobile users may leave if a page takes >3 seconds to load
+
+## Data Properties: Research vs. Production
+
+- Research data is usually **clean, well-formatted, and static**
+- Production data is **noisy, unstructured, and constantly shifting**
+- Labels in production may be **sparse, imbalanced, or incorrect**
+- Production systems must handle data **constantly generated by users**
+- Data scientists in production spend significantly more time on **data problems** than on algorithms
+
+## Fairness and Interpretability
+
+- **Fairness** is often an afterthought in research but a **requirement in production**
+- Biased algorithms can **discriminate at scale** against minority groups
+- **Interpretability** is required for users to trust the system and for developers to debug it
+- Business leaders often prefer a **human expert** over a "black box" AI if the AI can't explain its decision
+- Only a small percentage of companies currently take steps to **mitigate algorithmic bias**
+
+## ML Systems vs. Traditional Software
+
+- Traditional software assumes a **separation of code and data**
+- ML systems are **part code, part data, and part artifacts** created from both
+- In ML, you must **test and version both code and data**
+- Data is often the winning factor; companies focus on **improving data over algorithms**
+- ML systems must be **adaptive** to changing environments
+
+## Engineering Challenges in ML
+
+- Modern ML models can have **billions of parameters**, requiring massive RAM
+- Deploying large models on **edge devices** is a major engineering challenge
+- ML models often **fail silently**, making monitoring and debugging difficult
+- Speed of inference is critical; a slow autocomplete model is **useless**
+- Engineering challenges for models like **BERT** are being solved at a breakneck pace
+
+## Business and ML Objectives
+
+- Most businesses only care about **profit maximization**
+- ML metrics (like F1 score) must be **translated into business metrics** (like revenue)
+- **Ad click-through rates** are popular because they map directly to revenue
+- Netflix uses **"take-rate"** to bridge the gap between recommendations and streaming hours
+- **Experiments (A/B testing)** are often needed to find the actual relationship between metrics
+
+## Returns on Investment (ROI)
+
+- ML gain doesn't happen **overnight**; Google has invested for decades
+- ROI depends on the **maturity stage** of ML adoption
+- Sophisticated companies can deploy models in **under 30 days**
+- Early adopters spend more time on engineering and have **higher cloud bills**
+- Efficiency increases as the **ML pipeline matures**
+
+## Requirement: Reliability
+
+- The system must perform **correctly even in the face of faults**
+- **Correctness** is harder to define in ML than in traditional software
+- ML models can **fail silently**, serving wrong predictions without crashing
+- System health must be monitored to ensure it meets **performance expectations**
+- Reliability includes handling **hardware, software, and human errors**
+
+## Requirement: Scalability
+
+- Systems must handle growth in **complexity, traffic, and model count**
+- **Autoscaling** is a standard cloud feature but can be tricky to implement
+- Scalability involves **resource scaling** (GPUs/CPUs) and **artifact management**
+- Managing **thousands of models** requires automated monitoring and retraining
+- Handling growth requires **reproducible code generation**
+
+## Requirement: Maintainability
+
+- Different roles (ML engineers, DevOps, SMEs) must **collaborate using comfortable tools**
+- **Documentation and versioning** of code, data, and artifacts are essential
+- Models must be **reproducible** so new contributors can build on old work
+- Infrastructure should support **cross-functional visibility**
+- Maintainability ensures that teams can **identify and fix problems** without finger-pointing
+
+## Requirement: Adaptability
+
+- Systems must **evolve quickly** to handle shifting data and business needs
+- Adaptability is tightly linked to **maintainability**
+- The system should have capacity for **discovering performance improvements**
+- Updates should happen **without service interruption**
+- This requires infrastructure for **continual learning** and monitoring for shifts
+
+## The ML Lifecycle: Steps 1-3
+
+- **1. Project Scoping:** Identifying goals, stakeholders, and constraints
+- **2. Data Engineering:** Handling data sources, sampling, and labeling
+- **3. ML Model Development:** Feature engineering, training, and evaluation
+- Data engineering starts with curated **training data** derived from raw data
+- Model development is where **domain expertise** and ML knowledge are most needed
+
+## The ML Lifecycle: Steps 4-6
+
+- **4. Deployment:** Making the model accessible to users
+- **5. Monitoring and Continual Learning:** Maintaining performance in production
+- **6. Business Analysis:** Evaluating performance against business goals
+- Insights from analysis often lead to **rescoping** or eliminating projects
+- The process is a **cycle with constant back-and-forth** between steps
+
+## Framing ML Problems
+
+- A problem must be defined by **inputs, outputs, and an objective function**
+- The difficulty of a task changes based on **how it is framed**
+- Common task types include **classification and regression**
+- A task can be **reframed** (e.g., house price prediction as classification buckets)
+- Choosing the right framing can make a problem **significantly easier** to solve
+
+## Classification vs. Regression
+
+- **Classification** categorizes inputs into discrete classes
+- **Regression** outputs continuous values
+- **Binary classification** is the simplest form with two classes
+- **Multiclass classification** involves more than two classes
+- **High cardinality** tasks (thousands of classes) are very challenging
+
+## Multilabel Classification
+
+- Examples can belong to **multiple classes at once**
+- One approach is treating labels as a **vector of Booleans**
+- Another approach is turning it into multiple **binary classification problems**
+- This framing makes **label annotation difficult** due to disagreements
+- It is also hard to extract predictions from **raw probability distributions**
+
+## Framing for Simple Solutions
+
+- Reframing a task can avoid **frequent retraining**
+- Instead of predicting a probability for every app on a phone (**classification**), use app features as input (**regression**)
+- In the regression framing, adding a new app doesn't require **retraining from scratch**
+- This makes the model **more scalable and flexible**
+- The output in the regression frame is a **single value** denoting likelihood of use
+
+## Objective Functions
+
+- Guided by a **loss function** to minimize errors from wrong predictions
+- In supervised learning, the model compares outputs to **ground truth labels**
+- Common functions include **RMSE** for regression and **cross-entropy** for classification
+- Choosing a function requires **algebra knowledge**, but most use standard ones
+- The objective function is **different from business objectives**
+
+## Decoupling Conflicting Objectives
+
+- Systems often have **multiple goals**, such as engagement vs. quality
+- Conflicting objectives make it hard to rank items **using a single model**
+- One approach combines losses into a **weighted sum**, but requires retraining to tune
+- A better approach is to **train separate models** for each objective and combine scores
+- Decoupling makes **maintenance easier** as different goals shift at different rates
+
+## The Role of Data
+
+- Success in ML has been driven largely by the **quantity and quality of data**
+- The **"Data Science Hierarchy of Needs"** places data collection/storage at the foundation
+- Some argue that **computation and data** trump "mind" (architectural design)
+- Dataset sizes for language models grew from **0.8 billion to 500 billion tokens** in seven years
+- However, **more data isn't always better** if it is low quality or outdated
+
+## Research vs. Production Summary
+
+- Production requires handling **shifting data**; research uses **static data**
+- Production prioritizes **fairness and interpretability**; research often does not
+- **Training** is the bottleneck in research; **inference** is the bottleneck in production
+- Production involves **messy, unstructured data** with delayed labels
+- Success in research does not guarantee **usability in the real world**
+
+## Traditional Software vs. ML Summary
+
+- Traditional software focuses on **code versioning**; ML requires **data versioning**
+- Traditional software assumes **separation of concerns**; ML combines code/data
+- ML models can reach **gigabytes in size**, creating deployment hurdles
+- ML systems require **adaptive development cycles** due to data changes
+- **Silent failures** make ML debugging a cross-functional complexity
+
+## Business Objectives Summary
+
+- Projects must be **driven by business objectives** to survive
+- **Profit maximization** is the indirect or direct goal of most projects
+- Companies use **custom metrics** (take-rate, purchase-through rate) to map goals
+- **A/B testing** is essential to prove the business value of an ML model
+- Returns increase as the **maturity of adoption** improves efficiency
+
+## Framing and Task Summary
+
+- ML problems are defined by **inputs, outputs, and an objective function**
+- **Classification** is for categories; **Regression** is for continuous values
+- **Hierarchical classification** helps manage high cardinality
+- **Decoupling objectives** simplifies tuning and maintenance
+- Framing influences **how easy it is to add new features** or labels
+
+## System Requirements Summary
+
+- **Reliability:** Correct performance despite adversity
+- **Scalability:** Ability to handle growth in traffic and complexity
+- **Maintainability:** Support for cross-functional contributors and reproducibility
+- **Adaptability:** Capacity to evolve with shifting data distributions
+- Requirements vary but these four are **generally essential** for good systems.
+
+## The Iterative Cycle Summary
+
+- ML development is a **never-ending, non-linear process**
+- The six steps range from **scoping to business analysis**
+- Error analysis often forces developers to **re-label data or re-engineer features**
+- **Deployment** is not the end; monitoring leads back to earlier stages
+- **Data engineering** is the foundation for most modern ML models
+
+## The "Bitter Lesson" of AI
+
+- 70 years of AI research shows that **leveraging computation** is the most effective method
+- Human domain knowledge provides short-term gains but is **trumped by scale** in the long run
+- Google's success is attributed to having **more data, not necessarily better algorithms**
+- The **quantity of tokens** used in training has exploded exponentially
+- Access to **large amounts of data** fueled the progress of deep learning
+
+## Quality over Quantity
+
+- **More data isn't always better**
+- **Incorrect labels** in training data can hurt model performance
+- **Outdated data** prevents the model from generalizing to current trends
+- Success relies on **managing and improving data quality**
+- Data scientists must be wary of **poisoning or noise** in their datasets
+
+## Specific Requirements
+
+- EMA Reflection Paper on Artificial Intelligence
+- Annex 11 Revision Draft document
+- Annex 22 Draft
+- GAMP 5 D11
+- Supporting framework conditions (QRM, data integrity, change Management)
+

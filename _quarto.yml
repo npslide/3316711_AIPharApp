@@ -1,0 +1,54 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!materials/*/exercises/"
+  output-dir: docs
+
+from: markdown+emoji
+
+website:
+  title: "3316512 Pharmaceutical AI"
+  page-navigation: true
+  navbar:
+    background: light
+    foreground: dark
+    right:
+      # - text: "About"
+      #   href: about.qmd
+      - icon: cloud-fill
+        href: https://posit.cloud/spaces/397249
+        aria-label: Posit Cloud
+      - icon: github
+        href: https://github.com/posit-conf-2023/quarto-r
+        aria-label: GitHub
+  sidebar:
+    style: docked
+    contents:
+      auto: materials/*/index.qmd
+      # - text: "1. Machine Learning System"
+      #   href: materials/lect01-mlsystem/index.qmd
+      # - text: "2. Data Engineering"
+      #   href: materials/lect02-dataeng/index.qmd
+      # - text: "3. Feature Engineering"
+      #   href: materials/lect03-featureeng/index.qmd
+      #   # - section: "Advanced: Projects"
+      #   #   contents:
+      #   #   - text: "1. From Docs to Projects"
+      #   #     href: materials/2-projects/1-docs-to-projects/index.qmd
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    center: "&copy; 2026, Natapol Pornputtapong"
+
+format: 
+  html:
+    # theme: [default, custom.scss]
+    theme: default
+    toc: false
+    
+# Design tips:
+# 1. maggieappleton.com
+# 2. Palette: https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster
+
+  

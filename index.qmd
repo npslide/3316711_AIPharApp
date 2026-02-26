@@ -1,0 +1,23 @@
+---
+css: index.css
+---
+
+::: {.grid}
+
+::: {.g-col-12}
+# 3316512 <br> Pharmaceutical AI
+
+#### Faculty of Pharmaceutical Sciences <br> Chulalongkorn University
+:::
+
+::: {.g-col-12}
+# Course description
+Principles and applications of Artificial Intelligence in pharmaceutical Sciences, focusing on drug discovery, personalized medicine and pharmaceutical operations, including data preparation, training of Al models and ethical and regulatory management.
+
+# คำอธิบายรายวิชา	
+หลักการและการประยุกต์ใช้ของปัญญาประดิษฐ์ในทางเภสัชศาสตร์ โดยเน้นการค้นคว้ายา การแพทย์เฉพาะ บุคคล และการดําเนินงานด้านเภสัชกรรม รวมถึงการเตรียมข้อมูล การฝึกสอนโมเดลปัญญาประดิษฐ์ และการจัดการด้านจริยธรรมและข้อบังคับ
+:::
+
+:::
+
+
