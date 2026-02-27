@@ -1,0 +1,292 @@
+[
+  {
+    "objectID": "materials/lect07-ml/slide1.html#what-is-artificial-intelligence",
+    "href": "materials/lect07-ml/slide1.html#what-is-artificial-intelligence",
+    "title": "Machine Learning",
+    "section": "What is Artificial Intelligence?",
+    "text": "What is Artificial Intelligence?\nArtificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems.\n\n\nCore Capabilities\n\n🧠 Reasoning — logical problem solving\n📚 Learning — improving from experience\n👁️ Perception — interpreting sensory input\n💬 Natural Language — understanding text/speech\n🤖 Planning — goal-directed action\n\n\nApplication Domains\n\nDrug discovery & design\nMedical image analysis\nClinical decision support\nGenomics & proteomics\nPharmacovigilance"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#the-ai-hierarchy",
+    "href": "materials/lect07-ml/slide1.html#the-ai-hierarchy",
+    "title": "Machine Learning",
+    "section": "The AI Hierarchy",
+    "text": "The AI Hierarchy\n\n\n\n\nAI: Artificial Intelligence  the science and engineering of making intelligent machines, especially intelligent computer programs\n\n\n\n\n\nML: Machine Learning  design and train algorithms to learn from and act on data\n\n\n\n\n\nDL: Deep Learning  multi-layered neural networks, called deep neural networks, to simulate the complex decision-making power of the human brain\n\n\n\n\n\nGenAI: Generative Deep Learning  a subset of AI used to produce text, images, videos, or others response to specific prompts. 1\n\nhttps://en.wikipedia.org/wiki/Generative_artificial_intelligence"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#ai-rule-based-vs.-learning-based",
+    "href": "materials/lect07-ml/slide1.html#ai-rule-based-vs.-learning-based",
+    "title": "Machine Learning",
+    "section": "AI: Rule-Based vs. Learning-Based",
+    "text": "AI: Rule-Based vs. Learning-Based\n\n\n\n\n\n\n\n\nFeature\nTraditional AI\nMachine Learning\n\n\n\n\nKnowledge\nHard-coded rules\nLearned from data\n\n\nAdaptability\nManual updates needed\nImproves automatically\n\n\nScalability\nLimited\nScales with data\n\n\nInterpretability\nHigh (explicit rules)\nOften lower (black box)\n\n\nExample\nExpert systems, chess engines\nSpam filters, image classifiers"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#what-is-machine-learning",
+    "href": "materials/lect07-ml/slide1.html#what-is-machine-learning",
+    "title": "Machine Learning",
+    "section": "What is Machine Learning?",
+    "text": "What is Machine Learning?\n\nMachine Learning (ML) is a field of AI that enables systems to learn and improve from experience without being explicitly programmed.\n\nInstead of writing rules:\nIF temperature &gt; 38.5 THEN fever = True\nIF fever AND cough THEN risk = High\n...\nWe let the algorithm discover patterns from labeled examples."
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#machine-learning-key-components",
+    "href": "materials/lect07-ml/slide1.html#machine-learning-key-components",
+    "title": "Machine Learning",
+    "section": "Machine Learning Key Components",
+    "text": "Machine Learning Key Components\n\nData — examples & labels\nModel — mathematical function\nLoss function — how wrong are we?\nOptimization — minimize loss"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#types-of-machine-learning",
+    "href": "materials/lect07-ml/slide1.html#types-of-machine-learning",
+    "title": "Machine Learning",
+    "section": "Types of Machine Learning",
+    "text": "Types of Machine Learning\n\n\nSupervised Learning\n\nLabeled training data\nLearn input → output mapping\nExamples:\n\nClassification\nRegression\n\nApplications: diagnosis, prognosis\n\n\nUnsupervised Learning\n\nNo labels required\nFind hidden structure\nExamples:\n\nClustering\nDimensionality reduction\n\nApplications: patient stratification\n\n\nReinforcement Learning\n\nAgent + environment\nLearn by reward/penalty\nExamples:\n\nGame playing\nDrug dosing optimization\n\nApplications: clinical decision"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#supervised-learning-in-detail",
+    "href": "materials/lect07-ml/slide1.html#supervised-learning-in-detail",
+    "title": "Machine Learning",
+    "section": "Supervised Learning in Detail",
+    "text": "Supervised Learning in Detail\n\n\n\n\n\nflowchart LR\n  A[\"Training Data&lt;br /&gt;(X, y)\"] --&gt; B[\"ML Algorithm\"]\n  B --&gt; C[\"Learned Model&lt;br /&gt;f(X) ≈ y\"]\n  D[\"New Data X*\"] --&gt; C\n  C --&gt; E[\"Prediction ŷ\"]\n\n\n\n\n\n\nClassification — predict discrete categories (e.g., malignant vs. benign)\nRegression — predict continuous values (e.g., drug concentration, IC50)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#model-properties",
+    "href": "materials/lect07-ml/slide1.html#model-properties",
+    "title": "Machine Learning",
+    "section": "Model Properties",
+    "text": "Model Properties\n\nPerformance\nLinearity\nInterpretability\nScalability\nRobustness"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#common-ml-algorithms",
+    "href": "materials/lect07-ml/slide1.html#common-ml-algorithms",
+    "title": "Machine Learning",
+    "section": "Common ML Algorithms",
+    "text": "Common ML Algorithms\n\n\n\n\n\n\n\n\n\nAlgorithm\nType\nStrengths\n\n\n\n\nLinear/Logistic Regression\nSupervised\nInterpretable, fast\n\n\nDecision Trees\nSupervised\nInterpretable, non-linear\n\n\nRandom Forest\nSupervised\nRobust, handles missing data\n\n\nSupport Vector Machine\nSupervised\nGood for high-dim data\n\n\nGradient Boosting (XGBoost)\nSupervised\nState-of-art tabular data\n\n\nK-Means\nUnsupervised\nSimple clustering\n\n\nPCA\nUnsupervised\nDimensionality reduction\n\n\nNeural Networks\nBoth\nUniversal approximator"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#how-machine-learning-works",
+    "href": "materials/lect07-ml/slide1.html#how-machine-learning-works",
+    "title": "Machine Learning",
+    "section": "How Machine Learning Works",
+    "text": "How Machine Learning Works\n\n\n\n\n\n---\nconfig:\n  flowchart:\n    nodeSpacing: 50\n    rankSpacing: 50\n    padding: 5\n  look: handDrawn\n  theme: forest\n  layout: elk\n  elk:\n    mergeEdges: true\n    nodePlacementStrategy: LINEAR_SEGMENTS\n---\nflowchart TD\n  A[Collect Data] --&gt; B[Preprocess Data&lt;br /&gt;clean, normalize, encode]\n  B --&gt; C[Split Data&lt;br /&gt;train, validation, test]\n  C --&gt; D[Choose Train Model]\n  D --&gt; E[Evaluate Performance]\n  E --&gt; F{Good enough}\n  F -- No --&gt; G[Tune Hyperparameters&lt;br /&gt;/Change Model]\n  G --&gt; D\n  F -- Yes --&gt; H[Deploy Model]\n  H --&gt; I[Monitor Retrain]"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#key-concepts-bias-variance-tradeoff",
+    "href": "materials/lect07-ml/slide1.html#key-concepts-bias-variance-tradeoff",
+    "title": "Machine Learning",
+    "section": "Key Concepts: Bias-Variance Tradeoff",
+    "text": "Key Concepts: Bias-Variance Tradeoff\n\n\n\nUnderfitting (High Bias)\n\nModel too simple\n\nPoor on training AND test data\nFix: more complex model, more features\n\nOverfitting (High Variance)\n\nModel too complex\nGreat on training, poor on test\nFix: regularization, more data, simpler model\n\nSweet Spot\n\nBalances bias & variance\nGeneralizes well to new data\n\n\n\n\n\n\n\n\nxychart-beta\n  title \"Bias-Variance Tradeoff\"\n  x-axis [\"Simple\", \"Low\", \"Medium\", \"High\", \"Complex\"]\n  y-axis \"Error\" 0 --&gt; 10\n  line [9, 6, 3.5, 2.5, 2]\n  line [9, 5, 3.5, 5, 8]\n\n\n\n\n\n\n\n📉 Train Error (solid) decreases with complexity\n📈 Test Error (line) — U-shaped — optimal at middle\n⬆️ Left = High Bias (Underfitting)\n⬆️ Right = High Variance (Overfitting)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#classification-evaluation-metrics",
+    "href": "materials/lect07-ml/slide1.html#classification-evaluation-metrics",
+    "title": "Machine Learning",
+    "section": "Classification Evaluation Metrics",
+    "text": "Classification Evaluation Metrics\n\n\n\nMetric\nFormula\nUse When\n\n\n\n\nAccuracy\n(TP+TN)/Total\nBalanced classes\n\n\nPrecision\nTP/(TP+FP)\nCost of false positives high\n\n\nRecall\nTP/(TP+FN)\nCost of false negatives high\n\n\nF1 Score\n2·P·R/(P+R)\nImbalanced classes\n\n\nAUC-ROC\nArea under ROC\nOverall discriminability"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#regression-evaluation-metrics",
+    "href": "materials/lect07-ml/slide1.html#regression-evaluation-metrics",
+    "title": "Machine Learning",
+    "section": "Regression Evaluation Metrics",
+    "text": "Regression Evaluation Metrics\n\n\n\nMetric\nFormula\n\n\n\n\nMAE\nmean(\n\n\nRMSE\nsqrt(mean((y - ŷ)²))\n\n\nR²\n1 - SS_res/SS_tot"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#cross-validation",
+    "href": "materials/lect07-ml/slide1.html#cross-validation",
+    "title": "Machine Learning",
+    "section": "Cross-Validation",
+    "text": "Cross-Validation\n\n\n\n\n\nflowchart LR\n    F1[Fold 1 Test, Train, Train, Train, Train]\n    F2[Fold 2 Train, Test, Train, Train, Train]\n    F3[Fold 3 Train, Train, Test, Train, Train]\n    F4[Fold 4 Train, Train, Train, Test, Train]\n    F5[Fold 5 Train, Train, Train, Train, Test]\n  F1 & F2 & F3 & F4 & F5 --&gt; Avg[Average Score = CV Score]\n\n\n\n\n\n\n\nMore reliable estimate of model performance\nReduces overfitting risk during model selection"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#what-is-deep-learning",
+    "href": "materials/lect07-ml/slide1.html#what-is-deep-learning",
+    "title": "Machine Learning",
+    "section": "What is Deep Learning?",
+    "text": "What is Deep Learning?\nDeep Learning (DL) uses artificial neural networks with many layers to learn hierarchical representations from raw data.\n\n\nWhy “Deep”?\n\nMultiple hidden layers\nEach layer learns more abstract features\nPixels → Edges → Shapes → Objects\n\nKey Advantage\n\nAutomatic feature extraction — no manual feature engineering needed\nExcels at images, text, audio, sequences\n\n\nInput Layer   Hidden Layers   Output Layer\n   [x₁] ──┐\n   [x₂] ──┤─→[●][●][●]─→[●][●]─→[ŷ]\n   [x₃] ──┤─→[●][●][●]─→[●][●]\n   [x₄] ──┘\n   \n   Each ● = neuron (weighted sum + activation)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#neural-network-components",
+    "href": "materials/lect07-ml/slide1.html#neural-network-components",
+    "title": "Machine Learning",
+    "section": "Neural Network Components",
+    "text": "Neural Network Components\n\nNeuron (Perceptron): z = \\sum_{i} w_i x_i + b, \\quad \\hat{y} = \\sigma(z)\nActivation Functions:\n\n\n\nFunction\nFormula\nUse Case\n\n\n\n\nSigmoid\n1/(1+e⁻ᶻ)\nBinary output\n\n\nReLU\nmax(0, z)\nHidden layers (CNN)\n\n\nSoftmax\neᶻⁱ/Σeᶻʲ\nMulti-class output\n\n\nTanh\n(eᶻ-e⁻ᶻ)/(eᶻ+e⁻ᶻ)\nRNN hidden states\n\n\n\nTraining: Backpropagation + Gradient Descent\nw \\leftarrow w - \\eta \\cdot \\frac{\\partial \\mathcal{L}}{\\partial w}"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#deep-learning-architectures",
+    "href": "materials/lect07-ml/slide1.html#deep-learning-architectures",
+    "title": "Machine Learning",
+    "section": "Deep Learning Architectures",
+    "text": "Deep Learning Architectures\n\n\n\n\n\n\n\n\n\nArchitecture\nKey Feature\nApplications\n\n\n\n\nFeedforward (FNN/MLP)\nFully connected layers\nTabular data classification\n\n\nConvolutional (CNN)\nSpatial feature extraction\nMedical imaging, histopathology\n\n\nRecurrent (RNN/LSTM)\nSequential/temporal data\nEHR time series, text\n\n\nTransformer\nAttention mechanism\nDrug-protein interaction, NLP\n\n\nAutoencoder\nUnsupervised representation\nAnomaly detection, de-noising\n\n\nGAN\nGenerative adversarial\nMolecular generation"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#deep-learning-in-pharmaceutical-sciences",
+    "href": "materials/lect07-ml/slide1.html#deep-learning-in-pharmaceutical-sciences",
+    "title": "Machine Learning",
+    "section": "Deep Learning in Pharmaceutical Sciences",
+    "text": "Deep Learning in Pharmaceutical Sciences\n\n\nDrug Discovery\n\nAlphaFold2 — protein structure prediction\nMolecular property prediction (QSAR)\nDe novo drug design (generative models)\nADMET prediction\n\nClinical Applications\n\nPathology image analysis (H&E, IHC)\nRadiology image segmentation\nDrug-drug interaction prediction\n\n\nGenomics & Omics\n\nVariant calling from sequencing\nGene expression prediction\nBiomarker discovery\nMulti-omics data integration\n\nPharmacovigilance\n\nAdverse event detection from text\nSocial media mining\nSignal detection from claims data"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#why-julia-for-machine-learning",
+    "href": "materials/lect07-ml/slide1.html#why-julia-for-machine-learning",
+    "title": "Machine Learning",
+    "section": "Why Julia for Machine Learning?",
+    "text": "Why Julia for Machine Learning?\n\n\nPerformance\n\nC-level speed with Python-like syntax\nJIT compilation via LLVM\nNo need to vectorize — loops are fast\nIdeal for large numerical computations\n\nScientific Computing\n\nNative array operations\nExcellent linear algebra support\nSymbolic math (Symbolics.jl)\nAutomatic differentiation (Zygote.jl)\n\n\nSciML Ecosystem\nSciML Organization\n├── Flux.jl          # Deep Learning\n├── MLJ.jl           # ML framework\n├── DataFrames.jl    # Data manipulation\n├── GLM.jl           # Linear/GLM models\n├── DecisionTree.jl  # Trees, Random Forest\n├── LIBSVM.jl        # SVM\n└── Statistics.jl    # Core statistics"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#mlj.jl-the-unified-ml-framework",
+    "href": "materials/lect07-ml/slide1.html#mlj.jl-the-unified-ml-framework",
+    "title": "Machine Learning",
+    "section": "MLJ.jl: The Unified ML Framework",
+    "text": "MLJ.jl: The Unified ML Framework\nMLJ (Machine Learning in Julia) provides a unified interface to 150+ ML algorithms.\nusing MLJ\n\n# Load a model\nTree = @load DecisionTreeClassifier pkg=DecisionTree\n\n# Instantiate with hyperparameters\ntree = Tree(max_depth=5)\n\n# Wrap data in MLJ format\nX, y = ... # features and target\nmach = machine(tree, X, y)\n\n# Train\nfit!(mach, rows=train)\n\n# Predict\nŷ = predict(mach, rows=test)\n\n# Evaluate\nevaluate!(mach, resampling=CV(nfolds=5), measure=accuracy)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#setting-up-the-environment",
+    "href": "materials/lect07-ml/slide1.html#setting-up-the-environment",
+    "title": "Machine Learning",
+    "section": "Setting Up the Environment",
+    "text": "Setting Up the Environment\n# Install required packages (run once)\nusing Pkg\nPkg.add([\n    \"MLJ\",\n    \"MLJDecisionTreeInterface\",  # Decision Trees\n    \"XGBoost\",                   # Gradient Boosting\n    \"CSV\",                       # Read CSV files\n    \"DataFrames\",                # Data manipulation\n    \"Plots\",                     # Visualization\n    \"StatsPlots\",                # Statistical plots\n    \"CategoricalArrays\"          # Categorical variables\n])\n# Load packages\nusing MLJ, CSV, DataFrames, CategoricalArrays\nusing Plots, StatsPlots\n\n\n\n\n\n\nTip\n\n\nJulia packages are compiled on first use — subsequent runs are much faster."
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#the-titanic-dataset",
+    "href": "materials/lect07-ml/slide1.html#the-titanic-dataset",
+    "title": "Machine Learning",
+    "section": "The Titanic Dataset",
+    "text": "The Titanic Dataset\nKaggle Titanic Dataset\nObjective: Predict whether a passenger survived the Titanic disaster.\nThis is a Binary Classification Problem: - Target: Survived (0 = No, 1 = Yes)\n\n\n\n\nFeature\nType\nDescription\n\n\n\n\nPclass\nOrdinal\nPassenger class (1, 2, 3)\n\n\nSex\nCategorical\nmale / female\n\n\nAge\nContinuous\nAge in years\n\n\nSibSp\nInteger\n# siblings/spouses aboard\n\n\nParch\nInteger\n# parents/children aboard\n\n\nFare\nContinuous\nTicket fare\n\n\nEmbarked\nCategorical\nPort (C, Q, S)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-1-load-and-inspect-data",
+    "href": "materials/lect07-ml/slide1.html#step-1-load-and-inspect-data",
+    "title": "Machine Learning",
+    "section": "Step 1: Load and Inspect Data",
+    "text": "Step 1: Load and Inspect Data\nusing CSV, DataFrames\n\n# Load data\ndf = CSV.read(\"titanic.csv\", DataFrame)\n\n# Inspect\nprintln(\"Shape: \", size(df))\nprintln(\"\\nFirst 5 rows:\")\nfirst(df, 5)\n# Basic statistics\ndescribe(df, :all)\n# Check missing values\nmissing_count = combine(df, names(df) .=&gt; (x -&gt; sum(ismissing.(x))) .=&gt; names(df))\nprintln(missing_count)\n\n\n\n\n\n\nNote\n\n\nThe Titanic dataset has missing values in Age (~20%), Cabin (~77%), and Embarked (~0.2%)."
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-2-exploratory-data-analysis",
+    "href": "materials/lect07-ml/slide1.html#step-2-exploratory-data-analysis",
+    "title": "Machine Learning",
+    "section": "Step 2: Exploratory Data Analysis",
+    "text": "Step 2: Exploratory Data Analysis\nusing StatsPlots\n\n# Survival by gender\n@df df groupedbar(:Sex, :Survived, \n    group=:Survived,\n    xlabel=\"Sex\", ylabel=\"Count\",\n    title=\"Survival by Gender\",\n    labels=[\"Died\" \"Survived\"],\n    color=[:salmon :steelblue])\n# Age distribution by survival\n@df df violin(:Survived, :Age, \n    group=:Survived,\n    xlabel=\"Survived\", ylabel=\"Age\",\n    title=\"Age Distribution by Survival\",\n    labels=[\"Died\" \"Survived\"])\n# Survival rate by passenger class\nsurvival_by_class = combine(groupby(df, :Pclass),\n    :Survived =&gt; mean =&gt; :survival_rate)\nprintln(survival_by_class)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-3-data-preprocessing",
+    "href": "materials/lect07-ml/slide1.html#step-3-data-preprocessing",
+    "title": "Machine Learning",
+    "section": "Step 3: Data Preprocessing",
+    "text": "Step 3: Data Preprocessing\nusing DataFrames, CategoricalArrays, Statistics\n\nfunction preprocess_titanic(df::DataFrame)\n    df = copy(df)\n    \n    # 1. Drop irrelevant columns\n    select!(df, Not([:PassengerId, :Name, :Ticket, :Cabin]))\n    \n    # 2. Impute missing Age with median\n    age_median = median(skipmissing(df.Age))\n    df.Age = coalesce.(df.Age, age_median)\n    \n    # 3. Impute missing Embarked with mode\n    df.Embarked = coalesce.(df.Embarked, \"S\")\n    \n    # 4. Encode Sex: female=1, male=0\n    df.Sex = ifelse.(df.Sex .== \"female\", 1, 0)\n    \n    # 5. One-hot encode Embarked\n    df.Embarked_C = Int.(df.Embarked .== \"C\")\n    df.Embarked_Q = Int.(df.Embarked .== \"Q\")\n    select!(df, Not(:Embarked))\n    \n    # 6. Feature engineering\n    df.FamilySize = df.SibSp .+ df.Parch .+ 1\n    df.IsAlone = Int.(df.FamilySize .== 1)\n    \n    return df\nend\n\ndf_clean = preprocess_titanic(df)\nprintln(\"Processed shape: \", size(df_clean))"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-4-prepare-mlj-compatible-data",
+    "href": "materials/lect07-ml/slide1.html#step-4-prepare-mlj-compatible-data",
+    "title": "Machine Learning",
+    "section": "Step 4: Prepare MLJ-Compatible Data",
+    "text": "Step 4: Prepare MLJ-Compatible Data\nusing MLJ\n\n# Separate features and target\ntarget = :Survived\nfeatures = setdiff(names(df_clean), [string(target)])\n\nX = select(df_clean, features)\ny = df_clean[:, target]\n\n# Convert target to categorical (required for classification)\ny = CategoricalArray(y)\n\n# Coerce feature types for MLJ\nX = coerce(X, \n    :Pclass     =&gt; OrderedFactor,\n    :Sex        =&gt; Count,\n    :Age        =&gt; Continuous,\n    :SibSp      =&gt; Count,\n    :Parch      =&gt; Count,\n    :Fare       =&gt; Continuous,\n    :FamilySize =&gt; Count,\n    :IsAlone    =&gt; Count\n)\n\nprintln(\"X:\", schema(X))\nprintln(\"y:\", scitype(y))"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-5-traintest-split",
+    "href": "materials/lect07-ml/slide1.html#step-5-traintest-split",
+    "title": "Machine Learning",
+    "section": "Step 5: Train/Test Split",
+    "text": "Step 5: Train/Test Split\nusing MLJ\n\n# Reproducible split: 80% train, 20% test\ntrain, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)\n\nprintln(\"Training samples: \", length(train))\nprintln(\"Test samples:     \", length(test))\nprintln(\"Survival rate (train): \", \n    round(mean(y[train] .== \"1\") * 100, digits=1), \"%\")\nprintln(\"Survival rate (test):  \", \n    round(mean(y[test] .== \"1\") * 100, digits=1), \"%\")"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-6-train-a-decision-tree",
+    "href": "materials/lect07-ml/slide1.html#step-6-train-a-decision-tree",
+    "title": "Machine Learning",
+    "section": "Step 6: Train a Decision Tree",
+    "text": "Step 6: Train a Decision Tree\nusing MLJ\nMLJ.@load DecisionTreeClassifier pkg=DecisionTree\n\n# Define model\ntree_clf = DecisionTreeClassifier(max_depth=5)\n\n# Wrap in machine (binds model + data)\nmach_tree = machine(tree_clf, X, y)\n\n# Train on training set\nfit!(mach_tree, rows=train, verbosity=0)\n\n# Predict on test set\nŷ_tree = predict_mode(mach_tree, rows=test)\n\n# Evaluate\nacc_tree = accuracy(ŷ_tree, y[test])\nprintln(\"Decision Tree Accuracy: \", round(acc_tree * 100, digits=2), \"%\")"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-7-train-a-random-forest",
+    "href": "materials/lect07-ml/slide1.html#step-7-train-a-random-forest",
+    "title": "Machine Learning",
+    "section": "Step 7: Train a Random Forest",
+    "text": "Step 7: Train a Random Forest\nMLJ.@load RandomForestClassifier pkg=DecisionTree\n\n# Define model with hyperparameters\nrf_clf = RandomForestClassifier(\n    n_trees   = 100,\n    max_depth = 10,\n    min_samples_leaf = 5,\n    n_subfeatures = 3\n)\n\nmach_rf = machine(rf_clf, X, y)\nfit!(mach_rf, rows=train, verbosity=0)\nŷ_rf = predict_mode(mach_rf, rows=test)\n\nacc_rf = accuracy(ŷ_rf, y[test])\nprintln(\"Random Forest Accuracy: \", round(acc_rf * 100, digits=2), \"%\")"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-8-cross-validation-evaluation",
+    "href": "materials/lect07-ml/slide1.html#step-8-cross-validation-evaluation",
+    "title": "Machine Learning",
+    "section": "Step 8: Cross-Validation Evaluation",
+    "text": "Step 8: Cross-Validation Evaluation\nusing MLJ\n\n# 5-fold cross-validation\ncv = CV(nfolds=5, shuffle=true, rng=42)\n\n# Evaluate multiple metrics at once\neval_rf = evaluate(rf_clf, X, y,\n    resampling = cv,\n    measures   = [accuracy, f1score, auc],\n    verbosity  = 0\n)\n\nprintln(\"\\n=== Random Forest Cross-Validation ===\")\nfor (m, v) in zip(eval_rf.measure, eval_rf.measurement)\n    println(\"$(m):  \", round(v, digits=4))\nend\nprintln(\"Per-fold accuracy: \", round.(eval_rf.per_fold[1], digits=3))"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-9-hyperparameter-tuning",
+    "href": "materials/lect07-ml/slide1.html#step-9-hyperparameter-tuning",
+    "title": "Machine Learning",
+    "section": "Step 9: Hyperparameter Tuning",
+    "text": "Step 9: Hyperparameter Tuning\nusing MLJ\n\n# Define search range\nr1 = range(rf_clf, :n_trees,      lower=50,  upper=300, scale=:linear)\nr2 = range(rf_clf, :max_depth,    lower=3,   upper=15)\nr3 = range(rf_clf, :n_subfeatures, lower=2,  upper=6)\n\n# Grid search with cross-validation\ntuned_rf = TunedModel(\n    model     = rf_clf,\n    resampling = CV(nfolds=5, rng=42),\n    tuning    = Grid(resolution=5),\n    range     = [r1, r2, r3],\n    measure   = accuracy\n)\n\nmach_tuned = machine(tuned_rf, X, y)\nfit!(mach_tuned, rows=train, verbosity=0)\n\n# Best model\nbest_model = fitted_params(mach_tuned).best_model\nprintln(\"Best parameters:\")\nprintln(\"  n_trees:       \", best_model.n_trees)\nprintln(\"  max_depth:     \", best_model.max_depth)\nprintln(\"  n_subfeatures: \", best_model.n_subfeatures)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-10-feature-importance",
+    "href": "materials/lect07-ml/slide1.html#step-10-feature-importance",
+    "title": "Machine Learning",
+    "section": "Step 10: Feature Importance",
+    "text": "Step 10: Feature Importance\n# Get feature importances from trained Random Forest\nfp = fitted_params(mach_rf)\nimportances = fp.forest.feature_importances\n\n# Sort and display\nfeat_names = names(X)\nimp_df = sort(\n    DataFrame(feature=feat_names, importance=importances),\n    :importance, rev=true\n)\nprintln(imp_df)\n\n# Plot\nbar(imp_df.feature, imp_df.importance,\n    xlabel=\"Feature\",\n    ylabel=\"Importance\",\n    title=\"Random Forest Feature Importance (Titanic)\",\n    xrotation=30,\n    legend=false,\n    color=:steelblue)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-11-model-comparison",
+    "href": "materials/lect07-ml/slide1.html#step-11-model-comparison",
+    "title": "Machine Learning",
+    "section": "Step 11: Model Comparison",
+    "text": "Step 11: Model Comparison\nusing MLJ\n\n# Load all model types\nMLJ.@load LogisticClassifier pkg=MLJLinearModels\nMLJ.@load XGBoostClassifier  pkg=XGBoost\n\nmodels = [\n    (\"Logistic Regression\", LogisticClassifier()),\n    (\"Decision Tree\",       DecisionTreeClassifier(max_depth=5)),\n    (\"Random Forest\",       RandomForestClassifier(n_trees=100)),\n    (\"XGBoost\",             XGBoostClassifier(num_round=100)),\n]\n\nresults = []\nfor (name, model) in models\n    ev = evaluate(model, X, y,\n        resampling = CV(nfolds=5, rng=42),\n        measures   = [accuracy, f1score],\n        verbosity  = 0)\n    push!(results, (\n        Model    = name,\n        Accuracy = round(ev.measurement[1], digits=4),\n        F1_Score = round(ev.measurement[2], digits=4)\n    ))\nend\n\nprintln(DataFrame(results))"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#model-comparison-results",
+    "href": "materials/lect07-ml/slide1.html#model-comparison-results",
+    "title": "Machine Learning",
+    "section": "Model Comparison Results",
+    "text": "Model Comparison Results\nModel                  Accuracy   F1_Score\n─────────────────────────────────────────\nLogistic Regression    0.8045     0.7412\nDecision Tree          0.7921     0.7283\nRandom Forest          0.8247     0.7698\nXGBoost                0.8316     0.7801\n# Visualize comparison\nmodel_names = [r.Model for r in results]\naccuracies  = [r.Accuracy for r in results]\n\nbar(model_names, accuracies,\n    title=\"Model Accuracy Comparison — Titanic\",\n    xlabel=\"Model\", ylabel=\"Accuracy (5-fold CV)\",\n    ylim=(0.7, 0.9), legend=false,\n    color=[:steelblue, :salmon, :seagreen, :orchid],\n    xrotation=20)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#step-12-confusion-matrix-roc-curve",
+    "href": "materials/lect07-ml/slide1.html#step-12-confusion-matrix-roc-curve",
+    "title": "Machine Learning",
+    "section": "Step 12: Confusion Matrix & ROC Curve",
+    "text": "Step 12: Confusion Matrix & ROC Curve\nusing MLJ, Plots\n\n# Predictions with probabilities\nŷ_prob = predict(mach_rf, rows=test)\n\n# Confusion matrix\ncm = ConfusionMatrix(zero_division=0)\nprintln(\"Confusion Matrix:\")\nprintln(confusion_matrix(predict_mode(mach_rf, rows=test), y[test]))\n\n# ROC Curve\nfprs, tprs, thresholds = roc_curve(ŷ_prob, y[test])\nauc_val = auc(ŷ_prob, y[test])\n\nplot(fprs, tprs,\n    xlabel=\"False Positive Rate\",\n    ylabel=\"True Positive Rate\",\n    title=\"ROC Curve — Random Forest (Titanic)\",\n    label=\"AUC = $(round(auc_val, digits=3))\",\n    linewidth=2, color=:steelblue)\nplot!([0,1], [0,1], linestyle=:dash, color=:gray, label=\"Random\")"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#complete-pipeline-summary",
+    "href": "materials/lect07-ml/slide1.html#complete-pipeline-summary",
+    "title": "Machine Learning",
+    "section": "Complete Pipeline: Summary",
+    "text": "Complete Pipeline: Summary\nusing MLJ, CSV, DataFrames, CategoricalArrays\n\n# ── 1. Load\ndf = CSV.read(\"titanic.csv\", DataFrame)\n\n# ── 2. Preprocess (function defined earlier)\ndf_clean = preprocess_titanic(df)\n\n# ── 3. Feature/target split\nX = select(df_clean, Not(:Survived))\ny = CategoricalArray(df_clean.Survived)\nX = coerce(X, :Pclass =&gt; OrderedFactor, :Age =&gt; Continuous, :Fare =&gt; Continuous)\n\n# ── 4. Split\ntrain, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)\n\n# ── 5. Train best model\nMLJ.@load RandomForestClassifier pkg=DecisionTree\nmodel = RandomForestClassifier(n_trees=100, max_depth=10)\nmach  = machine(model, X, y)\nfit!(mach, rows=train)\n\n# ── 6. Evaluate\nŷ = predict_mode(mach, rows=test)\nprintln(\"Final Accuracy: \", round(accuracy(ŷ, y[test]) * 100, digits=2), \"%\")"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#keys",
+    "href": "materials/lect07-ml/slide1.html#keys",
+    "title": "Machine Learning",
+    "section": "Keys",
+    "text": "Keys\n\n\nAI / ML / DL Concepts\n\nAI is the broad field of intelligent machines\nML learns patterns from data automatically\nDL uses deep neural networks for complex tasks\nBias-variance tradeoff is fundamental\nAlways evaluate with cross-validation\n\nML Workflow\n\nCollect & explore data (EDA)\nPreprocess (clean, encode, engineer features)\nSplit: train / validation / test\nTrain & tune models\nEvaluate & compare\nDeploy & monitor\n\n\nJulia SciML for ML\n\nMLJ.jl — unified ML interface\nDataFrames.jl — data manipulation\nCSV.jl — data loading\nPlots.jl — visualization\nPerformance of C with readability of Python\n\nTitanic Results\n\n\n\nModel\nAccuracy\n\n\n\n\nLogistic Regression\n~80%\n\n\nRandom Forest\n~82%\n\n\nXGBoost\n~83%"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#further-reading-resources",
+    "href": "materials/lect07-ml/slide1.html#further-reading-resources",
+    "title": "Machine Learning",
+    "section": "Further Reading & Resources",
+    "text": "Further Reading & Resources\nJulia & SciML\n\nMLJ.jl Documentation\nSciML Organization\nJulia for Data Science\n\nMachine Learning\n\nHastie et al. — Elements of Statistical Learning (free PDF)\nGoodfellow et al. — Deep Learning (free at deeplearningbook.org)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slide1.html#references",
+    "href": "materials/lect07-ml/slide1.html#references",
+    "title": "Machine Learning",
+    "section": "References",
+    "text": "References\n\nMurphy, K.P. (2012). Machine Learning: A Probabilistic Perspective. MIT Press.\nGoodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.\nBlaom, A.D. et al. (2020). MLJ: A Julia package for composable machine learning. Journal of Open Source Software, 5(55), 2704.\nVamathevan, J. et al. (2019). Applications of machine learning in drug discovery and development. Nature Reviews Drug Discovery, 18, 463–477.\nKaggle Titanic Dataset: https://www.kaggle.com/c/titanic"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "3316512  Pharmaceutical AI",
+    "section": "",
+    "text": "Faculty of Pharmaceutical Sciences  Chulalongkorn University\n\n\n\n\nCourse description\nPrinciples and applications of Artificial Intelligence in pharmaceutical Sciences, focusing on drug discovery, personalized medicine and pharmaceutical operations, including data preparation, training of Al models and ethical and regulatory management.\n\n\nคำอธิบายรายวิชา\nหลักการและการประยุกต์ใช้ของปัญญาประดิษฐ์ในทางเภสัชศาสตร์ โดยเน้นการค้นคว้ายา การแพทย์เฉพาะ บุคคล และการดําเนินงานด้านเภสัชกรรม รวมถึงการเตรียมข้อมูล การฝึกสอนโมเดลปัญญาประดิษฐ์ และการจัดการด้านจริยธรรมและข้อบังคับ"
+  },
+  {
+    "objectID": "materials/lect07-ml/index.html",
+    "href": "materials/lect07-ml/index.html",
+    "title": "1. Machine Learning System",
+    "section": "",
+    "text": "Meet your neighbors, familiarize yourself with the format of the workshop, practing rendering documents with Quarto, and build a sense of the three components that make up the anatomy of a Quarto document.\n\nFull Screen\n\nFull Screen",
+    "crumbs": [
+      "1. Machine Learning System"
+    ]
+  }
+]
