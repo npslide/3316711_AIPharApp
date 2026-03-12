@@ -1,0 +1,36 @@
+---
+title: "9. Statistical Inference practices"
+---
+
+> Statistical inference is the process of using data analysis to deduce properties of an underlying probability distribution. Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data are sampled from a larger population.
+
+[nhanes dataset download](nhanes.csv)
+
+[Full Screen](slides.qmd)
+```{=html}
+<iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+
+<!-- #### Outline -->
+
+<!-- 1. About the Workshop -->
+<!-- 2. What can you do with Quarto? -->
+<!-- 3. Quarto and R Markdown: A History -->
+<!-- 4. Rendering in Quarto -->
+<!-- 5. The Structure of a Document -->
+<!--    i. Inline Elements -->
+<!--    ii. Block Elements -->
+<!--    iii. Metadata -->
+<!-- 6. The Elements of Markdown -->
+<!--    i. Text Formatting -->
+<!--    ii. Math -->
+<!--    iii. Links and Images -->
+<!--    iv. Footnotes -->
+<!--    v. Paragraph -->
+<!--    vi. Headers -->
+<!--    vii. Lists -->
+<!--    viii. Display Math -->
+<!--    ix. YAML -->
+
+<!-- #### Exercises -->

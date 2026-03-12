@@ -5,7 +5,7 @@ css: index.css
 ::: {.grid}
 
 ::: {.g-col-12}
-# 3316512 <br> Pharmaceutical AI
+# 3316711 <br> AI for Pharmaceutical Applications
 
 #### Faculty of Pharmaceutical Sciences <br> Chulalongkorn University
 :::

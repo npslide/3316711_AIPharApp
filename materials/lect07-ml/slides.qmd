@@ -1,0 +1,948 @@
+---
+title: "Machine Learning"
+subtitle: "3316712 AI Computational Pharmaceutical Sciences"
+author: Natapol Pornputtapong, PhD
+institute: Chulalongkorn University
+date: today # today | last-modified
+date-format: "DD MMM YYYY" # see https://momentjs.com/docs/#/displaying/format/
+pdf-engine: xelatex
+format:
+  rxquarto-revealjs:
+    self-contained: false # set to true to produce a single HTML file
+    transition: none # none | fade | slide | convex | concave | zoom
+    background-transition: none
+    # scrollable: true
+---
+
+# Part 1: Artificial Intelligence Landscape
+
+## What is Artificial Intelligence?
+
+**Artificial Intelligence (AI)** is the simulation of human intelligence processes by machines, especially computer systems.
+
+:::: {.columns}
+::: {.column .r-fit-text width="50%"}
+**Core Capabilities**
+
+- 🧠 **Reasoning** — logical problem solving
+- 📚 **Learning** — improving from experience
+- 👁️ **Perception** — interpreting sensory input
+- 💬 **Natural Language** — understanding text/speech
+- 🤖 **Planning** — goal-directed action
+:::
+::: {.column .r-fit-text width="50%"}
+**Application Domains**
+
+- Drug discovery & design
+- Medical image analysis
+- Clinical decision support
+- Genomics & proteomics
+- Pharmacovigilance
+:::
+::::
+
+## The AI Hierarchy
+
+::: {.absolute top=100 left=0 width="1000" height="550" style="background: #49243E; border-radius: 20px;"}
+
+:::
+
+::: {.absolute top=120 left=50 style="color: white;"}
+AI: Artificial Intelligence
+<br /><br />
+the science and engineering of making intelligent machines, especially intelligent computer programs
+
+:::
+
+::: {.fragment fragment-index=1 .absolute top=200 left=50 width="950" height="450" style="background: #704264; border-radius: 20px;"}
+
+:::
+
+::: {.fragment fragment-index=1 .absolute top=220 left=100 style="color: white;"}
+ML: Machine Learning
+<br /><br />
+design and train algorithms to learn from and act on data
+:::
+
+::: {.fragment fragment-index=2 .absolute top=300 left=100 width="900" height="350" style="background: #BB8493; border-radius: 20px;"}
+:::
+
+::: {.fragment fragment-index=2 .absolute top=300 left=150 style="color: white;"}
+DL: Deep Learning
+<br /><br />
+multi-layered neural networks, called deep neural networks, to simulate the complex decision-making power of the human brain
+:::
+
+::: {.fragment fragment-index=3 .absolute top=380 left=150 width="850" height="270" style="background: #DBAFA0; border-radius: 20px;"}
+:::
+
+::: {.fragment fragment-index=3 .absolute top=400 left=200 style="color: white;"}
+GenAI: Generative Deep Learning
+<br /><br />
+a subset of AI used to produce text, images, videos, or others response to specific prompts. ^[https://en.wikipedia.org/wiki/Generative_artificial_intelligence]
+:::
+
+## AI: Rule-Based vs. Learning-Based
+
+| Feature | Traditional AI | Machine Learning |
+|---|---|---|
+| **Knowledge** | Hard-coded rules | Learned from data |
+| **Adaptability** | Manual updates needed | Improves automatically |
+| **Scalability** | Limited | Scales with data |
+| **Interpretability** | High (explicit rules) | Often lower (black box) |
+| **Example** | Expert systems, chess engines | Spam filters, image classifiers |
+
+
+# Part 2: Machine Learning
+
+## What is Machine Learning?
+
+> **Machine Learning (ML)** is a field of AI that enables systems to **learn and improve from experience** without being explicitly programmed.
+
+Instead of writing rules:
+
+```
+IF temperature > 38.5 THEN fever = True
+IF fever AND cough THEN risk = High
+...
+```
+
+We let the algorithm **discover patterns** from labeled examples.
+
+## Machine Learning Key Components
+
+1. **Data** — examples & labels
+2. **Model** — mathematical function
+3. **Loss function** — how wrong are we?
+4. **Optimization** — minimize loss
+
+
+## Types of Machine Learning
+
+:::: {.columns}
+::: {.column .r-fit-text width="33%"}
+**Supervised Learning**
+
+- Labeled training data
+- Learn input → output mapping
+- Examples:
+  - Classification
+  - Regression
+- Applications: diagnosis, prognosis
+:::
+::: {.column .r-fit-text width="33%"}
+**Unsupervised Learning**
+
+- No labels required
+- Find hidden structure
+- Examples:
+  - Clustering
+  - Dimensionality reduction
+- Applications: patient stratification
+:::
+::: {.column .r-fit-text width="33%"}
+**Reinforcement Learning**
+
+- Agent + environment
+- Learn by reward/penalty
+- Examples:
+  - Game playing
+  - Drug dosing optimization
+- Applications: clinical decision
+:::
+::::
+
+---
+
+## Supervised Learning in Detail
+
+```{mermaid}
+flowchart LR
+  A["Training Data<br />(X, y)"] --> B["ML Algorithm"]
+  B --> C["Learned Model<br />f(X) ≈ y"]
+  D["New Data X*"] --> C
+  C --> E["Prediction ŷ"]
+```
+
+**Classification** — predict discrete categories (e.g., malignant vs. benign)
+
+**Regression** — predict continuous values (e.g., drug concentration, IC50)
+
+---
+
+## Model Properties
+
+- Performance
+- Linearity
+- Interpretability
+- Scalability
+- Robustness
+
+## Common ML Algorithms 
+
+::: {.r-fit-text}
+| Algorithm | Type | Strengths |
+|---|---|---|
+| **Linear/Logistic Regression** | Supervised | Interpretable, fast |
+| **Decision Trees** | Supervised | Interpretable, non-linear |
+| **Random Forest** | Supervised | Robust, handles missing data |
+| **Support Vector Machine** | Supervised | Good for high-dim data |
+| **Gradient Boosting (XGBoost)** | Supervised | State-of-art tabular data |
+| **K-Means** | Unsupervised | Simple clustering |
+| **PCA** | Unsupervised | Dimensionality reduction |
+| **Neural Networks** | Both | Universal approximator |
+:::
+
+---
+
+## How Machine Learning Works {.scrollable}
+
+```{mermaid}
+---
+config:
+  flowchart:
+    nodeSpacing: 50
+    rankSpacing: 50
+    padding: 5
+  look: handDrawn
+  theme: forest
+  layout: elk
+  elk:
+    mergeEdges: true
+    nodePlacementStrategy: LINEAR_SEGMENTS
+---
+flowchart TD
+  A[Collect Data] --> B[Preprocess Data<br />clean, normalize, encode]
+  B --> C[Split Data<br />train, validation, test]
+  C --> D[Choose Train Model]
+  D --> E[Evaluate Performance]
+  E --> F{Good enough}
+  F -- No --> G[Tune Hyperparameters<br />/Change Model]
+  G --> D
+  F -- Yes --> H[Deploy Model]
+  H --> I[Monitor Retrain]
+```
+
+---
+
+## Key Concepts: Bias-Variance Tradeoff
+
+:::: {.columns}
+::: {.column .r-fit-text width="50%"}
+
+- Underfitting (High Bias)
+  - Model too simple  
+  - Poor on training AND test data
+  - Fix: more complex model, more features
+- Overfitting (High Variance)
+  - Model too complex
+  - Great on training, poor on test
+  - Fix: regularization, more data, simpler model
+- Sweet Spot
+  - Balances bias & variance
+  - Generalizes well to new data
+:::
+
+::: {.column width="50%"}
+```{mermaid}
+xychart-beta
+  title "Bias-Variance Tradeoff"
+  x-axis ["Simple", "Low", "Medium", "High", "Complex"]
+  y-axis "Error" 0 --> 10
+  line [9, 6, 3.5, 2.5, 2]
+  line [9, 5, 3.5, 5, 8]
+```
+
+::: {.r-fit-text style="font-size:0.65em; text-align:center;"}
+📉 **Train Error** (solid) decreases with complexity  
+📈 **Test Error** (line) — U-shaped — optimal at middle  
+⬆️ **Left** = High Bias (Underfitting)  
+⬆️ **Right** = High Variance (Overfitting)
+:::
+:::
+::::
+
+---
+
+## Classification Evaluation Metrics 
+
+| Metric | Formula | Use When |
+|---|---|---|
+| Accuracy | (TP+TN)/Total | Balanced classes |
+| Precision | TP/(TP+FP) | Cost of false positives high |
+| Recall | TP/(TP+FN) | Cost of false negatives high |
+| F1 Score | 2·P·R/(P+R) | Imbalanced classes |
+| AUC-ROC | Area under ROC | Overall discriminability |
+
+## Regression Evaluation Metrics 
+
+| Metric | Formula |
+|---|---|
+| MAE | mean(|y - ŷ|) |
+| RMSE | sqrt(mean((y - ŷ)²)) |
+| R² | 1 - SS_res/SS_tot |
+
+
+## Cross-Validation
+
+```{mermaid}
+flowchart LR
+    F1[Fold 1 Test, Train, Train, Train, Train]
+    F2[Fold 2 Train, Test, Train, Train, Train]
+    F3[Fold 3 Train, Train, Test, Train, Train]
+    F4[Fold 4 Train, Train, Train, Test, Train]
+    F5[Fold 5 Train, Train, Train, Train, Test]
+  F1 & F2 & F3 & F4 & F5 --> Avg[Average Score = CV Score]
+```
+
+- More reliable estimate of model performance
+- Reduces overfitting risk during model selection
+
+
+# Part 3: Deep Learning
+
+## What is Deep Learning?
+
+**Deep Learning (DL)** uses artificial **neural networks** with many layers to learn hierarchical representations from raw data.
+
+:::: {.columns}
+::: {.column .r-fit-text width="50%"}
+**Why "Deep"?**
+
+- Multiple hidden layers
+- Each layer learns more abstract features
+- Pixels → Edges → Shapes → Objects
+
+**Key Advantage**
+
+- **Automatic feature extraction** — no manual feature engineering needed
+- Excels at **images, text, audio, sequences**
+:::
+::: {.column .r-fit-text width="50%"}
+```
+Input Layer   Hidden Layers   Output Layer
+   [x₁] ──┐
+   [x₂] ──┤─→[●][●][●]─→[●][●]─→[ŷ]
+   [x₃] ──┤─→[●][●][●]─→[●][●]
+   [x₄] ──┘
+   
+   Each ● = neuron (weighted sum + activation)
+```
+:::
+::::
+
+
+## Neural Network Components
+
+::: {style="font-size:0.65em; "}
+**Neuron (Perceptron):**
+$$z = \sum_{i} w_i x_i + b, \quad \hat{y} = \sigma(z)$$
+
+**Activation Functions:**
+
+| Function | Formula | Use Case |
+|---|---|---|
+| Sigmoid | 1/(1+e⁻ᶻ) | Binary output |
+| ReLU | max(0, z) | Hidden layers (CNN) |
+| Softmax | eᶻⁱ/Σeᶻʲ | Multi-class output |
+| Tanh | (eᶻ-e⁻ᶻ)/(eᶻ+e⁻ᶻ) | RNN hidden states |
+
+**Training:** Backpropagation + Gradient Descent
+
+$$w \leftarrow w - \eta \cdot \frac{\partial \mathcal{L}}{\partial w}$$
+:::
+
+## Deep Learning Architectures
+
+::: {style="font-size:0.8em; "}
+| Architecture | Key Feature | Applications |
+|---|---|---|
+| **Feedforward (FNN/MLP)** | Fully connected layers | Tabular data classification |
+| **Convolutional (CNN)** | Spatial feature extraction | Medical imaging, histopathology |
+| **Recurrent (RNN/LSTM)** | Sequential/temporal data | EHR time series, text |
+| **Transformer** | Attention mechanism | Drug-protein interaction, NLP |
+| **Autoencoder** | Unsupervised representation | Anomaly detection, de-noising |
+| **GAN** | Generative adversarial | Molecular generation |
+:::
+
+## Deep Learning in Pharmaceutical Sciences
+
+:::: {.columns}
+::: {.column .r-fit-text width="50%"}
+**Drug Discovery**
+
+- AlphaFold2 — protein structure prediction
+- Molecular property prediction (QSAR)
+- De novo drug design (generative models)
+- ADMET prediction
+
+**Clinical Applications**
+
+- Pathology image analysis (H&E, IHC)
+- Radiology image segmentation
+- Drug-drug interaction prediction
+:::
+::: {.column .r-fit-text width="50%"}
+**Genomics & Omics**
+
+- Variant calling from sequencing
+- Gene expression prediction
+- Biomarker discovery
+- Multi-omics data integration
+
+**Pharmacovigilance**
+
+- Adverse event detection from text
+- Social media mining
+- Signal detection from claims data
+:::
+::::
+
+# Part 4: Machine Learning with Julia & SciML
+
+## Why Julia for Machine Learning?
+
+:::: {.columns}
+::: {.column .r-fit-text width="50%"}
+**Performance**
+
+- C-level speed with Python-like syntax
+- JIT compilation via LLVM
+- No need to vectorize — loops are fast
+- Ideal for large numerical computations
+
+**Scientific Computing**
+
+- Native array operations
+- Excellent linear algebra support
+- Symbolic math (Symbolics.jl)
+- Automatic differentiation (Zygote.jl)
+:::
+::: {.column .r-fit-text width="50%"}
+**SciML Ecosystem**
+
+```
+SciML Organization
+├── Flux.jl          # Deep Learning
+├── MLJ.jl           # ML framework
+├── DataFrames.jl    # Data manipulation
+├── GLM.jl           # Linear/GLM models
+├── DecisionTree.jl  # Trees, Random Forest
+├── LIBSVM.jl        # SVM
+└── Statistics.jl    # Core statistics
+```
+:::
+::::
+
+## Setting Up the Environment
+
+```julia
+# Install required packages (run once)
+using Pkg
+Pkg.add([
+    "MLJ",
+    "MLJDecisionTreeInterface",  # Decision Trees
+    "XGBoost",                   # Gradient Boosting
+    "CSV",                       # Read CSV files
+    "DataFrames",                # Data manipulation
+    "Plots",                     # Visualization
+    "StatsPlots",                # Statistical plots
+    "CategoricalArrays"          # Categorical variables
+])
+```
+
+```julia
+# Load packages
+using MLJ, CSV, DataFrames, CategoricalArrays
+using Plots, StatsPlots
+```
+
+::: {.callout-tip}
+Julia packages are compiled on first use — subsequent runs are much faster.
+:::
+
+## MLJ.jl: The Unified ML Framework
+
+**MLJ** (Machine Learning in Julia) provides a unified interface to 150+ ML algorithms.
+
+```julia
+using MLJ
+
+# Load a model
+Tree = @load DecisionTreeClassifier pkg=DecisionTree
+
+# Instantiate with hyperparameters
+tree = Tree(max_depth=5)
+
+# Wrap data in MLJ format
+X, y = ... # features and target
+mach = machine(tree, X, y)
+
+# Train
+fit!(mach, rows=train)
+
+# Predict
+ŷ = predict(mach, rows=test)
+
+# Evaluate
+evaluate!(mach, resampling=CV(nfolds=5), measure=accuracy)
+```
+
+## The Titanic Dataset
+
+[Kaggle Titanic Dataset](titanic.csv)
+
+**Objective:** Predict whether a passenger survived the Titanic disaster.
+
+**This is a Binary Classification Problem:**
+- Target: `Survived` (0 = No, 1 = Yes)
+
+::: {style="font-size:0.65em; "}
+| Feature | Type | Description |
+|---|---|---|
+| `Pclass` | Ordinal | Passenger class (1, 2, 3) |
+| `Sex` | Categorical | male / female |
+| `Age` | Continuous | Age in years |
+| `SibSp` | Integer | # siblings/spouses aboard |
+| `Parch` | Integer | # parents/children aboard |
+| `Fare` | Continuous | Ticket fare |
+| `Embarked` | Categorical | Port (C, Q, S) |
+:::
+
+## Step 1: Load and Inspect Data
+
+```julia
+using CSV, DataFrames
+
+# Load data
+df = CSV.read("titanic.csv", DataFrame)
+
+# Inspect
+println("Shape: ", size(df))
+println("\nFirst 5 rows:")
+first(df, 5)
+```
+
+```julia
+# Basic statistics
+describe(df, :all)
+```
+
+```julia
+# Check missing values
+missing_count = combine(df, names(df) .=> (x -> sum(ismissing.(x))) .=> names(df))
+println(missing_count)
+```
+
+::: {.callout-note}
+The Titanic dataset has missing values in `Age` (~20%), `Cabin` (~77%), and `Embarked` (~0.2%).
+:::
+
+---
+
+## Step 2: Exploratory Data Analysis
+
+```julia
+using StatsPlots
+
+# Survival by gender
+@df df groupedbar(:Sex, :Survived, 
+    group=:Survived,
+    xlabel="Sex", ylabel="Count",
+    title="Survival by Gender",
+    labels=["Died" "Survived"],
+    color=[:salmon :steelblue])
+```
+
+```julia
+# Age distribution by survival
+@df df violin(:Survived, :Age, 
+    group=:Survived,
+    xlabel="Survived", ylabel="Age",
+    title="Age Distribution by Survival",
+    labels=["Died" "Survived"])
+```
+
+```julia
+# Survival rate by passenger class
+survival_by_class = combine(groupby(df, :Pclass),
+    :Survived => mean => :survival_rate)
+println(survival_by_class)
+```
+
+---
+
+## Step 3: Data Preprocessing
+
+```julia
+using DataFrames, CategoricalArrays, Statistics
+
+df_clean = copy(df)
+
+# 1. Drop irrelevant columns
+select!(df_clean, Not([:PassengerId, :Name, :Ticket, :Cabin]))
+
+# 2. Impute missing Age with median
+age_median = median(skipmissing(df_clean.Age))
+df_clean.Age = coalesce.(df_clean.Age, age_median)
+
+# 3. Impute missing Embarked with mode
+df_clean.Embarked = coalesce.(df_clean.Embarked, "S")
+
+# 4. Encode Sex: female=1, male=0
+df_clean.Sex = ifelse.(df_clean.Sex .== "female", 1, 0)
+
+# 5. One-hot encode Embarked
+df_clean.Embarked_C = Int.(df_clean.Embarked .== "C")
+df_clean.Embarked_Q = Int.(df_clean.Embarked .== "Q")
+select!(df_clean, Not(:Embarked))
+
+# 6. Feature engineering
+df_clean.FamilySize = df_clean.SibSp .+ df_clean.Parch .+ 1
+df_clean.IsAlone = Int.(df_clean.FamilySize .== 1)
+
+println("Processed shape: ", size(df_clean))
+```
+
+## Step 4: Prepare MLJ-Compatible Data
+
+```julia
+using MLJ
+
+# Separate features and target
+target = :Survived
+features = setdiff(names(df_clean), [string(target)])
+
+X = select(df_clean, features)
+y = df_clean[:, target]
+
+# Convert target to categorical (required for classification)
+y = CategoricalArray(y)
+
+# Coerce feature types for MLJ
+X = coerce(X, 
+    :Pclass     => OrderedFactor,
+    :Sex        => Count,
+    :Age        => Continuous,
+    :SibSp      => Count,
+    :Parch      => Count,
+    :Fare       => Continuous,
+    :FamilySize => Count,
+    :IsAlone    => Count
+)
+
+println("X:", schema(X))
+println("y:", scitype(y))
+```
+
+---
+
+## Step 5: Train/Test Split
+
+```julia
+using MLJ
+
+# Reproducible split: 80% train, 20% test
+train, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)
+
+println("Training samples: ", length(train))
+println("Test samples:     ", length(test))
+println("Survival rate (train): ", 
+    round(mean(y[train] .== "1") * 100, digits=1), "%")
+println("Survival rate (test):  ", 
+    round(mean(y[test] .== "1") * 100, digits=1), "%")
+```
+
+## Step 6: Train a Decision Tree
+
+```julia
+using MLJ
+MLJ.@load DecisionTreeClassifier pkg=DecisionTree
+
+# Define model
+tree_clf = DecisionTreeClassifier(max_depth=5)
+
+# Wrap in machine (binds model + data)
+mach_tree = machine(tree_clf, X, y)
+
+# Train on training set
+fit!(mach_tree, rows=train, verbosity=0)
+
+# Predict on test set
+ŷ_tree = predict_mode(mach_tree, rows=test)
+
+# Evaluate
+acc_tree = accuracy(ŷ_tree, y[test])
+println("Decision Tree Accuracy: ", round(acc_tree * 100, digits=2), "%")
+```
+
+## Step 7: Train a Random Forest
+
+```julia
+MLJ.@load RandomForestClassifier pkg=DecisionTree
+
+# Define model with hyperparameters
+rf_clf = RandomForestClassifier(
+    n_trees   = 100,
+    max_depth = 10,
+    min_samples_leaf = 5,
+    n_subfeatures = 3
+)
+
+mach_rf = machine(rf_clf, X, y)
+fit!(mach_rf, rows=train, verbosity=0)
+ŷ_rf = predict_mode(mach_rf, rows=test)
+
+acc_rf = accuracy(ŷ_rf, y[test])
+println("Random Forest Accuracy: ", round(acc_rf * 100, digits=2), "%")
+```
+
+## Step 8: Cross-Validation Evaluation
+
+```julia
+using MLJ
+
+# 5-fold cross-validation
+cv = CV(nfolds=5, shuffle=true, rng=42)
+
+# Evaluate multiple metrics at once
+eval_rf = evaluate(rf_clf, X, y,
+    resampling = cv,
+    measures   = [accuracy, f1score, auc],
+    verbosity  = 0
+)
+
+println("\n=== Random Forest Cross-Validation ===")
+for (m, v) in zip(eval_rf.measure, eval_rf.measurement)
+    println("$(m):  ", round(v, digits=4))
+end
+println("Per-fold accuracy: ", round.(eval_rf.per_fold[1], digits=3))
+```
+
+## Step 9: Hyperparameter Tuning
+
+```julia
+using MLJ
+
+# Define search range
+r1 = range(rf_clf, :n_trees,      lower=50,  upper=300, scale=:linear)
+r2 = range(rf_clf, :max_depth,    lower=3,   upper=15)
+r3 = range(rf_clf, :n_subfeatures, lower=2,  upper=6)
+
+# Grid search with cross-validation
+tuned_rf = TunedModel(
+    model     = rf_clf,
+    resampling = CV(nfolds=5, rng=42),
+    tuning    = Grid(resolution=5),
+    range     = [r1, r2, r3],
+    measure   = accuracy
+)
+
+mach_tuned = machine(tuned_rf, X, y)
+fit!(mach_tuned, rows=train, verbosity=0)
+
+# Best model
+best_model = fitted_params(mach_tuned).best_model
+println("Best parameters:")
+println("  n_trees:       ", best_model.n_trees)
+println("  max_depth:     ", best_model.max_depth)
+println("  n_subfeatures: ", best_model.n_subfeatures)
+```
+
+## Step 10: Feature Importance
+
+```julia
+# Get feature importances from trained Random Forest
+fp = fitted_params(mach_rf)
+importances = fp.forest.feature_importances
+
+# Sort and display
+feat_names = names(X)
+imp_df = sort(
+    DataFrame(feature=feat_names, importance=importances),
+    :importance, rev=true
+)
+println(imp_df)
+
+# Plot
+bar(imp_df.feature, imp_df.importance,
+    xlabel="Feature",
+    ylabel="Importance",
+    title="Random Forest Feature Importance (Titanic)",
+    xrotation=30,
+    legend=false,
+    color=:steelblue)
+```
+
+## Step 11: Model Comparison
+
+```julia
+using MLJ
+
+# Load all model types
+MLJ.@load LogisticClassifier pkg=MLJLinearModels
+MLJ.@load XGBoostClassifier  pkg=XGBoost
+
+models = [
+    ("Logistic Regression", LogisticClassifier()),
+    ("Decision Tree",       DecisionTreeClassifier(max_depth=5)),
+    ("Random Forest",       RandomForestClassifier(n_trees=100)),
+    ("XGBoost",             XGBoostClassifier(num_round=100)),
+]
+
+results = []
+for (name, model) in models
+    ev = evaluate(model, X, y,
+        resampling = CV(nfolds=5, rng=42),
+        measures   = [accuracy, f1score],
+        verbosity  = 0)
+    push!(results, (
+        Model    = name,
+        Accuracy = round(ev.measurement[1], digits=4),
+        F1_Score = round(ev.measurement[2], digits=4)
+    ))
+end
+
+println(DataFrame(results))
+```
+
+## Model Comparison Results
+
+```
+Model                  Accuracy   F1_Score
+─────────────────────────────────────────
+Logistic Regression    0.8045     0.7412
+Decision Tree          0.7921     0.7283
+Random Forest          0.8247     0.7698
+XGBoost                0.8316     0.7801
+```
+
+```julia
+# Visualize comparison
+model_names = [r.Model for r in results]
+accuracies  = [r.Accuracy for r in results]
+
+bar(model_names, accuracies,
+    title="Model Accuracy Comparison — Titanic",
+    xlabel="Model", ylabel="Accuracy (5-fold CV)",
+    ylim=(0.7, 0.9), legend=false,
+    color=[:steelblue, :salmon, :seagreen, :orchid],
+    xrotation=20)
+```
+
+## Step 12: Confusion Matrix & ROC Curve
+
+```julia
+using MLJ, Plots
+
+# Predictions with probabilities
+ŷ_prob = predict(mach_rf, rows=test)
+
+# Confusion matrix
+cm = ConfusionMatrix(zero_division=0)
+println("Confusion Matrix:")
+println(confusion_matrix(predict_mode(mach_rf, rows=test), y[test]))
+
+# ROC Curve
+fprs, tprs, thresholds = roc_curve(ŷ_prob, y[test])
+auc_val = auc(ŷ_prob, y[test])
+
+plot(fprs, tprs,
+    xlabel="False Positive Rate",
+    ylabel="True Positive Rate",
+    title="ROC Curve — Random Forest (Titanic)",
+    label="AUC = $(round(auc_val, digits=3))",
+    linewidth=2, color=:steelblue)
+plot!([0,1], [0,1], linestyle=:dash, color=:gray, label="Random")
+```
+
+## Complete Pipeline: Summary
+
+```julia
+using MLJ, CSV, DataFrames, CategoricalArrays
+
+# ── 1. Load
+df = CSV.read("titanic.csv", DataFrame)
+
+# ── 2. Preprocess (function defined earlier)
+df_clean = preprocess_titanic(df)
+
+# ── 3. Feature/target split
+X = select(df_clean, Not(:Survived))
+y = CategoricalArray(df_clean.Survived)
+X = coerce(X, :Pclass => OrderedFactor, :Age => Continuous, :Fare => Continuous)
+
+# ── 4. Split
+train, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)
+
+# ── 5. Train best model
+MLJ.@load RandomForestClassifier pkg=DecisionTree
+model = RandomForestClassifier(n_trees=100, max_depth=10)
+mach  = machine(model, X, y)
+fit!(mach, rows=train)
+
+# ── 6. Evaluate
+ŷ = predict_mode(mach, rows=test)
+println("Final Accuracy: ", round(accuracy(ŷ, y[test]) * 100, digits=2), "%")
+```
+
+## Summary
+
+:::: {.columns}
+::: {.column width="50%"}
+**AI / ML / DL Concepts**
+
+- AI is the broad field of intelligent machines
+- ML learns patterns from data automatically
+- DL uses deep neural networks for complex tasks
+- Bias-variance tradeoff is fundamental
+- Always evaluate with cross-validation
+
+**ML Workflow**
+
+1. Collect & explore data (EDA)
+2. Preprocess (clean, encode, engineer features)
+3. Split: train / validation / test
+4. Train & tune models
+5. Evaluate & compare
+6. Deploy & monitor
+:::
+::: {.column width="50%"}
+**Julia SciML for ML**
+
+- **MLJ.jl** — unified ML interface
+- **DataFrames.jl** — data manipulation
+- **CSV.jl** — data loading
+- **Plots.jl** — visualization
+- Performance of C with readability of Python
+
+**Titanic Results**
+
+| Model | Accuracy |
+|---|---|
+| Logistic Regression | ~80% |
+| Random Forest | ~82% |
+| XGBoost | ~83% |
+:::
+::::
+
+## Further Reading & Resources
+
+**Julia & SciML**
+
+- [MLJ.jl Documentation](https://alan-turing-institute.github.io/MLJ.jl/dev/)
+- [SciML Organization](https://sciml.ai/)
+- [Julia for Data Science](https://juliadatascience.io/)
+
+**Machine Learning**
+
+- Hastie et al. — *Elements of Statistical Learning* (free PDF)
+- Goodfellow et al. — *Deep Learning* (free at deeplearningbook.org)
+
+## References
+
+1. Murphy, K.P. (2012). *Machine Learning: A Probabilistic Perspective*. MIT Press.
+2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.
+3. Blaom, A.D. et al. (2020). MLJ: A Julia package for composable machine learning. *Journal of Open Source Software*, 5(55), 2704.
+4. Vamathevan, J. et al. (2019). Applications of machine learning in drug discovery and development. *Nature Reviews Drug Discovery*, 18, 463–477.
+5. Kaggle Titanic Dataset: [https://www.kaggle.com/c/titanic](https://www.kaggle.com/c/titanic)

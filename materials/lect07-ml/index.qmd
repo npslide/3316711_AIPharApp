@@ -1,17 +1,12 @@
 ---
-title: "1. Machine Learning System"
+title: "7. Machine Learning"
 ---
 
 > Meet your neighbors, familiarize yourself with the format of the workshop, practing rendering documents with Quarto, and build a sense of the three components that make up the anatomy of a Quarto document.
 
-[Full Screen](slide1.qmd)
+[Full Screen](slides.qmd)
 ```{=html}
-<iframe class="slide-deck" src="slide1.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
-```
-
-[Full Screen](slide2.qmd)
-```{=html}
-<iframe class="slide-deck" src="slide2.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 <!-- #### Outline -->
