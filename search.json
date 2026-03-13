@@ -1,273 +1,763 @@
 [
   {
-    "objectID": "materials/lect07-ml/slide1.html#what-is-artificial-intelligence",
-    "href": "materials/lect07-ml/slide1.html#what-is-artificial-intelligence",
+    "objectID": "materials/lect09-statinfer/slides.html#statistics",
+    "href": "materials/lect09-statinfer/slides.html#statistics",
+    "title": "Statistical Inference practices",
+    "section": "Statistics 1",
+    "text": "Statistics 1\ndiscipline that concerns the collection, organization, analysis, interpretation and presentation of data\nWikipedia; Romijn, Jan-Willem (2014). “Philosophy of statistics”. Stanford Encyclopedia of Philosophy."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#statistic-tools-family",
+    "href": "materials/lect09-statinfer/slides.html#statistic-tools-family",
+    "title": "Statistical Inference practices",
+    "section": "Statistic tools Family",
+    "text": "Statistic tools Family\n\n\n\n\n\n\ngraph TD\n  A[Statistics] --&gt; B[Descriptive]\n  A --&gt; C[Inferential]\n  A --&gt; D[Bayesian]\n  A --&gt; E[Statistical learning]\n  \n  B --&gt; F[Central tendency]\n  B --&gt; G[Distribution]\n  B --&gt; H[Plot]\n\n  C --&gt; I[T-test]\n  C --&gt; J[ANOVA]\n\n  E --&gt; K[AI]\n  E --&gt; L[NN]"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#drug-testing",
+    "href": "materials/lect09-statinfer/slides.html#drug-testing",
+    "title": "Statistical Inference practices",
+    "section": "Drug testing",
+    "text": "Drug testing\n\n2 new pain killer, test in 10 persons that have pain.\n\nA: 8 of 10 get better.\nB: 9 of 10 get better.\n\n2 new pain killer, test in 100 persons that have pain.\n\nA: 70 of 100 get better.\nB: 79 of 100 get better."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#statistical-inference",
+    "href": "materials/lect09-statinfer/slides.html#statistical-inference",
+    "title": "Statistical Inference practices",
+    "section": "Statistical inference",
+    "text": "Statistical inference\n\n\n\nObserve  Sample\n\n\n——&gt;\n\n\nInfer  Population"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#hypothesis-testing-statistical-inference",
+    "href": "materials/lect09-statinfer/slides.html#hypothesis-testing-statistical-inference",
+    "title": "Statistical Inference practices",
+    "section": "Hypothesis testing: statistical inference",
+    "text": "Hypothesis testing: statistical inference\n\nConvert the research hypothesis to null hypothesis and try to disprove. The decide which test & tails to be used.\ndecide on a significance level – the probability with which we are prepared to make a wrong decision if the null hypothesis is true.\nExperimental design & do data collection\nPerform requirement check then Calculate p-value\nCompare p-value with a significance level then end up either accepting or rejecting the null hypothesis.\nInterpretation"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#state-the-hypothesis",
+    "href": "materials/lect09-statinfer/slides.html#state-the-hypothesis",
+    "title": "Statistical Inference practices",
+    "section": "State the hypothesis",
+    "text": "State the hypothesis\n\nParameters\n\nmean (\\mu)\nstandard variation (\\sigma)\ndistribution\n\nAlternative relationship\n\nnot equal (\\neq) - two tail\ngreater than (\\gt) - one tail\nlower than (\\lt) - one tail"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#hypotheses",
+    "href": "materials/lect09-statinfer/slides.html#hypotheses",
+    "title": "Statistical Inference practices",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\n\n\n\n\n\n\nNull (not-sig: true)\nAlternative (sig: true)\n\n\n\n\n\\mu = 15\n\\mu \\neq 15\n\n\n\\mu \\leq 15\n\\mu \\gt 15\n\n\n\\mu_1 = \\mu_2\n\\mu_1 \\neq \\mu_2\n\n\n\\mu_1 \\geq \\mu_2\n\\mu_1 \\lt \\mu_2\n\n\n\\mu_1 = \\mu_2 = \\mu_3 ...\n\\mu_1 \\neq \\mu_2, \\mu_1 \\neq \\mu_3 ..."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#choose-the-test-parametric-and-non-parametric",
+    "href": "materials/lect09-statinfer/slides.html#choose-the-test-parametric-and-non-parametric",
+    "title": "Statistical Inference practices",
+    "section": "Choose the test: Parametric and non-parametric",
+    "text": "Choose the test: Parametric and non-parametric\n\n\nParametric\n\ntest based on parameterized distributions\n\nT-Test\nANOVA\n\nMore strictness\nRequirement check\n\n\nNon parametric\n\nnot based on parameterized distributions\n\nMann-Whitney\nKruskal-Wallis\n\nLess strictness\nNo requirement"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#decide-the-significant-level",
+    "href": "materials/lect09-statinfer/slides.html#decide-the-significant-level",
+    "title": "Statistical Inference practices",
+    "section": "Decide the significant level",
+    "text": "Decide the significant level\n \n\n\n\n\nnull hypothesis is true\nnull hypothesis is false\n\n\n\n\naccept null hypothesis\nGood\nType II (\\beta) error\n\n\nreject null hypothesis\nType I (\\alpha) error\nGood"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#choosing-the-test",
+    "href": "materials/lect09-statinfer/slides.html#choosing-the-test",
+    "title": "Statistical Inference practices",
+    "section": "Choosing the test",
+    "text": "Choosing the test\n\nChoosing the test based on the hypothesis\nDecide on the significant level & collect the data\nChoose the parametric first\nChecking the assumption of the test\nCalculate p-value, confidence limit\nAccept or reject null hypothesis"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#p-value",
+    "href": "materials/lect09-statinfer/slides.html#p-value",
+    "title": "Statistical Inference practices",
+    "section": "P-Value",
+    "text": "P-Value"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#wrong-interpretation-of-p-value",
+    "href": "materials/lect09-statinfer/slides.html#wrong-interpretation-of-p-value",
+    "title": "Statistical Inference practices",
+    "section": "Wrong interpretation of P-Value",
+    "text": "Wrong interpretation of P-Value\nWhen the same hypothesis is tested in different studies; if P of Drug ‘A’ is smaller than drug ‘B’, then drug ‘A’ is more effective than drug ‘b’."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#choosing-statistic-testing",
+    "href": "materials/lect09-statinfer/slides.html#choosing-statistic-testing",
+    "title": "Statistical Inference practices",
+    "section": "choosing Statistic Testing",
+    "text": "choosing Statistic Testing\n\ntype of parameter: mean, variance, distribution, proportion\nnumber of sample group: one, two, more\ntype of variable: focus on continuous\nnumber of independent variable: focus on one\nnumber of dependent variable: focus on one\nparametric vs non parametric"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-1-sample",
+    "href": "materials/lect09-statinfer/slides.html#testing-of-mean-1-sample",
+    "title": "Statistical Inference practices",
+    "section": "Testing of Mean 1 sample",
+    "text": "Testing of Mean 1 sample\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nN/A\none sample T-Test of mean\n\n\nno\nN/A\nMann-Whitney U"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-2-samples",
+    "href": "materials/lect09-statinfer/slides.html#testing-of-mean-2-samples",
+    "title": "Statistical Inference practices",
+    "section": "Testing of Mean 2 samples",
+    "text": "Testing of Mean 2 samples\n\n\n\n\n\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nsample pair\npaired T-Test of mean\n\n\nno\nsample pair\nWilcoxon signed rank test\n\n\nyes\nequal variance\ntwo sample T-Test of mean of equal variance\n\n\nyes\nnonequal variance\ntwo sample T-Test of mean of non equal variance\n\n\nno\nN/A\nWilcoxon rank-sum test"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-more-samples",
+    "href": "materials/lect09-statinfer/slides.html#testing-of-mean-more-samples",
+    "title": "Statistical Inference practices",
+    "section": "Testing of Mean more samples",
+    "text": "Testing of Mean more samples\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nN/A\nOne-Way ANOVA\n\n\nno\nN/A\nKruskal-Wallis test"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#testing-of-variance",
+    "href": "materials/lect09-statinfer/slides.html#testing-of-variance",
+    "title": "Statistical Inference practices",
+    "section": "Testing of Variance",
+    "text": "Testing of Variance\n\nBartlett Test of Homogeneity of Variances"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#testing-of-distribution",
+    "href": "materials/lect09-statinfer/slides.html#testing-of-distribution",
+    "title": "Statistical Inference practices",
+    "section": "Testing of Distribution",
+    "text": "Testing of Distribution\n\nShapiro-Wilk test of normality"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#library-installation",
+    "href": "materials/lect09-statinfer/slides.html#library-installation",
+    "title": "Statistical Inference practices",
+    "section": "library installation",
+    "text": "library installation\n\ntidyverse\n\ntibble\ntribble\nreadr\ntidyr\ndplyr\n…\n\ntidymodels\n\ninfer"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#calling-library",
+    "href": "materials/lect09-statinfer/slides.html#calling-library",
+    "title": "Statistical Inference practices",
+    "section": "calling library",
+    "text": "calling library"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#the-nhanes-data",
+    "href": "materials/lect09-statinfer/slides.html#the-nhanes-data",
+    "title": "Statistical Inference practices",
+    "section": "The NHANES data",
+    "text": "The NHANES data\n\n\n\n\n\n\n\nVariable\nDefinition\n\n\n\n\nid\nA unique sample identifier\n\n\nGender\nGender (sex) of study participant coded as male or female\n\n\nAge\nAge in years at screening of study participant. Note: Subjects 80 years or older were recorded as 80.\n\n\nRace\nReported race of study participant, including non-Hispanic Asian category: Mexican, Hispanic, White, Black, Asian, or Other. Not availale for 2009-10.\n\n\nEducation\nEducational level of study participant Reported for participants aged 20 years or older. One of 8thGrade, 9-11thGrade, HighSchool, SomeCollege, or CollegeGrad.\n\n\nMaritalStatus\nMarital status of study participant. Reported for participants aged 20 years or older. One of Married, Widowed, Divorced, Separated, NeverMarried, or LivePartner (living with partner).\n\n\nRelationshipStatus\nSimplification of MaritalStatus, coded as Committed if MaritalStatus is Married or LivePartner, and Single otherwise.\n\n\nInsured\nIndicates whether the individual is covered by health insurance.\n\n\nIncome\nNumerical version of HHIncome derived from the middle income in each category\n\n\nPoverty\nA ratio of family income to poverty guidelines. Smaller numbers indicate more poverty\n\n\nHomeRooms\nHow many rooms are in home of study participant (counting kitchen but not bathroom). 13 rooms = 13 or more rooms.\n\n\nHomeOwn\nOne of Home, Rent, or Other indicating whether the home of study participant or someone in their family is owned, rented or occupied by some other arrangement.\n\n\nWork\nIndicates whether the individual is current working or not.\n\n\nWeight\nWeight in kg\n\n\nHeight\nStanding height in cm. Reported for participants aged 2 years or older.\n\n\nBMI\nBody mass index (weight/height2 in kg/m2). Reported for participants aged 2 years or older.\n\n\nPulse\n60 second pulse rate\n\n\nBPSys\nCombined systolic blood pressure reading, following the procedure outlined for BPXSAR.\n\n\nBPDia\nCombined diastolic blood pressure reading, following the procedure outlined for BPXDAR.\n\n\nTestosterone\nTesterone total (ng/dL). Reported for participants aged 6 years or older. Not available for 2009-2010.\n\n\nHDLChol\nDirect HDL cholesterol in mmol/L. Reported for participants aged 6 years or older.\n\n\nTotChol\nTotal HDL cholesterol in mmol/L. Reported for participants aged 6 years or older.\n\n\nDiabetes\nStudy participant told by a doctor or health professional that they have diabetes. Reported for participants aged 1 year or older as Yes or No.\n\n\nDiabetesAge\nAge of study participant when first told they had diabetes. Reported for participants aged 1 year or older.\n\n\nnPregnancies\nHow many times participant has been pregnant. Reported for female participants aged 20 years or older.\n\n\nnBabies\nHow many of participants deliveries resulted in live births. Reported for female participants aged 20 years or older.\n\n\nSleepHrsNight\nSelf-reported number of hours study participant usually gets at night on weekdays or workdays. Reported for participants aged 16 years and older.\n\n\nPhysActive\nParticipant does moderate or vigorous-intensity sports, fitness or recreational activities (Yes or No). Reported for participants 12 years or older.\n\n\nPhysActiveDays\nNumber of days in a typical week that participant does moderate or vigorous-intensity activity. Reported for participants 12 years or older.\n\n\nAlcoholDay\nAverage number of drinks consumed on days that participant drank alcoholic beverages. Reported for participants aged 18 years or older.\n\n\nAlcoholYear\nEstimated number of days over the past year that participant drank alcoholic beverages. Reported for participants aged 18 years or older.\n\n\nSmokingStatus\nSmoking status: Current Former or Never."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#import-data-to-tibbles",
+    "href": "materials/lect09-statinfer/slides.html#import-data-to-tibbles",
+    "title": "Statistical Inference practices",
+    "section": "import data to tibbles",
+    "text": "import data to tibbles\n\n\n5000×32 DataFrame4975 rows omitted\n\n\n\nRow\nid\nGender\nAge\nRace\nEducation\nMaritalStatus\nRelationshipStatus\nInsured\nIncome\nPoverty\nHomeRooms\nHomeOwn\nWork\nWeight\nHeight\nBMI\nPulse\nBPSys\nBPDia\nTestosterone\nHDLChol\nTotChol\nDiabetes\nDiabetesAge\nnPregnancies\nnBabies\nSleepHrsNight\nPhysActive\nPhysActiveDays\nAlcoholDay\nAlcoholYear\nSmokingStatus\n\n\n\nInt64\nString7\nInt64\nString15\nString15\nString15\nString15\nString3\nString7\nString7\nString3\nString7\nString15\nString7\nString7\nString7\nString3\nString3\nString3\nString7\nString7\nString7\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString7\n\n\n\n\n1\n62163\nmale\n14\nAsian\nNA\nNA\nNA\nYes\n100000\n4.07\n6\nRent\nNA\n49.4\n168.9\n17.3\n72\n107\n37\n274.95\n1.14\n3.98\nNo\nNA\nNA\nNA\nNA\nNo\n1\nNA\nNA\nNA\n\n\n2\n62172\nfemale\n43\nBlack\nHigh School\nNeverMarried\nSingle\nYes\n22500\n2.02\n4\nRent\nNotWorking\n98.6\n172.0\n33.3\n80\n103\n72\n47.53\n1.89\n4.37\nNo\nNA\n3\n2\n8\nNo\n2\n3\n104\nCurrent\n\n\n3\n62174\nmale\n80\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n70000\n4.3\n7\nOwn\nNotWorking\n95.8\n168.1\n33.9\n56\n97\n39\n642.82\n1.4\n5.25\nNo\nNA\nNA\nNA\n9\nNo\n7\nNA\n0\nNever\n\n\n4\n62174\nmale\n80\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n70000\n4.3\n7\nOwn\nNotWorking\n95.8\n168.1\n33.9\n56\n97\n39\n642.82\n1.4\n5.25\nNo\nNA\nNA\nNA\n9\nNo\n5\nNA\n0\nNever\n\n\n5\n62175\nmale\n5\nWhite\nNA\nNA\nNA\nYes\n12500\n0.39\n7\nRent\nNA\n23.9\n119.8\n16.7\nNA\nNA\nNA\nNA\nNA\nNA\nNo\nNA\nNA\nNA\nNA\nNA\n7\nNA\nNA\nNA\n\n\n6\n62176\nfemale\n34\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n100000\n5.0\n8\nOwn\nNotWorking\n68.7\n171.6\n23.3\n92\n107\n69\n21.11\n1.42\n4.42\nNo\nNA\n5\n2\n7\nYes\n5\n2\n104\nNever\n\n\n7\n62178\nmale\n80\nWhite\nHigh School\nWidowed\nSingle\nYes\n2500\n0.05\n6\nOwn\nNotWorking\n85.9\n173.5\n28.5\n68\n121\n72\n562.78\n1.22\n5.2\nNo\nNA\nNA\nNA\n6\nNo\nNA\nNA\nNA\nNever\n\n\n8\n62180\nmale\n35\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n22500\n0.87\n6\nOwn\nWorking\n89.0\n178.7\n27.9\n66\n107\n66\n401.78\n0.85\n3.7\nNo\nNA\nNA\nNA\n7\nNo\nNA\n1\n2\nNever\n\n\n9\n62186\nfemale\n17\nBlack\nNA\nNA\nNA\nYes\n22500\n0.53\n6\nOwn\nNotWorking\n63.5\n166.4\n22.9\n86\n108\n64\n27.0\n1.4\n3.21\nNo\nNA\nNA\nNA\n7\nYes\n4\nNA\nNA\nNA\n\n\n10\n62190\nfemale\n15\nMexican\nNA\nNA\nNA\nYes\n30000\n0.54\n4\nRent\nNA\n38.5\n150.5\n17.0\n76\n113\n27\n22.2\n1.63\n4.11\nNo\nNA\nNA\nNA\nNA\nNo\n7\nNA\nNA\nNA\n\n\n11\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\n2\n1\n260\nFormer\n\n\n12\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\nNA\n1\n260\nFormer\n\n\n13\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\n7\n1\n260\nFormer\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n4989\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\nNA\nNA\n0\nNever\n\n\n4990\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\n4\nNA\n0\nNever\n\n\n4991\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\n7\nNA\n0\nNever\n\n\n4992\n71908\nfemale\n66\nWhite\nCollege Grad\nWidowed\nSingle\nYes\n70000\n4.55\n8\nOwn\nWorking\n88.7\n159.0\n35.1\n76\n114\n70\n26.0\n1.86\n6.47\nNo\nNA\n2\n2\n6\nNo\n5\n1\n5\nNever\n\n\n4993\n71908\nfemale\n66\nWhite\nCollege Grad\nWidowed\nSingle\nYes\n70000\n4.55\n8\nOwn\nWorking\n88.7\n159.0\n35.1\n76\n114\n70\n26.0\n1.86\n6.47\nNo\nNA\n2\n2\n6\nNo\nNA\n1\n5\nNever\n\n\n4994\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4995\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4996\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4997\n71910\nfemale\n0\nWhite\nNA\nNA\nNA\nYes\n87500\n3.37\n10\nOwn\nNA\n6.7\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n4998\n71911\nmale\n27\nMexican\nCollege Grad\nMarried\nCommitted\nYes\n87500\n3.25\n10\nOwn\nWorking\n96.7\n175.8\n31.3\n74\n133\n74\n509.0\n1.06\n5.72\nNo\nNA\nNA\nNA\n6\nNo\n3\n5\n4\nNever\n\n\n4999\n71915\nmale\n60\nWhite\nCollege Grad\nNeverMarried\nSingle\nYes\n70000\n5.0\n4\nOwn\nWorking\n78.4\n168.8\n27.5\n76\n147\n73\n505.13\n0.93\n4.94\nYes\n56\nNA\nNA\n6\nNo\n1\nNA\n0\nNever\n\n\n5000\n71915\nmale\n60\nWhite\nCollege Grad\nNeverMarried\nSingle\nYes\n70000\n5.0\n4\nOwn\nWorking\n78.4\n168.8\n27.5\n76\n147\n73\n505.13\n0.93\n4.94\nYes\n56\nNA\nNA\n6\nNo\nNA\nNA\n0\nNever"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#view-tibbles",
+    "href": "materials/lect09-statinfer/slides.html#view-tibbles",
+    "title": "Statistical Inference practices",
+    "section": "view tibbles",
+    "text": "view tibbles"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#normality-test-shapiro-wilk-test-of-normality",
+    "href": "materials/lect09-statinfer/slides.html#normality-test-shapiro-wilk-test-of-normality",
+    "title": "Statistical Inference practices",
+    "section": "normality test: Shapiro-Wilk test of normality",
+    "text": "normality test: Shapiro-Wilk test of normality\n H_0 : data distribution = normal distribution   H_1 : data distribution \\neq normal distribution"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#bartlett-test-of-homogeneity-of-variances",
+    "href": "materials/lect09-statinfer/slides.html#bartlett-test-of-homogeneity-of-variances",
+    "title": "Statistical Inference practices",
+    "section": "Bartlett Test of Homogeneity of Variances",
+    "text": "Bartlett Test of Homogeneity of Variances\n H_0 : Var_{diabetes} = Var_{nondiabetes}   H_1 : Var_{diabetes} \\neq Var_{nondiabetes}"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#t-test-for-a-population-mean-variance-unknown",
+    "href": "materials/lect09-statinfer/slides.html#t-test-for-a-population-mean-variance-unknown",
+    "title": "Statistical Inference practices",
+    "section": "t-test for a population mean (variance unknown)",
+    "text": "t-test for a population mean (variance unknown)\n\nObject\n\nTo investigate the significance of the difference between an assumed population mean μ0 and a sample mean x ̄.\n\nLimitations\n\nIf the variance of the population σ 2 is known, a more powerful test is available: the Z-test for a population mean (Test 1).\nThe test is accurate if the population is normally distributed. If the population is not normal, the test will give an approximate guide.\n\nExample: Most of diabetic patient are overweight"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test",
+    "href": "materials/lect09-statinfer/slides.html#one-sample-t-test",
+    "title": "Statistical Inference practices",
+    "section": "one sample T Test",
+    "text": "one sample T Test\n H_0 : \\mu_{BMI_{diabetic}} = 25   H_1 : \\mu_{BMI_{diabetic}} \\neq 25"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test-inferiority-test",
+    "href": "materials/lect09-statinfer/slides.html#one-sample-t-test-inferiority-test",
+    "title": "Statistical Inference practices",
+    "section": "one sample T Test: inferiority test",
+    "text": "one sample T Test: inferiority test\n H_0 : \\mu_{BMI_{diabetic}} \\geq 25   H_1 : \\mu_{BMI_{diabetic}} &lt; 25"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test-superiority-test",
+    "href": "materials/lect09-statinfer/slides.html#one-sample-t-test-superiority-test",
+    "title": "Statistical Inference practices",
+    "section": "one sample T Test: superiority test",
+    "text": "one sample T Test: superiority test\n H_0 : \\mu_{BMI_{diabetic}} \\leq 25   H_1 : \\mu_{BMI_{diabetic}} &gt; 25"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-but-equal",
+    "href": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-but-equal",
+    "title": "Statistical Inference practices",
+    "section": "t-test for two population means (variances unknown but equal)",
+    "text": "t-test for two population means (variances unknown but equal)\n\nObject\n\nTo investigate the significance of the difference between the means of two populations.\n\nLimitations\n\nIf the variance of the populations is known, a more powerful test is available: the Z-test for two population means (Test 2).\nThe test is accurate if the populations are normally distributed. If the populations are not normal, the test will give an approximate guide."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-equal-variance-two-tail",
+    "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-equal-variance-two-tail",
+    "title": "Statistical Inference practices",
+    "section": "two sample T Test: equal variance, two-tail",
+    "text": "two sample T Test: equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}}"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-and-unequal",
+    "href": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-and-unequal",
+    "title": "Statistical Inference practices",
+    "section": "t-test for two population means (variances unknown and unequal)",
+    "text": "t-test for two population means (variances unknown and unequal)\n\nObject\n\nTo investigate the significance of the difference between the means of two populations.\n\nLimitations\n\nIf the variances of the populations are known, a more powerful test is available: the Z-test for two population means (Test 3).\nThe test is approximate if the populations are normally distributed or if the sample sizes are sufficiently large.\nThe test should only be used to test the hypothesis μ1 = μ2."
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-two-tail",
+    "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-two-tail",
+    "title": "Statistical Inference practices",
+    "section": "two sample T Test: not equal variance, two-tail",
+    "text": "two sample T Test: not equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}}"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-one-tail",
+    "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-one-tail",
+    "title": "Statistical Inference practices",
+    "section": "two sample T Test: not equal variance, one-tail",
+    "text": "two sample T Test: not equal variance, one-tail\n H_0 : \\mu_{BMI_{diabetic}} \\leq \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} &gt; \\mu_{BMI_{nondiabetic}}"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
+    "href": "materials/lect09-statinfer/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
+    "title": "Statistical Inference practices",
+    "section": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)",
+    "text": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#comparing-bmi-among-race",
+    "href": "materials/lect09-statinfer/slides.html#comparing-bmi-among-race",
+    "title": "Statistical Inference practices",
+    "section": "comparing BMI among Race",
+    "text": "comparing BMI among Race"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#preparing-data",
+    "href": "materials/lect09-statinfer/slides.html#preparing-data",
+    "title": "Statistical Inference practices",
+    "section": "preparing data",
+    "text": "preparing data"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#box-plot",
+    "href": "materials/lect09-statinfer/slides.html#box-plot",
+    "title": "Statistical Inference practices",
+    "section": "box plot",
+    "text": "box plot"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#summarize-by-group",
+    "href": "materials/lect09-statinfer/slides.html#summarize-by-group",
+    "title": "Statistical Inference practices",
+    "section": "summarize by group",
+    "text": "summarize by group"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#analysis-of-varience",
+    "href": "materials/lect09-statinfer/slides.html#analysis-of-varience",
+    "title": "Statistical Inference practices",
+    "section": "Analysis of Varience",
+    "text": "Analysis of Varience\n H_0 : \\mu_{BMI_{Asian}} = \\mu_{BMI_{Black}} = \\mu_{BMI_{White}} = \\mu_{BMI_{Mexican}} = \\mu_{BMI_{Hispanic}}"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#post-hoc",
+    "href": "materials/lect09-statinfer/slides.html#post-hoc",
+    "title": "Statistical Inference practices",
+    "section": "Post-hoc",
+    "text": "Post-hoc\n\n\nPost-hoc analysis via pairwise comparisons"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#model",
+    "href": "materials/lect09-statinfer/slides.html#model",
+    "title": "Statistical Inference practices",
+    "section": "Model",
+    "text": "Model\n BMI = \\beta_0 + \\beta_1 Age"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#assumptions",
+    "href": "materials/lect09-statinfer/slides.html#assumptions",
+    "title": "Statistical Inference practices",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nNon-linearity\nHeteroscedasticity\nOutlier values\nNormality of residuals"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#non-linearity",
+    "href": "materials/lect09-statinfer/slides.html#non-linearity",
+    "title": "Statistical Inference practices",
+    "section": "Non-linearity",
+    "text": "Non-linearity"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#heteroscedasticity",
+    "href": "materials/lect09-statinfer/slides.html#heteroscedasticity",
+    "title": "Statistical Inference practices",
+    "section": "Heteroscedasticity",
+    "text": "Heteroscedasticity"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#normality-of-residuals",
+    "href": "materials/lect09-statinfer/slides.html#normality-of-residuals",
+    "title": "Statistical Inference practices",
+    "section": "Normality of residuals",
+    "text": "Normality of residuals"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#plot",
+    "href": "materials/lect09-statinfer/slides.html#plot",
+    "title": "Statistical Inference practices",
+    "section": "plot",
+    "text": "plot"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#fitting",
+    "href": "materials/lect09-statinfer/slides.html#fitting",
+    "title": "Statistical Inference practices",
+    "section": "Fitting",
+    "text": "Fitting"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#model-diagnostics",
+    "href": "materials/lect09-statinfer/slides.html#model-diagnostics",
+    "title": "Statistical Inference practices",
+    "section": "Model Diagnostics",
+    "text": "Model Diagnostics"
+  },
+  {
+    "objectID": "materials/lect09-statinfer/slides.html#references",
+    "href": "materials/lect09-statinfer/slides.html#references",
+    "title": "Statistical Inference practices",
+    "section": "References",
+    "text": "References\n\nhttps://sparkbyexamples.com/r-programming/select-rows-in-r/\nhttps://4va.github.io/biodatasci/\nhttps://bioconnector.github.io/"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#ethical-on-data",
+    "href": "materials/lect08-data/slides.html#ethical-on-data",
+    "title": "Data integrity",
+    "section": "Ethical on Data",
+    "text": "Ethical on Data\n\n“Fabrication and Falsification”\n\nIt is a primary responsibility of a researcher to avoid either a false statement or an omission that distorts the research record.\nA researcher must not report anticipated research results that had not yet been observed at the time of submission of the report."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#avoid-misconduct-on-data",
+    "href": "materials/lect08-data/slides.html#avoid-misconduct-on-data",
+    "title": "Data integrity",
+    "section": "Avoid misconduct on data",
+    "text": "Avoid misconduct on data\n\nData integrity\nUse and mis-use of data\nOwnership and access of data\nStorage and Retention of Data\nData privacy"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-integrity",
+    "href": "materials/lect08-data/slides.html#data-integrity",
+    "title": "Data integrity",
+    "section": "Data integrity",
+    "text": "Data integrity\nmaintain a clear and complete record of data acquired. sufficient detail to permit examination for the purpose of replicating the research, responding to questions that may result from unintentional error or misinterpretation, establishing authenticity of the records, and confirming the validity of the conclusions. destruction of research records or the failure to maintain and produce research records 1\nhttp://www.provost.pitt.edu/documents/GUIDELINES%20FOR%20ETHICAL%20PRACTICES%20IN%20RESEARCH-FINALrevised2-March%202011.pdf"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-integrity-standard-practice-data-recording",
+    "href": "materials/lect08-data/slides.html#data-integrity-standard-practice-data-recording",
+    "title": "Data integrity",
+    "section": "Data integrity: standard practice Data recording",
+    "text": "Data integrity: standard practice Data recording\n\nRecord data in ink in an proper notebook\nProper notebook\n\nindexed\nconsecutively numbered pages\npermanently bound\n\nEntries should not be erased\n\nuse a thin line cross\ninitialed dated correction written separately\nan explanatory note, near the original entry or in the margin"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-integrity-1",
+    "href": "materials/lect08-data/slides.html#data-integrity-1",
+    "title": "Data integrity",
+    "section": "Data integrity",
+    "text": "Data integrity\n\nAll pages of a notebook should be dated and initialed.\nprintouts from instruments or computers,\n\nlabeled and pasted into the notebook or,\nstored securely and referenced in the notebook as to storage location."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-notebook",
+    "href": "materials/lect08-data/slides.html#example-notebook",
+    "title": "Data integrity",
+    "section": "example notebook",
+    "text": "example notebook"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#use-and-mis-use-i",
+    "href": "materials/lect08-data/slides.html#use-and-mis-use-i",
+    "title": "Data integrity",
+    "section": "Use and Mis-use I",
+    "text": "Use and Mis-use I\n\nNegative result data\nLarge background Do not: withholding of information about confounding factors. If some data should be disregarded for a stated reason, confirmed by an approved statistical test for neglecting outliers, the reason should be stated in the published accounts.\n\nAny intentional or reckless disregard for the truth in reporting observations may be considered to be an act of research misconduct."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#use-and-mis-use-ii",
+    "href": "materials/lect08-data/slides.html#use-and-mis-use-ii",
+    "title": "Data integrity",
+    "section": "Use and Mis-use II",
+    "text": "Use and Mis-use II\nThe use of photo-images not to misrepresent the underlying data.\nDo not\n\nadd or delete any part of the image: a band\ndifferentially adjust the intensity\nlabel an image from one experiment as representing a different experiment\nsplice image without using a line indicating the deletion, or to juxtapose pieces from different image onto a single image."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-cleansing",
+    "href": "materials/lect08-data/slides.html#data-cleansing",
+    "title": "Data integrity",
+    "section": "Data cleansing",
+    "text": "Data cleansing\n\n\nDirty data - Invalid\n- Inaccurate\n- Incomplete\n- Inconsistent\n- Duplicate entries - Incorrectly formatted\n\nClean data - Valid - Accurate - Complete - Consistent - Unique - Uniform"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-data-validation",
+    "href": "materials/lect08-data/slides.html#example-data-validation",
+    "title": "Data integrity",
+    "section": "Example: Data validation",
+    "text": "Example: Data validation\nA date of birth as dd-mm-yyyy,\nday field will allow numbers up to 31\nmonth field up to 12\nyear field up to 2021"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-inaccurate-data",
+    "href": "materials/lect08-data/slides.html#example-inaccurate-data",
+    "title": "Data integrity",
+    "section": "Example: Inaccurate data",
+    "text": "Example: Inaccurate data\nSurvey question:\nHow often do you go grocery?\n\nEvery day\nOnce a week\nBiweekly\nOnce a month\nLess than once a month\nNever\n\nInaccurate number from instruments"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-incomplete-data",
+    "href": "materials/lect08-data/slides.html#example-incomplete-data",
+    "title": "Data integrity",
+    "section": "Example: Incomplete data",
+    "text": "Example: Incomplete data\nMissing data\nHandling: - Prevent - Listwise or case deletion, Pairwise deletion - Imputation: Mean substitution, Regression imputation, Maximum likelihood, Expectation-Maximization - Sensitivity analysis - Last observation carried forward"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-inconsistent-data",
+    "href": "materials/lect08-data/slides.html#example-inconsistent-data",
+    "title": "Data integrity",
+    "section": "Example: Inconsistent data",
+    "text": "Example: Inconsistent data\nIn your survey about demographic variables, including age, ethnicity, education level, and socioeconomic status.\nOne participant enters “13” for their age PhD-level education as their highest attained degree\nOr\n“14” for their age Have 2 children"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-duplicate-entries",
+    "href": "materials/lect08-data/slides.html#example-duplicate-entries",
+    "title": "Data integrity",
+    "section": "Example: Duplicate entries",
+    "text": "Example: Duplicate entries\nFills out the questionnaire twice Record twice or multiple time Subject duplication"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#example-nonuniform-data",
+    "href": "materials/lect08-data/slides.html#example-nonuniform-data",
+    "title": "Data integrity",
+    "section": "Example: Nonuniform data",
+    "text": "Example: Nonuniform data\nIn a survey, ask to enter their gross salary in U.S. dollars. Some respond with their monthly salary others report their annual salary Using difference units"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#ownership-and-access-of-data",
+    "href": "materials/lect08-data/slides.html#ownership-and-access-of-data",
+    "title": "Data integrity",
+    "section": "Ownership and access of data",
+    "text": "Ownership and access of data\nResearch data obtained in studies performed at the University and/or by employees of the University are not the property of the researcher who generated or observed them or even of the principal investigator of the research group. They belong to the University, which can be held accountable for the integrity of the data even if the researchers have left the University."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#storage-and-retention-of-data",
+    "href": "materials/lect08-data/slides.html#storage-and-retention-of-data",
+    "title": "Data integrity",
+    "section": "Storage and Retention of Data",
+    "text": "Storage and Retention of Data\n\nStored securely for at least five years after completion\nDeposited in a national or international databank\n\nX-ray crystallographic data on protein structures,\nhuman genomic\nproteomic data\nDNA microarray data."
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-privacy",
+    "href": "materials/lect08-data/slides.html#data-privacy",
+    "title": "Data integrity",
+    "section": "Data privacy",
+    "text": "Data privacy\nBy Law\n\nNational Health Act: 2007\nPersonal data protection act: 2019"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#data-protection",
+    "href": "materials/lect08-data/slides.html#data-protection",
+    "title": "Data integrity",
+    "section": "Data protection",
+    "text": "Data protection\n\nanonymization\naccess control\navoid share drive"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#references",
+    "href": "materials/lect08-data/slides.html#references",
+    "title": "Data integrity",
+    "section": "References",
+    "text": "References\n\nhttps://sparkbyexamples.com/r-programming/select-rows-in-r/\nhttps://4va.github.io/biodatasci/\nhttps://bioconnector.github.io/"
+  },
+  {
+    "objectID": "materials/lect07-ml/slides.html#what-is-artificial-intelligence",
+    "href": "materials/lect07-ml/slides.html#what-is-artificial-intelligence",
     "title": "Machine Learning",
     "section": "What is Artificial Intelligence?",
     "text": "What is Artificial Intelligence?\nArtificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems.\n\n\nCore Capabilities\n\n🧠 Reasoning — logical problem solving\n📚 Learning — improving from experience\n👁️ Perception — interpreting sensory input\n💬 Natural Language — understanding text/speech\n🤖 Planning — goal-directed action\n\n\nApplication Domains\n\nDrug discovery & design\nMedical image analysis\nClinical decision support\nGenomics & proteomics\nPharmacovigilance"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#the-ai-hierarchy",
-    "href": "materials/lect07-ml/slide1.html#the-ai-hierarchy",
+    "objectID": "materials/lect07-ml/slides.html#the-ai-hierarchy",
+    "href": "materials/lect07-ml/slides.html#the-ai-hierarchy",
     "title": "Machine Learning",
     "section": "The AI Hierarchy",
     "text": "The AI Hierarchy\n\n\n\n\nAI: Artificial Intelligence  the science and engineering of making intelligent machines, especially intelligent computer programs\n\n\n\n\n\nML: Machine Learning  design and train algorithms to learn from and act on data\n\n\n\n\n\nDL: Deep Learning  multi-layered neural networks, called deep neural networks, to simulate the complex decision-making power of the human brain\n\n\n\n\n\nGenAI: Generative Deep Learning  a subset of AI used to produce text, images, videos, or others response to specific prompts. 1\n\nhttps://en.wikipedia.org/wiki/Generative_artificial_intelligence"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#ai-rule-based-vs.-learning-based",
-    "href": "materials/lect07-ml/slide1.html#ai-rule-based-vs.-learning-based",
+    "objectID": "materials/lect07-ml/slides.html#ai-rule-based-vs.-learning-based",
+    "href": "materials/lect07-ml/slides.html#ai-rule-based-vs.-learning-based",
     "title": "Machine Learning",
     "section": "AI: Rule-Based vs. Learning-Based",
     "text": "AI: Rule-Based vs. Learning-Based\n\n\n\n\n\n\n\n\nFeature\nTraditional AI\nMachine Learning\n\n\n\n\nKnowledge\nHard-coded rules\nLearned from data\n\n\nAdaptability\nManual updates needed\nImproves automatically\n\n\nScalability\nLimited\nScales with data\n\n\nInterpretability\nHigh (explicit rules)\nOften lower (black box)\n\n\nExample\nExpert systems, chess engines\nSpam filters, image classifiers"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#what-is-machine-learning",
-    "href": "materials/lect07-ml/slide1.html#what-is-machine-learning",
+    "objectID": "materials/lect07-ml/slides.html#what-is-machine-learning",
+    "href": "materials/lect07-ml/slides.html#what-is-machine-learning",
     "title": "Machine Learning",
     "section": "What is Machine Learning?",
     "text": "What is Machine Learning?\n\nMachine Learning (ML) is a field of AI that enables systems to learn and improve from experience without being explicitly programmed.\n\nInstead of writing rules:\nIF temperature &gt; 38.5 THEN fever = True\nIF fever AND cough THEN risk = High\n...\nWe let the algorithm discover patterns from labeled examples."
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#machine-learning-key-components",
-    "href": "materials/lect07-ml/slide1.html#machine-learning-key-components",
+    "objectID": "materials/lect07-ml/slides.html#machine-learning-key-components",
+    "href": "materials/lect07-ml/slides.html#machine-learning-key-components",
     "title": "Machine Learning",
     "section": "Machine Learning Key Components",
     "text": "Machine Learning Key Components\n\nData — examples & labels\nModel — mathematical function\nLoss function — how wrong are we?\nOptimization — minimize loss"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#types-of-machine-learning",
-    "href": "materials/lect07-ml/slide1.html#types-of-machine-learning",
+    "objectID": "materials/lect07-ml/slides.html#types-of-machine-learning",
+    "href": "materials/lect07-ml/slides.html#types-of-machine-learning",
     "title": "Machine Learning",
     "section": "Types of Machine Learning",
     "text": "Types of Machine Learning\n\n\nSupervised Learning\n\nLabeled training data\nLearn input → output mapping\nExamples:\n\nClassification\nRegression\n\nApplications: diagnosis, prognosis\n\n\nUnsupervised Learning\n\nNo labels required\nFind hidden structure\nExamples:\n\nClustering\nDimensionality reduction\n\nApplications: patient stratification\n\n\nReinforcement Learning\n\nAgent + environment\nLearn by reward/penalty\nExamples:\n\nGame playing\nDrug dosing optimization\n\nApplications: clinical decision"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#supervised-learning-in-detail",
-    "href": "materials/lect07-ml/slide1.html#supervised-learning-in-detail",
+    "objectID": "materials/lect07-ml/slides.html#supervised-learning-in-detail",
+    "href": "materials/lect07-ml/slides.html#supervised-learning-in-detail",
     "title": "Machine Learning",
     "section": "Supervised Learning in Detail",
     "text": "Supervised Learning in Detail\n\n\n\n\n\nflowchart LR\n  A[\"Training Data&lt;br /&gt;(X, y)\"] --&gt; B[\"ML Algorithm\"]\n  B --&gt; C[\"Learned Model&lt;br /&gt;f(X) ≈ y\"]\n  D[\"New Data X*\"] --&gt; C\n  C --&gt; E[\"Prediction ŷ\"]\n\n\n\n\n\n\nClassification — predict discrete categories (e.g., malignant vs. benign)\nRegression — predict continuous values (e.g., drug concentration, IC50)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#model-properties",
-    "href": "materials/lect07-ml/slide1.html#model-properties",
+    "objectID": "materials/lect07-ml/slides.html#model-properties",
+    "href": "materials/lect07-ml/slides.html#model-properties",
     "title": "Machine Learning",
     "section": "Model Properties",
     "text": "Model Properties\n\nPerformance\nLinearity\nInterpretability\nScalability\nRobustness"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#common-ml-algorithms",
-    "href": "materials/lect07-ml/slide1.html#common-ml-algorithms",
+    "objectID": "materials/lect07-ml/slides.html#common-ml-algorithms",
+    "href": "materials/lect07-ml/slides.html#common-ml-algorithms",
     "title": "Machine Learning",
     "section": "Common ML Algorithms",
     "text": "Common ML Algorithms\n\n\n\n\n\n\n\n\n\nAlgorithm\nType\nStrengths\n\n\n\n\nLinear/Logistic Regression\nSupervised\nInterpretable, fast\n\n\nDecision Trees\nSupervised\nInterpretable, non-linear\n\n\nRandom Forest\nSupervised\nRobust, handles missing data\n\n\nSupport Vector Machine\nSupervised\nGood for high-dim data\n\n\nGradient Boosting (XGBoost)\nSupervised\nState-of-art tabular data\n\n\nK-Means\nUnsupervised\nSimple clustering\n\n\nPCA\nUnsupervised\nDimensionality reduction\n\n\nNeural Networks\nBoth\nUniversal approximator"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#how-machine-learning-works",
-    "href": "materials/lect07-ml/slide1.html#how-machine-learning-works",
+    "objectID": "materials/lect07-ml/slides.html#how-machine-learning-works",
+    "href": "materials/lect07-ml/slides.html#how-machine-learning-works",
     "title": "Machine Learning",
     "section": "How Machine Learning Works",
     "text": "How Machine Learning Works\n\n\n\n\n\n---\nconfig:\n  flowchart:\n    nodeSpacing: 50\n    rankSpacing: 50\n    padding: 5\n  look: handDrawn\n  theme: forest\n  layout: elk\n  elk:\n    mergeEdges: true\n    nodePlacementStrategy: LINEAR_SEGMENTS\n---\nflowchart TD\n  A[Collect Data] --&gt; B[Preprocess Data&lt;br /&gt;clean, normalize, encode]\n  B --&gt; C[Split Data&lt;br /&gt;train, validation, test]\n  C --&gt; D[Choose Train Model]\n  D --&gt; E[Evaluate Performance]\n  E --&gt; F{Good enough}\n  F -- No --&gt; G[Tune Hyperparameters&lt;br /&gt;/Change Model]\n  G --&gt; D\n  F -- Yes --&gt; H[Deploy Model]\n  H --&gt; I[Monitor Retrain]"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#key-concepts-bias-variance-tradeoff",
-    "href": "materials/lect07-ml/slide1.html#key-concepts-bias-variance-tradeoff",
+    "objectID": "materials/lect07-ml/slides.html#key-concepts-bias-variance-tradeoff",
+    "href": "materials/lect07-ml/slides.html#key-concepts-bias-variance-tradeoff",
     "title": "Machine Learning",
     "section": "Key Concepts: Bias-Variance Tradeoff",
     "text": "Key Concepts: Bias-Variance Tradeoff\n\n\n\nUnderfitting (High Bias)\n\nModel too simple\n\nPoor on training AND test data\nFix: more complex model, more features\n\nOverfitting (High Variance)\n\nModel too complex\nGreat on training, poor on test\nFix: regularization, more data, simpler model\n\nSweet Spot\n\nBalances bias & variance\nGeneralizes well to new data\n\n\n\n\n\n\n\n\nxychart-beta\n  title \"Bias-Variance Tradeoff\"\n  x-axis [\"Simple\", \"Low\", \"Medium\", \"High\", \"Complex\"]\n  y-axis \"Error\" 0 --&gt; 10\n  line [9, 6, 3.5, 2.5, 2]\n  line [9, 5, 3.5, 5, 8]\n\n\n\n\n\n\n\n📉 Train Error (solid) decreases with complexity\n📈 Test Error (line) — U-shaped — optimal at middle\n⬆️ Left = High Bias (Underfitting)\n⬆️ Right = High Variance (Overfitting)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#classification-evaluation-metrics",
-    "href": "materials/lect07-ml/slide1.html#classification-evaluation-metrics",
+    "objectID": "materials/lect07-ml/slides.html#classification-evaluation-metrics",
+    "href": "materials/lect07-ml/slides.html#classification-evaluation-metrics",
     "title": "Machine Learning",
     "section": "Classification Evaluation Metrics",
     "text": "Classification Evaluation Metrics\n\n\n\nMetric\nFormula\nUse When\n\n\n\n\nAccuracy\n(TP+TN)/Total\nBalanced classes\n\n\nPrecision\nTP/(TP+FP)\nCost of false positives high\n\n\nRecall\nTP/(TP+FN)\nCost of false negatives high\n\n\nF1 Score\n2·P·R/(P+R)\nImbalanced classes\n\n\nAUC-ROC\nArea under ROC\nOverall discriminability"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#regression-evaluation-metrics",
-    "href": "materials/lect07-ml/slide1.html#regression-evaluation-metrics",
+    "objectID": "materials/lect07-ml/slides.html#regression-evaluation-metrics",
+    "href": "materials/lect07-ml/slides.html#regression-evaluation-metrics",
     "title": "Machine Learning",
     "section": "Regression Evaluation Metrics",
     "text": "Regression Evaluation Metrics\n\n\n\nMetric\nFormula\n\n\n\n\nMAE\nmean(\n\n\nRMSE\nsqrt(mean((y - ŷ)²))\n\n\nR²\n1 - SS_res/SS_tot"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#cross-validation",
-    "href": "materials/lect07-ml/slide1.html#cross-validation",
+    "objectID": "materials/lect07-ml/slides.html#cross-validation",
+    "href": "materials/lect07-ml/slides.html#cross-validation",
     "title": "Machine Learning",
     "section": "Cross-Validation",
     "text": "Cross-Validation\n\n\n\n\n\nflowchart LR\n    F1[Fold 1 Test, Train, Train, Train, Train]\n    F2[Fold 2 Train, Test, Train, Train, Train]\n    F3[Fold 3 Train, Train, Test, Train, Train]\n    F4[Fold 4 Train, Train, Train, Test, Train]\n    F5[Fold 5 Train, Train, Train, Train, Test]\n  F1 & F2 & F3 & F4 & F5 --&gt; Avg[Average Score = CV Score]\n\n\n\n\n\n\n\nMore reliable estimate of model performance\nReduces overfitting risk during model selection"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#what-is-deep-learning",
-    "href": "materials/lect07-ml/slide1.html#what-is-deep-learning",
+    "objectID": "materials/lect07-ml/slides.html#what-is-deep-learning",
+    "href": "materials/lect07-ml/slides.html#what-is-deep-learning",
     "title": "Machine Learning",
     "section": "What is Deep Learning?",
     "text": "What is Deep Learning?\nDeep Learning (DL) uses artificial neural networks with many layers to learn hierarchical representations from raw data.\n\n\nWhy “Deep”?\n\nMultiple hidden layers\nEach layer learns more abstract features\nPixels → Edges → Shapes → Objects\n\nKey Advantage\n\nAutomatic feature extraction — no manual feature engineering needed\nExcels at images, text, audio, sequences\n\n\nInput Layer   Hidden Layers   Output Layer\n   [x₁] ──┐\n   [x₂] ──┤─→[●][●][●]─→[●][●]─→[ŷ]\n   [x₃] ──┤─→[●][●][●]─→[●][●]\n   [x₄] ──┘\n   \n   Each ● = neuron (weighted sum + activation)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#neural-network-components",
-    "href": "materials/lect07-ml/slide1.html#neural-network-components",
+    "objectID": "materials/lect07-ml/slides.html#neural-network-components",
+    "href": "materials/lect07-ml/slides.html#neural-network-components",
     "title": "Machine Learning",
     "section": "Neural Network Components",
     "text": "Neural Network Components\n\nNeuron (Perceptron): z = \\sum_{i} w_i x_i + b, \\quad \\hat{y} = \\sigma(z)\nActivation Functions:\n\n\n\nFunction\nFormula\nUse Case\n\n\n\n\nSigmoid\n1/(1+e⁻ᶻ)\nBinary output\n\n\nReLU\nmax(0, z)\nHidden layers (CNN)\n\n\nSoftmax\neᶻⁱ/Σeᶻʲ\nMulti-class output\n\n\nTanh\n(eᶻ-e⁻ᶻ)/(eᶻ+e⁻ᶻ)\nRNN hidden states\n\n\n\nTraining: Backpropagation + Gradient Descent\nw \\leftarrow w - \\eta \\cdot \\frac{\\partial \\mathcal{L}}{\\partial w}"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#deep-learning-architectures",
-    "href": "materials/lect07-ml/slide1.html#deep-learning-architectures",
+    "objectID": "materials/lect07-ml/slides.html#deep-learning-architectures",
+    "href": "materials/lect07-ml/slides.html#deep-learning-architectures",
     "title": "Machine Learning",
     "section": "Deep Learning Architectures",
     "text": "Deep Learning Architectures\n\n\n\n\n\n\n\n\n\nArchitecture\nKey Feature\nApplications\n\n\n\n\nFeedforward (FNN/MLP)\nFully connected layers\nTabular data classification\n\n\nConvolutional (CNN)\nSpatial feature extraction\nMedical imaging, histopathology\n\n\nRecurrent (RNN/LSTM)\nSequential/temporal data\nEHR time series, text\n\n\nTransformer\nAttention mechanism\nDrug-protein interaction, NLP\n\n\nAutoencoder\nUnsupervised representation\nAnomaly detection, de-noising\n\n\nGAN\nGenerative adversarial\nMolecular generation"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#deep-learning-in-pharmaceutical-sciences",
-    "href": "materials/lect07-ml/slide1.html#deep-learning-in-pharmaceutical-sciences",
+    "objectID": "materials/lect07-ml/slides.html#deep-learning-in-pharmaceutical-sciences",
+    "href": "materials/lect07-ml/slides.html#deep-learning-in-pharmaceutical-sciences",
     "title": "Machine Learning",
     "section": "Deep Learning in Pharmaceutical Sciences",
     "text": "Deep Learning in Pharmaceutical Sciences\n\n\nDrug Discovery\n\nAlphaFold2 — protein structure prediction\nMolecular property prediction (QSAR)\nDe novo drug design (generative models)\nADMET prediction\n\nClinical Applications\n\nPathology image analysis (H&E, IHC)\nRadiology image segmentation\nDrug-drug interaction prediction\n\n\nGenomics & Omics\n\nVariant calling from sequencing\nGene expression prediction\nBiomarker discovery\nMulti-omics data integration\n\nPharmacovigilance\n\nAdverse event detection from text\nSocial media mining\nSignal detection from claims data"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#why-julia-for-machine-learning",
-    "href": "materials/lect07-ml/slide1.html#why-julia-for-machine-learning",
+    "objectID": "materials/lect07-ml/slides.html#why-julia-for-machine-learning",
+    "href": "materials/lect07-ml/slides.html#why-julia-for-machine-learning",
     "title": "Machine Learning",
     "section": "Why Julia for Machine Learning?",
     "text": "Why Julia for Machine Learning?\n\n\nPerformance\n\nC-level speed with Python-like syntax\nJIT compilation via LLVM\nNo need to vectorize — loops are fast\nIdeal for large numerical computations\n\nScientific Computing\n\nNative array operations\nExcellent linear algebra support\nSymbolic math (Symbolics.jl)\nAutomatic differentiation (Zygote.jl)\n\n\nSciML Ecosystem\nSciML Organization\n├── Flux.jl          # Deep Learning\n├── MLJ.jl           # ML framework\n├── DataFrames.jl    # Data manipulation\n├── GLM.jl           # Linear/GLM models\n├── DecisionTree.jl  # Trees, Random Forest\n├── LIBSVM.jl        # SVM\n└── Statistics.jl    # Core statistics"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#mlj.jl-the-unified-ml-framework",
-    "href": "materials/lect07-ml/slide1.html#mlj.jl-the-unified-ml-framework",
-    "title": "Machine Learning",
-    "section": "MLJ.jl: The Unified ML Framework",
-    "text": "MLJ.jl: The Unified ML Framework\nMLJ (Machine Learning in Julia) provides a unified interface to 150+ ML algorithms.\nusing MLJ\n\n# Load a model\nTree = @load DecisionTreeClassifier pkg=DecisionTree\n\n# Instantiate with hyperparameters\ntree = Tree(max_depth=5)\n\n# Wrap data in MLJ format\nX, y = ... # features and target\nmach = machine(tree, X, y)\n\n# Train\nfit!(mach, rows=train)\n\n# Predict\nŷ = predict(mach, rows=test)\n\n# Evaluate\nevaluate!(mach, resampling=CV(nfolds=5), measure=accuracy)"
-  },
-  {
-    "objectID": "materials/lect07-ml/slide1.html#setting-up-the-environment",
-    "href": "materials/lect07-ml/slide1.html#setting-up-the-environment",
+    "objectID": "materials/lect07-ml/slides.html#setting-up-the-environment",
+    "href": "materials/lect07-ml/slides.html#setting-up-the-environment",
     "title": "Machine Learning",
     "section": "Setting Up the Environment",
     "text": "Setting Up the Environment\n# Install required packages (run once)\nusing Pkg\nPkg.add([\n    \"MLJ\",\n    \"MLJDecisionTreeInterface\",  # Decision Trees\n    \"XGBoost\",                   # Gradient Boosting\n    \"CSV\",                       # Read CSV files\n    \"DataFrames\",                # Data manipulation\n    \"Plots\",                     # Visualization\n    \"StatsPlots\",                # Statistical plots\n    \"CategoricalArrays\"          # Categorical variables\n])\n# Load packages\nusing MLJ, CSV, DataFrames, CategoricalArrays\nusing Plots, StatsPlots\n\n\n\n\n\n\nTip\n\n\nJulia packages are compiled on first use — subsequent runs are much faster."
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#the-titanic-dataset",
-    "href": "materials/lect07-ml/slide1.html#the-titanic-dataset",
+    "objectID": "materials/lect07-ml/slides.html#mlj.jl-the-unified-ml-framework",
+    "href": "materials/lect07-ml/slides.html#mlj.jl-the-unified-ml-framework",
+    "title": "Machine Learning",
+    "section": "MLJ.jl: The Unified ML Framework",
+    "text": "MLJ.jl: The Unified ML Framework\nMLJ (Machine Learning in Julia) provides a unified interface to 150+ ML algorithms.\nusing MLJ\n\n# Load a model\nTree = @load DecisionTreeClassifier pkg=DecisionTree\n\n# Instantiate with hyperparameters\ntree = Tree(max_depth=5)\n\n# Wrap data in MLJ format\nX, y = ... # features and target\nmach = machine(tree, X, y)\n\n# Train\nfit!(mach, rows=train)\n\n# Predict\nŷ = predict(mach, rows=test)\n\n# Evaluate\nevaluate!(mach, resampling=CV(nfolds=5), measure=accuracy)"
+  },
+  {
+    "objectID": "materials/lect07-ml/slides.html#the-titanic-dataset",
+    "href": "materials/lect07-ml/slides.html#the-titanic-dataset",
     "title": "Machine Learning",
     "section": "The Titanic Dataset",
     "text": "The Titanic Dataset\nKaggle Titanic Dataset\nObjective: Predict whether a passenger survived the Titanic disaster.\nThis is a Binary Classification Problem: - Target: Survived (0 = No, 1 = Yes)\n\n\n\n\nFeature\nType\nDescription\n\n\n\n\nPclass\nOrdinal\nPassenger class (1, 2, 3)\n\n\nSex\nCategorical\nmale / female\n\n\nAge\nContinuous\nAge in years\n\n\nSibSp\nInteger\n# siblings/spouses aboard\n\n\nParch\nInteger\n# parents/children aboard\n\n\nFare\nContinuous\nTicket fare\n\n\nEmbarked\nCategorical\nPort (C, Q, S)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-1-load-and-inspect-data",
-    "href": "materials/lect07-ml/slide1.html#step-1-load-and-inspect-data",
+    "objectID": "materials/lect07-ml/slides.html#step-1-load-and-inspect-data",
+    "href": "materials/lect07-ml/slides.html#step-1-load-and-inspect-data",
     "title": "Machine Learning",
     "section": "Step 1: Load and Inspect Data",
     "text": "Step 1: Load and Inspect Data\nusing CSV, DataFrames\n\n# Load data\ndf = CSV.read(\"titanic.csv\", DataFrame)\n\n# Inspect\nprintln(\"Shape: \", size(df))\nprintln(\"\\nFirst 5 rows:\")\nfirst(df, 5)\n# Basic statistics\ndescribe(df, :all)\n# Check missing values\nmissing_count = combine(df, names(df) .=&gt; (x -&gt; sum(ismissing.(x))) .=&gt; names(df))\nprintln(missing_count)\n\n\n\n\n\n\nNote\n\n\nThe Titanic dataset has missing values in Age (~20%), Cabin (~77%), and Embarked (~0.2%)."
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-2-exploratory-data-analysis",
-    "href": "materials/lect07-ml/slide1.html#step-2-exploratory-data-analysis",
+    "objectID": "materials/lect07-ml/slides.html#step-2-exploratory-data-analysis",
+    "href": "materials/lect07-ml/slides.html#step-2-exploratory-data-analysis",
     "title": "Machine Learning",
     "section": "Step 2: Exploratory Data Analysis",
     "text": "Step 2: Exploratory Data Analysis\nusing StatsPlots\n\n# Survival by gender\n@df df groupedbar(:Sex, :Survived, \n    group=:Survived,\n    xlabel=\"Sex\", ylabel=\"Count\",\n    title=\"Survival by Gender\",\n    labels=[\"Died\" \"Survived\"],\n    color=[:salmon :steelblue])\n# Age distribution by survival\n@df df violin(:Survived, :Age, \n    group=:Survived,\n    xlabel=\"Survived\", ylabel=\"Age\",\n    title=\"Age Distribution by Survival\",\n    labels=[\"Died\" \"Survived\"])\n# Survival rate by passenger class\nsurvival_by_class = combine(groupby(df, :Pclass),\n    :Survived =&gt; mean =&gt; :survival_rate)\nprintln(survival_by_class)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-3-data-preprocessing",
-    "href": "materials/lect07-ml/slide1.html#step-3-data-preprocessing",
+    "objectID": "materials/lect07-ml/slides.html#step-3-data-preprocessing",
+    "href": "materials/lect07-ml/slides.html#step-3-data-preprocessing",
     "title": "Machine Learning",
     "section": "Step 3: Data Preprocessing",
-    "text": "Step 3: Data Preprocessing\nusing DataFrames, CategoricalArrays, Statistics\n\nfunction preprocess_titanic(df::DataFrame)\n    df = copy(df)\n    \n    # 1. Drop irrelevant columns\n    select!(df, Not([:PassengerId, :Name, :Ticket, :Cabin]))\n    \n    # 2. Impute missing Age with median\n    age_median = median(skipmissing(df.Age))\n    df.Age = coalesce.(df.Age, age_median)\n    \n    # 3. Impute missing Embarked with mode\n    df.Embarked = coalesce.(df.Embarked, \"S\")\n    \n    # 4. Encode Sex: female=1, male=0\n    df.Sex = ifelse.(df.Sex .== \"female\", 1, 0)\n    \n    # 5. One-hot encode Embarked\n    df.Embarked_C = Int.(df.Embarked .== \"C\")\n    df.Embarked_Q = Int.(df.Embarked .== \"Q\")\n    select!(df, Not(:Embarked))\n    \n    # 6. Feature engineering\n    df.FamilySize = df.SibSp .+ df.Parch .+ 1\n    df.IsAlone = Int.(df.FamilySize .== 1)\n    \n    return df\nend\n\ndf_clean = preprocess_titanic(df)\nprintln(\"Processed shape: \", size(df_clean))"
+    "text": "Step 3: Data Preprocessing\nusing DataFrames, CategoricalArrays, Statistics\n\ndf_clean = copy(df)\n\n# 1. Drop irrelevant columns\nselect!(df_clean, Not([:PassengerId, :Name, :Ticket, :Cabin]))\n\n# 2. Impute missing Age with median\nage_median = median(skipmissing(df_clean.Age))\ndf_clean.Age = coalesce.(df_clean.Age, age_median)\n\n# 3. Impute missing Embarked with mode\ndf_clean.Embarked = coalesce.(df_clean.Embarked, \"S\")\n\n# 4. Encode Sex: female=1, male=0\ndf_clean.Sex = ifelse.(df_clean.Sex .== \"female\", 1, 0)\n\n# 5. One-hot encode Embarked\ndf_clean.Embarked_C = Int.(df_clean.Embarked .== \"C\")\ndf_clean.Embarked_Q = Int.(df_clean.Embarked .== \"Q\")\nselect!(df_clean, Not(:Embarked))\n\n# 6. Feature engineering\ndf_clean.FamilySize = df_clean.SibSp .+ df_clean.Parch .+ 1\ndf_clean.IsAlone = Int.(df_clean.FamilySize .== 1)\n\nprintln(\"Processed shape: \", size(df_clean))"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-4-prepare-mlj-compatible-data",
-    "href": "materials/lect07-ml/slide1.html#step-4-prepare-mlj-compatible-data",
+    "objectID": "materials/lect07-ml/slides.html#step-4-prepare-mlj-compatible-data",
+    "href": "materials/lect07-ml/slides.html#step-4-prepare-mlj-compatible-data",
     "title": "Machine Learning",
     "section": "Step 4: Prepare MLJ-Compatible Data",
     "text": "Step 4: Prepare MLJ-Compatible Data\nusing MLJ\n\n# Separate features and target\ntarget = :Survived\nfeatures = setdiff(names(df_clean), [string(target)])\n\nX = select(df_clean, features)\ny = df_clean[:, target]\n\n# Convert target to categorical (required for classification)\ny = CategoricalArray(y)\n\n# Coerce feature types for MLJ\nX = coerce(X, \n    :Pclass     =&gt; OrderedFactor,\n    :Sex        =&gt; Count,\n    :Age        =&gt; Continuous,\n    :SibSp      =&gt; Count,\n    :Parch      =&gt; Count,\n    :Fare       =&gt; Continuous,\n    :FamilySize =&gt; Count,\n    :IsAlone    =&gt; Count\n)\n\nprintln(\"X:\", schema(X))\nprintln(\"y:\", scitype(y))"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-5-traintest-split",
-    "href": "materials/lect07-ml/slide1.html#step-5-traintest-split",
+    "objectID": "materials/lect07-ml/slides.html#step-5-traintest-split",
+    "href": "materials/lect07-ml/slides.html#step-5-traintest-split",
     "title": "Machine Learning",
     "section": "Step 5: Train/Test Split",
     "text": "Step 5: Train/Test Split\nusing MLJ\n\n# Reproducible split: 80% train, 20% test\ntrain, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)\n\nprintln(\"Training samples: \", length(train))\nprintln(\"Test samples:     \", length(test))\nprintln(\"Survival rate (train): \", \n    round(mean(y[train] .== \"1\") * 100, digits=1), \"%\")\nprintln(\"Survival rate (test):  \", \n    round(mean(y[test] .== \"1\") * 100, digits=1), \"%\")"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-6-train-a-decision-tree",
-    "href": "materials/lect07-ml/slide1.html#step-6-train-a-decision-tree",
+    "objectID": "materials/lect07-ml/slides.html#step-6-train-a-decision-tree",
+    "href": "materials/lect07-ml/slides.html#step-6-train-a-decision-tree",
     "title": "Machine Learning",
     "section": "Step 6: Train a Decision Tree",
     "text": "Step 6: Train a Decision Tree\nusing MLJ\nMLJ.@load DecisionTreeClassifier pkg=DecisionTree\n\n# Define model\ntree_clf = DecisionTreeClassifier(max_depth=5)\n\n# Wrap in machine (binds model + data)\nmach_tree = machine(tree_clf, X, y)\n\n# Train on training set\nfit!(mach_tree, rows=train, verbosity=0)\n\n# Predict on test set\nŷ_tree = predict_mode(mach_tree, rows=test)\n\n# Evaluate\nacc_tree = accuracy(ŷ_tree, y[test])\nprintln(\"Decision Tree Accuracy: \", round(acc_tree * 100, digits=2), \"%\")"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-7-train-a-random-forest",
-    "href": "materials/lect07-ml/slide1.html#step-7-train-a-random-forest",
+    "objectID": "materials/lect07-ml/slides.html#step-7-train-a-random-forest",
+    "href": "materials/lect07-ml/slides.html#step-7-train-a-random-forest",
     "title": "Machine Learning",
     "section": "Step 7: Train a Random Forest",
     "text": "Step 7: Train a Random Forest\nMLJ.@load RandomForestClassifier pkg=DecisionTree\n\n# Define model with hyperparameters\nrf_clf = RandomForestClassifier(\n    n_trees   = 100,\n    max_depth = 10,\n    min_samples_leaf = 5,\n    n_subfeatures = 3\n)\n\nmach_rf = machine(rf_clf, X, y)\nfit!(mach_rf, rows=train, verbosity=0)\nŷ_rf = predict_mode(mach_rf, rows=test)\n\nacc_rf = accuracy(ŷ_rf, y[test])\nprintln(\"Random Forest Accuracy: \", round(acc_rf * 100, digits=2), \"%\")"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-8-cross-validation-evaluation",
-    "href": "materials/lect07-ml/slide1.html#step-8-cross-validation-evaluation",
+    "objectID": "materials/lect07-ml/slides.html#step-8-cross-validation-evaluation",
+    "href": "materials/lect07-ml/slides.html#step-8-cross-validation-evaluation",
     "title": "Machine Learning",
     "section": "Step 8: Cross-Validation Evaluation",
     "text": "Step 8: Cross-Validation Evaluation\nusing MLJ\n\n# 5-fold cross-validation\ncv = CV(nfolds=5, shuffle=true, rng=42)\n\n# Evaluate multiple metrics at once\neval_rf = evaluate(rf_clf, X, y,\n    resampling = cv,\n    measures   = [accuracy, f1score, auc],\n    verbosity  = 0\n)\n\nprintln(\"\\n=== Random Forest Cross-Validation ===\")\nfor (m, v) in zip(eval_rf.measure, eval_rf.measurement)\n    println(\"$(m):  \", round(v, digits=4))\nend\nprintln(\"Per-fold accuracy: \", round.(eval_rf.per_fold[1], digits=3))"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-9-hyperparameter-tuning",
-    "href": "materials/lect07-ml/slide1.html#step-9-hyperparameter-tuning",
+    "objectID": "materials/lect07-ml/slides.html#step-9-hyperparameter-tuning",
+    "href": "materials/lect07-ml/slides.html#step-9-hyperparameter-tuning",
     "title": "Machine Learning",
     "section": "Step 9: Hyperparameter Tuning",
     "text": "Step 9: Hyperparameter Tuning\nusing MLJ\n\n# Define search range\nr1 = range(rf_clf, :n_trees,      lower=50,  upper=300, scale=:linear)\nr2 = range(rf_clf, :max_depth,    lower=3,   upper=15)\nr3 = range(rf_clf, :n_subfeatures, lower=2,  upper=6)\n\n# Grid search with cross-validation\ntuned_rf = TunedModel(\n    model     = rf_clf,\n    resampling = CV(nfolds=5, rng=42),\n    tuning    = Grid(resolution=5),\n    range     = [r1, r2, r3],\n    measure   = accuracy\n)\n\nmach_tuned = machine(tuned_rf, X, y)\nfit!(mach_tuned, rows=train, verbosity=0)\n\n# Best model\nbest_model = fitted_params(mach_tuned).best_model\nprintln(\"Best parameters:\")\nprintln(\"  n_trees:       \", best_model.n_trees)\nprintln(\"  max_depth:     \", best_model.max_depth)\nprintln(\"  n_subfeatures: \", best_model.n_subfeatures)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-10-feature-importance",
-    "href": "materials/lect07-ml/slide1.html#step-10-feature-importance",
+    "objectID": "materials/lect07-ml/slides.html#step-10-feature-importance",
+    "href": "materials/lect07-ml/slides.html#step-10-feature-importance",
     "title": "Machine Learning",
     "section": "Step 10: Feature Importance",
     "text": "Step 10: Feature Importance\n# Get feature importances from trained Random Forest\nfp = fitted_params(mach_rf)\nimportances = fp.forest.feature_importances\n\n# Sort and display\nfeat_names = names(X)\nimp_df = sort(\n    DataFrame(feature=feat_names, importance=importances),\n    :importance, rev=true\n)\nprintln(imp_df)\n\n# Plot\nbar(imp_df.feature, imp_df.importance,\n    xlabel=\"Feature\",\n    ylabel=\"Importance\",\n    title=\"Random Forest Feature Importance (Titanic)\",\n    xrotation=30,\n    legend=false,\n    color=:steelblue)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-11-model-comparison",
-    "href": "materials/lect07-ml/slide1.html#step-11-model-comparison",
+    "objectID": "materials/lect07-ml/slides.html#step-11-model-comparison",
+    "href": "materials/lect07-ml/slides.html#step-11-model-comparison",
     "title": "Machine Learning",
     "section": "Step 11: Model Comparison",
     "text": "Step 11: Model Comparison\nusing MLJ\n\n# Load all model types\nMLJ.@load LogisticClassifier pkg=MLJLinearModels\nMLJ.@load XGBoostClassifier  pkg=XGBoost\n\nmodels = [\n    (\"Logistic Regression\", LogisticClassifier()),\n    (\"Decision Tree\",       DecisionTreeClassifier(max_depth=5)),\n    (\"Random Forest\",       RandomForestClassifier(n_trees=100)),\n    (\"XGBoost\",             XGBoostClassifier(num_round=100)),\n]\n\nresults = []\nfor (name, model) in models\n    ev = evaluate(model, X, y,\n        resampling = CV(nfolds=5, rng=42),\n        measures   = [accuracy, f1score],\n        verbosity  = 0)\n    push!(results, (\n        Model    = name,\n        Accuracy = round(ev.measurement[1], digits=4),\n        F1_Score = round(ev.measurement[2], digits=4)\n    ))\nend\n\nprintln(DataFrame(results))"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#model-comparison-results",
-    "href": "materials/lect07-ml/slide1.html#model-comparison-results",
+    "objectID": "materials/lect07-ml/slides.html#model-comparison-results",
+    "href": "materials/lect07-ml/slides.html#model-comparison-results",
     "title": "Machine Learning",
     "section": "Model Comparison Results",
     "text": "Model Comparison Results\nModel                  Accuracy   F1_Score\n─────────────────────────────────────────\nLogistic Regression    0.8045     0.7412\nDecision Tree          0.7921     0.7283\nRandom Forest          0.8247     0.7698\nXGBoost                0.8316     0.7801\n# Visualize comparison\nmodel_names = [r.Model for r in results]\naccuracies  = [r.Accuracy for r in results]\n\nbar(model_names, accuracies,\n    title=\"Model Accuracy Comparison — Titanic\",\n    xlabel=\"Model\", ylabel=\"Accuracy (5-fold CV)\",\n    ylim=(0.7, 0.9), legend=false,\n    color=[:steelblue, :salmon, :seagreen, :orchid],\n    xrotation=20)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#step-12-confusion-matrix-roc-curve",
-    "href": "materials/lect07-ml/slide1.html#step-12-confusion-matrix-roc-curve",
+    "objectID": "materials/lect07-ml/slides.html#step-12-confusion-matrix-roc-curve",
+    "href": "materials/lect07-ml/slides.html#step-12-confusion-matrix-roc-curve",
     "title": "Machine Learning",
     "section": "Step 12: Confusion Matrix & ROC Curve",
     "text": "Step 12: Confusion Matrix & ROC Curve\nusing MLJ, Plots\n\n# Predictions with probabilities\nŷ_prob = predict(mach_rf, rows=test)\n\n# Confusion matrix\ncm = ConfusionMatrix(zero_division=0)\nprintln(\"Confusion Matrix:\")\nprintln(confusion_matrix(predict_mode(mach_rf, rows=test), y[test]))\n\n# ROC Curve\nfprs, tprs, thresholds = roc_curve(ŷ_prob, y[test])\nauc_val = auc(ŷ_prob, y[test])\n\nplot(fprs, tprs,\n    xlabel=\"False Positive Rate\",\n    ylabel=\"True Positive Rate\",\n    title=\"ROC Curve — Random Forest (Titanic)\",\n    label=\"AUC = $(round(auc_val, digits=3))\",\n    linewidth=2, color=:steelblue)\nplot!([0,1], [0,1], linestyle=:dash, color=:gray, label=\"Random\")"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#complete-pipeline-summary",
-    "href": "materials/lect07-ml/slide1.html#complete-pipeline-summary",
+    "objectID": "materials/lect07-ml/slides.html#complete-pipeline-summary",
+    "href": "materials/lect07-ml/slides.html#complete-pipeline-summary",
     "title": "Machine Learning",
     "section": "Complete Pipeline: Summary",
     "text": "Complete Pipeline: Summary\nusing MLJ, CSV, DataFrames, CategoricalArrays\n\n# ── 1. Load\ndf = CSV.read(\"titanic.csv\", DataFrame)\n\n# ── 2. Preprocess (function defined earlier)\ndf_clean = preprocess_titanic(df)\n\n# ── 3. Feature/target split\nX = select(df_clean, Not(:Survived))\ny = CategoricalArray(df_clean.Survived)\nX = coerce(X, :Pclass =&gt; OrderedFactor, :Age =&gt; Continuous, :Fare =&gt; Continuous)\n\n# ── 4. Split\ntrain, test = partition(eachindex(y), 0.8, shuffle=true, rng=42)\n\n# ── 5. Train best model\nMLJ.@load RandomForestClassifier pkg=DecisionTree\nmodel = RandomForestClassifier(n_trees=100, max_depth=10)\nmach  = machine(model, X, y)\nfit!(mach, rows=train)\n\n# ── 6. Evaluate\nŷ = predict_mode(mach, rows=test)\nprintln(\"Final Accuracy: \", round(accuracy(ŷ, y[test]) * 100, digits=2), \"%\")"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#keys",
-    "href": "materials/lect07-ml/slide1.html#keys",
+    "objectID": "materials/lect07-ml/slides.html#summary",
+    "href": "materials/lect07-ml/slides.html#summary",
     "title": "Machine Learning",
-    "section": "Keys",
-    "text": "Keys\n\n\nAI / ML / DL Concepts\n\nAI is the broad field of intelligent machines\nML learns patterns from data automatically\nDL uses deep neural networks for complex tasks\nBias-variance tradeoff is fundamental\nAlways evaluate with cross-validation\n\nML Workflow\n\nCollect & explore data (EDA)\nPreprocess (clean, encode, engineer features)\nSplit: train / validation / test\nTrain & tune models\nEvaluate & compare\nDeploy & monitor\n\n\nJulia SciML for ML\n\nMLJ.jl — unified ML interface\nDataFrames.jl — data manipulation\nCSV.jl — data loading\nPlots.jl — visualization\nPerformance of C with readability of Python\n\nTitanic Results\n\n\n\nModel\nAccuracy\n\n\n\n\nLogistic Regression\n~80%\n\n\nRandom Forest\n~82%\n\n\nXGBoost\n~83%"
+    "section": "Summary",
+    "text": "Summary\n\n\nAI / ML / DL Concepts\n\nAI is the broad field of intelligent machines\nML learns patterns from data automatically\nDL uses deep neural networks for complex tasks\nBias-variance tradeoff is fundamental\nAlways evaluate with cross-validation\n\nML Workflow\n\nCollect & explore data (EDA)\nPreprocess (clean, encode, engineer features)\nSplit: train / validation / test\nTrain & tune models\nEvaluate & compare\nDeploy & monitor\n\n\nJulia SciML for ML\n\nMLJ.jl — unified ML interface\nDataFrames.jl — data manipulation\nCSV.jl — data loading\nPlots.jl — visualization\nPerformance of C with readability of Python\n\nTitanic Results\n\n\n\nModel\nAccuracy\n\n\n\n\nLogistic Regression\n~80%\n\n\nRandom Forest\n~82%\n\n\nXGBoost\n~83%"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#further-reading-resources",
-    "href": "materials/lect07-ml/slide1.html#further-reading-resources",
+    "objectID": "materials/lect07-ml/slides.html#further-reading-resources",
+    "href": "materials/lect07-ml/slides.html#further-reading-resources",
     "title": "Machine Learning",
     "section": "Further Reading & Resources",
     "text": "Further Reading & Resources\nJulia & SciML\n\nMLJ.jl Documentation\nSciML Organization\nJulia for Data Science\n\nMachine Learning\n\nHastie et al. — Elements of Statistical Learning (free PDF)\nGoodfellow et al. — Deep Learning (free at deeplearningbook.org)"
   },
   {
-    "objectID": "materials/lect07-ml/slide1.html#references",
-    "href": "materials/lect07-ml/slide1.html#references",
+    "objectID": "materials/lect07-ml/slides.html#references",
+    "href": "materials/lect07-ml/slides.html#references",
     "title": "Machine Learning",
     "section": "References",
     "text": "References\n\nMurphy, K.P. (2012). Machine Learning: A Probabilistic Perspective. MIT Press.\nGoodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.\nBlaom, A.D. et al. (2020). MLJ: A Julia package for composable machine learning. Journal of Open Source Software, 5(55), 2704.\nVamathevan, J. et al. (2019). Applications of machine learning in drug discovery and development. Nature Reviews Drug Discovery, 18, 463–477.\nKaggle Titanic Dataset: https://www.kaggle.com/c/titanic"
@@ -275,18 +765,38 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "3316512  Pharmaceutical AI",
+    "title": "3316711  AI for Pharmaceutical Applications",
     "section": "",
     "text": "Faculty of Pharmaceutical Sciences  Chulalongkorn University\n\n\n\n\nCourse description\nPrinciples and applications of Artificial Intelligence in pharmaceutical Sciences, focusing on drug discovery, personalized medicine and pharmaceutical operations, including data preparation, training of Al models and ethical and regulatory management.\n\n\nคำอธิบายรายวิชา\nหลักการและการประยุกต์ใช้ของปัญญาประดิษฐ์ในทางเภสัชศาสตร์ โดยเน้นการค้นคว้ายา การแพทย์เฉพาะ บุคคล และการดําเนินงานด้านเภสัชกรรม รวมถึงการเตรียมข้อมูล การฝึกสอนโมเดลปัญญาประดิษฐ์ และการจัดการด้านจริยธรรมและข้อบังคับ"
   },
   {
     "objectID": "materials/lect07-ml/index.html",
     "href": "materials/lect07-ml/index.html",
-    "title": "1. Machine Learning System",
+    "title": "7. Machine Learning",
     "section": "",
-    "text": "Meet your neighbors, familiarize yourself with the format of the workshop, practing rendering documents with Quarto, and build a sense of the three components that make up the anatomy of a Quarto document.\n\nFull Screen\n\nFull Screen",
+    "text": "Meet your neighbors, familiarize yourself with the format of the workshop, practing rendering documents with Quarto, and build a sense of the three components that make up the anatomy of a Quarto document.\n\nFull Screen",
     "crumbs": [
-      "1. Machine Learning System"
+      "7. Machine Learning"
+    ]
+  },
+  {
+    "objectID": "materials/lect08-data/index.html",
+    "href": "materials/lect08-data/index.html",
+    "title": "8. Data Integrity",
+    "section": "",
+    "text": "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle. It is a critical aspect to the design, implementation and usage of any system which stores, processes or retrieves data.\n\nFull Screen",
+    "crumbs": [
+      "8. Data Integrity"
+    ]
+  },
+  {
+    "objectID": "materials/lect09-statinfer/index.html",
+    "href": "materials/lect09-statinfer/index.html",
+    "title": "9. Statistical Inference practices",
+    "section": "",
+    "text": "Statistical inference is the process of using data analysis to deduce properties of an underlying probability distribution. Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data are sampled from a larger population.\n\nnhanes dataset download\nFull Screen",
+    "crumbs": [
+      "9. Statistical Inference practices"
     ]
   }
 ]

@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://npslide.github.io/3316712_AIComp/materials/lect07-ml/slide1.html</loc>
-    <lastmod>2026-02-27T01:32:39.248Z</lastmod>
+    <loc>https://npslide.github.io/3316712_AIComp/materials/lect09-statinfer/slides.html</loc>
+    <lastmod>2026-03-13T02:08:37.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://npslide.github.io/3316712_AIComp/materials/lect08-data/slides.html</loc>
+    <lastmod>2026-03-12T16:55:37.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://npslide.github.io/3316712_AIComp/materials/lect07-ml/slides.html</loc>
+    <lastmod>2026-03-12T16:55:01.625Z</lastmod>
   </url>
   <url>
     <loc>https://npslide.github.io/3316712_AIComp/index.html</loc>
-    <lastmod>2026-02-26T07:53:27.920Z</lastmod>
+    <lastmod>2026-02-28T03:00:49.206Z</lastmod>
   </url>
   <url>
     <loc>https://npslide.github.io/3316712_AIComp/materials/lect07-ml/index.html</loc>
-    <lastmod>2026-02-26T07:53:27.921Z</lastmod>
+    <lastmod>2026-03-12T16:30:06.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://npslide.github.io/3316712_AIComp/materials/lect08-data/index.html</loc>
+    <lastmod>2026-03-12T16:31:13.779Z</lastmod>
+  </url>
+  <url>
+    <loc>https://npslide.github.io/3316712_AIComp/materials/lect09-statinfer/index.html</loc>
+    <lastmod>2026-03-12T16:31:29.696Z</lastmod>
   </url>
 </urlset>
