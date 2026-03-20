@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Natapol Pornputtapong, PhD">
-  <meta name="dcterms.date" content="2026-03-13">
-  <title>3316512 Pharmaceutical AI – Statistical Inference practices</title>
+  <meta name="dcterms.date" content="2026-03-20">
+  <title>3316512 Pharmaceutical AI – 9. Statistical Inference practices</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-6aa3cccf5014b6f4870a5cffe4c1dc60.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
@@ -151,7 +217,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="../../site_libs/quarto-contrib/quarto-project/npslide/rxquarto/assets/bcm-bg.png" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Statistical Inference practices</h1>
+  <h1 class="title">9. Statistical Inference practices</h1>
   <p class="subtitle">3316712 AI Computational Pharmaceutical Sciences</p>
 
 <div class="quarto-title-authors">
@@ -165,7 +231,7 @@ Natapol Pornputtapong, PhD
     </div>
 </div>
 
-  <p class="date">13 Mar 2026</p>
+  <p class="date">20 Mar 2026</p>
 </section>
 <section>
 <section id="statistical-testing" class="title-slide slide level1 center">
@@ -490,21 +556,8 @@ Natapol Pornputtapong, PhD
 </section>
 <section id="library-installation" class="slide level2">
 <h2>library installation</h2>
-<ul>
-<li>tidyverse
-<ul>
-<li>tibble</li>
-<li>tribble</li>
-<li>readr</li>
-<li>tidyr</li>
-<li>dplyr</li>
-<li>…</li>
-</ul></li>
-<li>tidymodels
-<ul>
-<li>infer</li>
-</ul></li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a><span class="im">using</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a></a><span class="bu">Pkg</span>.<span class="fu">add</span>([<span class="st">"Tidier"</span>, <span class="st">"CSV"</span>, <span class="st">"DataFrames"</span>, <span class="st">"HypothesisTests"</span>, <span class="st">"GLM"</span>, <span class="st">"CairoMakie"</span>, <span class="st">"Distributions"</span>, <span class="st">"AnovaGLM"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="calling-library" class="slide level2">
 <h2>calling library</h2>
@@ -656,13 +709,13 @@ Natapol Pornputtapong, PhD
 </section>
 <section id="import-data-to-tibbles" class="slide level2">
 <h2>import data to tibbles</h2>
-<div id="43a1d7e2" class="cell" data-execution_count="4">
+<div id="0352cd87" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<div><div style="float: left;"><span>5000×32 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">4975 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<div><div style="float: left;"><span>5000×32 DataFrame</span></div><div style="float: right; font-style: italic;"><span>4975 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top" style="margin-bottom: 6px;">
 <thead>
-<tr class="header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<tr class="columnLabelRow header">
+<th class="stubheadLabel" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">id</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Gender</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Age</th>
@@ -696,8 +749,8 @@ Natapol Pornputtapong, PhD
 <th style="text-align: left;" data-quarto-table-cell-role="th">AlcoholYear</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">SmokingStatus</th>
 </tr>
-<tr class="subheader headerLastRow even">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<tr class="columnLabelRow even">
+<th class="stubheadLabel" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
 <th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th" title="String7">String7</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
@@ -733,8 +786,8 @@ Natapol Pornputtapong, PhD
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">1</td>
 <td style="text-align: right;">62163</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">14</td>
@@ -768,8 +821,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">2</td>
 <td style="text-align: right;">62172</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">43</td>
@@ -803,8 +856,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">104</td>
 <td style="text-align: left;">Current</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">3</td>
 <td style="text-align: right;">62174</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -838,8 +891,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4</td>
 <td style="text-align: right;">62174</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -873,8 +926,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">5</td>
 <td style="text-align: right;">62175</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">5</td>
@@ -908,8 +961,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">6</td>
 <td style="text-align: right;">62176</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">34</td>
@@ -943,8 +996,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">104</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">7</td>
 <td style="text-align: right;">62178</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -978,8 +1031,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">8</td>
 <td style="text-align: right;">62180</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">35</td>
@@ -1013,8 +1066,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">9</td>
 <td style="text-align: right;">62186</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">17</td>
@@ -1048,8 +1101,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">10</td>
 <td style="text-align: right;">62190</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">15</td>
@@ -1083,8 +1136,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">11</td>
 <td style="text-align: right;">62199</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">57</td>
@@ -1118,8 +1171,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">260</td>
 <td style="text-align: left;">Former</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">12</td>
 <td style="text-align: right;">62199</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">57</td>
@@ -1153,8 +1206,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">260</td>
 <td style="text-align: left;">Former</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">13</td>
 <td style="text-align: right;">62199</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">57</td>
@@ -1191,40 +1244,40 @@ Natapol Pornputtapong, PhD
 <tr class="even">
 <td style="text-align: right;">⋮</td>
 <td style="text-align: right;">⋮</td>
+<td style="text-align: left;">⋮</td>
 <td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
-<td style="text-align: right;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
+<td style="text-align: left;">⋮</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4989</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4989</td>
 <td style="text-align: right;">71907</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -1258,8 +1311,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4990</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4990</td>
 <td style="text-align: right;">71907</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -1293,8 +1346,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4991</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4991</td>
 <td style="text-align: right;">71907</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">80</td>
@@ -1328,8 +1381,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4992</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4992</td>
 <td style="text-align: right;">71908</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">66</td>
@@ -1363,8 +1416,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4993</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4993</td>
 <td style="text-align: right;">71908</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">66</td>
@@ -1398,8 +1451,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4994</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4994</td>
 <td style="text-align: right;">71909</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">28</td>
@@ -1433,8 +1486,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Current</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4995</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4995</td>
 <td style="text-align: right;">71909</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">28</td>
@@ -1468,8 +1521,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Current</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4996</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4996</td>
 <td style="text-align: right;">71909</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">28</td>
@@ -1503,8 +1556,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Current</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4997</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4997</td>
 <td style="text-align: right;">71910</td>
 <td style="text-align: left;">female</td>
 <td style="text-align: right;">0</td>
@@ -1538,8 +1591,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4998</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4998</td>
 <td style="text-align: right;">71911</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">27</td>
@@ -1573,8 +1626,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4999</td>
+<tr class="dataRow odd">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">4999</td>
 <td style="text-align: right;">71915</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">60</td>
@@ -1608,8 +1661,8 @@ Natapol Pornputtapong, PhD
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">Never</td>
 </tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5000</td>
+<tr class="dataRow even">
+<td class="rowLabel" style="text-align: right; font-weight: bold;">5000</td>
 <td style="text-align: right;">71915</td>
 <td style="text-align: left;">male</td>
 <td style="text-align: right;">60</td>
@@ -1754,7 +1807,7 @@ Natapol Pornputtapong, PhD
 </section>
 <section id="post-hoc" class="slide level2">
 <h2>Post-hoc</h2>
-<div id="0fde9f49" class="cell" data-execution_count="20">
+<div id="8b2b3600" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-stdout">
 <pre><code>Post-hoc analysis via pairwise comparisons</code></pre>
 </div>

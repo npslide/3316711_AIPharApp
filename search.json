@@ -2,350 +2,350 @@
   {
     "objectID": "materials/lect09-statinfer/slides.html#statistics",
     "href": "materials/lect09-statinfer/slides.html#statistics",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Statistics 1",
     "text": "Statistics 1\ndiscipline that concerns the collection, organization, analysis, interpretation and presentation of data\nWikipedia; Romijn, Jan-Willem (2014). “Philosophy of statistics”. Stanford Encyclopedia of Philosophy."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#statistic-tools-family",
     "href": "materials/lect09-statinfer/slides.html#statistic-tools-family",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Statistic tools Family",
     "text": "Statistic tools Family\n\n\n\n\n\n\ngraph TD\n  A[Statistics] --&gt; B[Descriptive]\n  A --&gt; C[Inferential]\n  A --&gt; D[Bayesian]\n  A --&gt; E[Statistical learning]\n  \n  B --&gt; F[Central tendency]\n  B --&gt; G[Distribution]\n  B --&gt; H[Plot]\n\n  C --&gt; I[T-test]\n  C --&gt; J[ANOVA]\n\n  E --&gt; K[AI]\n  E --&gt; L[NN]"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#drug-testing",
     "href": "materials/lect09-statinfer/slides.html#drug-testing",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Drug testing",
     "text": "Drug testing\n\n2 new pain killer, test in 10 persons that have pain.\n\nA: 8 of 10 get better.\nB: 9 of 10 get better.\n\n2 new pain killer, test in 100 persons that have pain.\n\nA: 70 of 100 get better.\nB: 79 of 100 get better."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#statistical-inference",
     "href": "materials/lect09-statinfer/slides.html#statistical-inference",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Statistical inference",
     "text": "Statistical inference\n\n\n\nObserve  Sample\n\n\n——&gt;\n\n\nInfer  Population"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#hypothesis-testing-statistical-inference",
     "href": "materials/lect09-statinfer/slides.html#hypothesis-testing-statistical-inference",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Hypothesis testing: statistical inference",
     "text": "Hypothesis testing: statistical inference\n\nConvert the research hypothesis to null hypothesis and try to disprove. The decide which test & tails to be used.\ndecide on a significance level – the probability with which we are prepared to make a wrong decision if the null hypothesis is true.\nExperimental design & do data collection\nPerform requirement check then Calculate p-value\nCompare p-value with a significance level then end up either accepting or rejecting the null hypothesis.\nInterpretation"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#state-the-hypothesis",
     "href": "materials/lect09-statinfer/slides.html#state-the-hypothesis",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "State the hypothesis",
     "text": "State the hypothesis\n\nParameters\n\nmean (\\mu)\nstandard variation (\\sigma)\ndistribution\n\nAlternative relationship\n\nnot equal (\\neq) - two tail\ngreater than (\\gt) - one tail\nlower than (\\lt) - one tail"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#hypotheses",
     "href": "materials/lect09-statinfer/slides.html#hypotheses",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Hypotheses",
     "text": "Hypotheses\n\n\n\n\n\n\n\n\nNull (not-sig: true)\nAlternative (sig: true)\n\n\n\n\n\\mu = 15\n\\mu \\neq 15\n\n\n\\mu \\leq 15\n\\mu \\gt 15\n\n\n\\mu_1 = \\mu_2\n\\mu_1 \\neq \\mu_2\n\n\n\\mu_1 \\geq \\mu_2\n\\mu_1 \\lt \\mu_2\n\n\n\\mu_1 = \\mu_2 = \\mu_3 ...\n\\mu_1 \\neq \\mu_2, \\mu_1 \\neq \\mu_3 ..."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#choose-the-test-parametric-and-non-parametric",
     "href": "materials/lect09-statinfer/slides.html#choose-the-test-parametric-and-non-parametric",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Choose the test: Parametric and non-parametric",
     "text": "Choose the test: Parametric and non-parametric\n\n\nParametric\n\ntest based on parameterized distributions\n\nT-Test\nANOVA\n\nMore strictness\nRequirement check\n\n\nNon parametric\n\nnot based on parameterized distributions\n\nMann-Whitney\nKruskal-Wallis\n\nLess strictness\nNo requirement"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#decide-the-significant-level",
     "href": "materials/lect09-statinfer/slides.html#decide-the-significant-level",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Decide the significant level",
     "text": "Decide the significant level\n \n\n\n\n\nnull hypothesis is true\nnull hypothesis is false\n\n\n\n\naccept null hypothesis\nGood\nType II (\\beta) error\n\n\nreject null hypothesis\nType I (\\alpha) error\nGood"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#choosing-the-test",
     "href": "materials/lect09-statinfer/slides.html#choosing-the-test",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Choosing the test",
     "text": "Choosing the test\n\nChoosing the test based on the hypothesis\nDecide on the significant level & collect the data\nChoose the parametric first\nChecking the assumption of the test\nCalculate p-value, confidence limit\nAccept or reject null hypothesis"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#p-value",
     "href": "materials/lect09-statinfer/slides.html#p-value",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "P-Value",
     "text": "P-Value"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#wrong-interpretation-of-p-value",
     "href": "materials/lect09-statinfer/slides.html#wrong-interpretation-of-p-value",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Wrong interpretation of P-Value",
     "text": "Wrong interpretation of P-Value\nWhen the same hypothesis is tested in different studies; if P of Drug ‘A’ is smaller than drug ‘B’, then drug ‘A’ is more effective than drug ‘b’."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#choosing-statistic-testing",
     "href": "materials/lect09-statinfer/slides.html#choosing-statistic-testing",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "choosing Statistic Testing",
     "text": "choosing Statistic Testing\n\ntype of parameter: mean, variance, distribution, proportion\nnumber of sample group: one, two, more\ntype of variable: focus on continuous\nnumber of independent variable: focus on one\nnumber of dependent variable: focus on one\nparametric vs non parametric"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-1-sample",
     "href": "materials/lect09-statinfer/slides.html#testing-of-mean-1-sample",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Testing of Mean 1 sample",
     "text": "Testing of Mean 1 sample\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nN/A\none sample T-Test of mean\n\n\nno\nN/A\nMann-Whitney U"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-2-samples",
     "href": "materials/lect09-statinfer/slides.html#testing-of-mean-2-samples",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Testing of Mean 2 samples",
     "text": "Testing of Mean 2 samples\n\n\n\n\n\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nsample pair\npaired T-Test of mean\n\n\nno\nsample pair\nWilcoxon signed rank test\n\n\nyes\nequal variance\ntwo sample T-Test of mean of equal variance\n\n\nyes\nnonequal variance\ntwo sample T-Test of mean of non equal variance\n\n\nno\nN/A\nWilcoxon rank-sum test"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#testing-of-mean-more-samples",
     "href": "materials/lect09-statinfer/slides.html#testing-of-mean-more-samples",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Testing of Mean more samples",
     "text": "Testing of Mean more samples\n\n\n\nnormal ?\nextra requirement\ntest to use\n\n\n\n\nyes\nN/A\nOne-Way ANOVA\n\n\nno\nN/A\nKruskal-Wallis test"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#testing-of-variance",
     "href": "materials/lect09-statinfer/slides.html#testing-of-variance",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Testing of Variance",
     "text": "Testing of Variance\n\nBartlett Test of Homogeneity of Variances"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#testing-of-distribution",
     "href": "materials/lect09-statinfer/slides.html#testing-of-distribution",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Testing of Distribution",
     "text": "Testing of Distribution\n\nShapiro-Wilk test of normality"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#library-installation",
     "href": "materials/lect09-statinfer/slides.html#library-installation",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "library installation",
-    "text": "library installation\n\ntidyverse\n\ntibble\ntribble\nreadr\ntidyr\ndplyr\n…\n\ntidymodels\n\ninfer"
+    "text": "library installation\nusing Pkg\nPkg.add([\"Tidier\", \"CSV\", \"DataFrames\", \"HypothesisTests\", \"GLM\", \"CairoMakie\", \"Distributions\", \"AnovaGLM\"])"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#calling-library",
     "href": "materials/lect09-statinfer/slides.html#calling-library",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "calling library",
     "text": "calling library"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#the-nhanes-data",
     "href": "materials/lect09-statinfer/slides.html#the-nhanes-data",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "The NHANES data",
     "text": "The NHANES data\n\n\n\n\n\n\n\nVariable\nDefinition\n\n\n\n\nid\nA unique sample identifier\n\n\nGender\nGender (sex) of study participant coded as male or female\n\n\nAge\nAge in years at screening of study participant. Note: Subjects 80 years or older were recorded as 80.\n\n\nRace\nReported race of study participant, including non-Hispanic Asian category: Mexican, Hispanic, White, Black, Asian, or Other. Not availale for 2009-10.\n\n\nEducation\nEducational level of study participant Reported for participants aged 20 years or older. One of 8thGrade, 9-11thGrade, HighSchool, SomeCollege, or CollegeGrad.\n\n\nMaritalStatus\nMarital status of study participant. Reported for participants aged 20 years or older. One of Married, Widowed, Divorced, Separated, NeverMarried, or LivePartner (living with partner).\n\n\nRelationshipStatus\nSimplification of MaritalStatus, coded as Committed if MaritalStatus is Married or LivePartner, and Single otherwise.\n\n\nInsured\nIndicates whether the individual is covered by health insurance.\n\n\nIncome\nNumerical version of HHIncome derived from the middle income in each category\n\n\nPoverty\nA ratio of family income to poverty guidelines. Smaller numbers indicate more poverty\n\n\nHomeRooms\nHow many rooms are in home of study participant (counting kitchen but not bathroom). 13 rooms = 13 or more rooms.\n\n\nHomeOwn\nOne of Home, Rent, or Other indicating whether the home of study participant or someone in their family is owned, rented or occupied by some other arrangement.\n\n\nWork\nIndicates whether the individual is current working or not.\n\n\nWeight\nWeight in kg\n\n\nHeight\nStanding height in cm. Reported for participants aged 2 years or older.\n\n\nBMI\nBody mass index (weight/height2 in kg/m2). Reported for participants aged 2 years or older.\n\n\nPulse\n60 second pulse rate\n\n\nBPSys\nCombined systolic blood pressure reading, following the procedure outlined for BPXSAR.\n\n\nBPDia\nCombined diastolic blood pressure reading, following the procedure outlined for BPXDAR.\n\n\nTestosterone\nTesterone total (ng/dL). Reported for participants aged 6 years or older. Not available for 2009-2010.\n\n\nHDLChol\nDirect HDL cholesterol in mmol/L. Reported for participants aged 6 years or older.\n\n\nTotChol\nTotal HDL cholesterol in mmol/L. Reported for participants aged 6 years or older.\n\n\nDiabetes\nStudy participant told by a doctor or health professional that they have diabetes. Reported for participants aged 1 year or older as Yes or No.\n\n\nDiabetesAge\nAge of study participant when first told they had diabetes. Reported for participants aged 1 year or older.\n\n\nnPregnancies\nHow many times participant has been pregnant. Reported for female participants aged 20 years or older.\n\n\nnBabies\nHow many of participants deliveries resulted in live births. Reported for female participants aged 20 years or older.\n\n\nSleepHrsNight\nSelf-reported number of hours study participant usually gets at night on weekdays or workdays. Reported for participants aged 16 years and older.\n\n\nPhysActive\nParticipant does moderate or vigorous-intensity sports, fitness or recreational activities (Yes or No). Reported for participants 12 years or older.\n\n\nPhysActiveDays\nNumber of days in a typical week that participant does moderate or vigorous-intensity activity. Reported for participants 12 years or older.\n\n\nAlcoholDay\nAverage number of drinks consumed on days that participant drank alcoholic beverages. Reported for participants aged 18 years or older.\n\n\nAlcoholYear\nEstimated number of days over the past year that participant drank alcoholic beverages. Reported for participants aged 18 years or older.\n\n\nSmokingStatus\nSmoking status: Current Former or Never."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#import-data-to-tibbles",
     "href": "materials/lect09-statinfer/slides.html#import-data-to-tibbles",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "import data to tibbles",
     "text": "import data to tibbles\n\n\n5000×32 DataFrame4975 rows omitted\n\n\n\nRow\nid\nGender\nAge\nRace\nEducation\nMaritalStatus\nRelationshipStatus\nInsured\nIncome\nPoverty\nHomeRooms\nHomeOwn\nWork\nWeight\nHeight\nBMI\nPulse\nBPSys\nBPDia\nTestosterone\nHDLChol\nTotChol\nDiabetes\nDiabetesAge\nnPregnancies\nnBabies\nSleepHrsNight\nPhysActive\nPhysActiveDays\nAlcoholDay\nAlcoholYear\nSmokingStatus\n\n\n\nInt64\nString7\nInt64\nString15\nString15\nString15\nString15\nString3\nString7\nString7\nString3\nString7\nString15\nString7\nString7\nString7\nString3\nString3\nString3\nString7\nString7\nString7\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString3\nString7\n\n\n\n\n1\n62163\nmale\n14\nAsian\nNA\nNA\nNA\nYes\n100000\n4.07\n6\nRent\nNA\n49.4\n168.9\n17.3\n72\n107\n37\n274.95\n1.14\n3.98\nNo\nNA\nNA\nNA\nNA\nNo\n1\nNA\nNA\nNA\n\n\n2\n62172\nfemale\n43\nBlack\nHigh School\nNeverMarried\nSingle\nYes\n22500\n2.02\n4\nRent\nNotWorking\n98.6\n172.0\n33.3\n80\n103\n72\n47.53\n1.89\n4.37\nNo\nNA\n3\n2\n8\nNo\n2\n3\n104\nCurrent\n\n\n3\n62174\nmale\n80\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n70000\n4.3\n7\nOwn\nNotWorking\n95.8\n168.1\n33.9\n56\n97\n39\n642.82\n1.4\n5.25\nNo\nNA\nNA\nNA\n9\nNo\n7\nNA\n0\nNever\n\n\n4\n62174\nmale\n80\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n70000\n4.3\n7\nOwn\nNotWorking\n95.8\n168.1\n33.9\n56\n97\n39\n642.82\n1.4\n5.25\nNo\nNA\nNA\nNA\n9\nNo\n5\nNA\n0\nNever\n\n\n5\n62175\nmale\n5\nWhite\nNA\nNA\nNA\nYes\n12500\n0.39\n7\nRent\nNA\n23.9\n119.8\n16.7\nNA\nNA\nNA\nNA\nNA\nNA\nNo\nNA\nNA\nNA\nNA\nNA\n7\nNA\nNA\nNA\n\n\n6\n62176\nfemale\n34\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n100000\n5.0\n8\nOwn\nNotWorking\n68.7\n171.6\n23.3\n92\n107\n69\n21.11\n1.42\n4.42\nNo\nNA\n5\n2\n7\nYes\n5\n2\n104\nNever\n\n\n7\n62178\nmale\n80\nWhite\nHigh School\nWidowed\nSingle\nYes\n2500\n0.05\n6\nOwn\nNotWorking\n85.9\n173.5\n28.5\n68\n121\n72\n562.78\n1.22\n5.2\nNo\nNA\nNA\nNA\n6\nNo\nNA\nNA\nNA\nNever\n\n\n8\n62180\nmale\n35\nWhite\nCollege Grad\nMarried\nCommitted\nYes\n22500\n0.87\n6\nOwn\nWorking\n89.0\n178.7\n27.9\n66\n107\n66\n401.78\n0.85\n3.7\nNo\nNA\nNA\nNA\n7\nNo\nNA\n1\n2\nNever\n\n\n9\n62186\nfemale\n17\nBlack\nNA\nNA\nNA\nYes\n22500\n0.53\n6\nOwn\nNotWorking\n63.5\n166.4\n22.9\n86\n108\n64\n27.0\n1.4\n3.21\nNo\nNA\nNA\nNA\n7\nYes\n4\nNA\nNA\nNA\n\n\n10\n62190\nfemale\n15\nMexican\nNA\nNA\nNA\nYes\n30000\n0.54\n4\nRent\nNA\n38.5\n150.5\n17.0\n76\n113\n27\n22.2\n1.63\n4.11\nNo\nNA\nNA\nNA\nNA\nNo\n7\nNA\nNA\nNA\n\n\n11\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\n2\n1\n260\nFormer\n\n\n12\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\nNA\n1\n260\nFormer\n\n\n13\n62199\nmale\n57\nWhite\nCollege Grad\nLivePartner\nCommitted\nYes\n100000\n5.0\n4\nRent\nWorking\n96.9\n186.0\n28.0\n84\n110\n65\n269.24\n0.91\n4.42\nNo\nNA\nNA\nNA\n8\nYes\n7\n1\n260\nFormer\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n4989\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\nNA\nNA\n0\nNever\n\n\n4990\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\n4\nNA\n0\nNever\n\n\n4991\n71907\nmale\n80\nWhite\nHigh School\nMarried\nCommitted\nYes\n60000\n4.08\n6\nOwn\nNotWorking\n71.5\n175.4\n23.2\n54\n148\n70\n402.9\n1.27\n4.37\nNo\nNA\nNA\nNA\n5\nYes\n7\nNA\n0\nNever\n\n\n4992\n71908\nfemale\n66\nWhite\nCollege Grad\nWidowed\nSingle\nYes\n70000\n4.55\n8\nOwn\nWorking\n88.7\n159.0\n35.1\n76\n114\n70\n26.0\n1.86\n6.47\nNo\nNA\n2\n2\n6\nNo\n5\n1\n5\nNever\n\n\n4993\n71908\nfemale\n66\nWhite\nCollege Grad\nWidowed\nSingle\nYes\n70000\n4.55\n8\nOwn\nWorking\n88.7\n159.0\n35.1\n76\n114\n70\n26.0\n1.86\n6.47\nNo\nNA\n2\n2\n6\nNo\nNA\n1\n5\nNever\n\n\n4994\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4995\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4996\n71909\nmale\n28\nMexican\n9 - 11th Grade\nNeverMarried\nSingle\nNo\n7500\n0.46\n3\nRent\nWorking\n92.3\n177.3\n29.4\n68\n124\n65\n490.43\n1.22\n3.9\nNo\nNA\nNA\nNA\n6\nYes\nNA\nNA\nNA\nCurrent\n\n\n4997\n71910\nfemale\n0\nWhite\nNA\nNA\nNA\nYes\n87500\n3.37\n10\nOwn\nNA\n6.7\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n4998\n71911\nmale\n27\nMexican\nCollege Grad\nMarried\nCommitted\nYes\n87500\n3.25\n10\nOwn\nWorking\n96.7\n175.8\n31.3\n74\n133\n74\n509.0\n1.06\n5.72\nNo\nNA\nNA\nNA\n6\nNo\n3\n5\n4\nNever\n\n\n4999\n71915\nmale\n60\nWhite\nCollege Grad\nNeverMarried\nSingle\nYes\n70000\n5.0\n4\nOwn\nWorking\n78.4\n168.8\n27.5\n76\n147\n73\n505.13\n0.93\n4.94\nYes\n56\nNA\nNA\n6\nNo\n1\nNA\n0\nNever\n\n\n5000\n71915\nmale\n60\nWhite\nCollege Grad\nNeverMarried\nSingle\nYes\n70000\n5.0\n4\nOwn\nWorking\n78.4\n168.8\n27.5\n76\n147\n73\n505.13\n0.93\n4.94\nYes\n56\nNA\nNA\n6\nNo\nNA\nNA\n0\nNever"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#view-tibbles",
     "href": "materials/lect09-statinfer/slides.html#view-tibbles",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "view tibbles",
     "text": "view tibbles"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#normality-test-shapiro-wilk-test-of-normality",
     "href": "materials/lect09-statinfer/slides.html#normality-test-shapiro-wilk-test-of-normality",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "normality test: Shapiro-Wilk test of normality",
     "text": "normality test: Shapiro-Wilk test of normality\n H_0 : data distribution = normal distribution   H_1 : data distribution \\neq normal distribution"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#bartlett-test-of-homogeneity-of-variances",
     "href": "materials/lect09-statinfer/slides.html#bartlett-test-of-homogeneity-of-variances",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Bartlett Test of Homogeneity of Variances",
     "text": "Bartlett Test of Homogeneity of Variances\n H_0 : Var_{diabetes} = Var_{nondiabetes}   H_1 : Var_{diabetes} \\neq Var_{nondiabetes}"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#t-test-for-a-population-mean-variance-unknown",
     "href": "materials/lect09-statinfer/slides.html#t-test-for-a-population-mean-variance-unknown",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "t-test for a population mean (variance unknown)",
     "text": "t-test for a population mean (variance unknown)\n\nObject\n\nTo investigate the significance of the difference between an assumed population mean μ0 and a sample mean x ̄.\n\nLimitations\n\nIf the variance of the population σ 2 is known, a more powerful test is available: the Z-test for a population mean (Test 1).\nThe test is accurate if the population is normally distributed. If the population is not normal, the test will give an approximate guide.\n\nExample: Most of diabetic patient are overweight"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test",
     "href": "materials/lect09-statinfer/slides.html#one-sample-t-test",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "one sample T Test",
     "text": "one sample T Test\n H_0 : \\mu_{BMI_{diabetic}} = 25   H_1 : \\mu_{BMI_{diabetic}} \\neq 25"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test-inferiority-test",
     "href": "materials/lect09-statinfer/slides.html#one-sample-t-test-inferiority-test",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "one sample T Test: inferiority test",
     "text": "one sample T Test: inferiority test\n H_0 : \\mu_{BMI_{diabetic}} \\geq 25   H_1 : \\mu_{BMI_{diabetic}} &lt; 25"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#one-sample-t-test-superiority-test",
     "href": "materials/lect09-statinfer/slides.html#one-sample-t-test-superiority-test",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "one sample T Test: superiority test",
     "text": "one sample T Test: superiority test\n H_0 : \\mu_{BMI_{diabetic}} \\leq 25   H_1 : \\mu_{BMI_{diabetic}} &gt; 25"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-but-equal",
     "href": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-but-equal",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "t-test for two population means (variances unknown but equal)",
     "text": "t-test for two population means (variances unknown but equal)\n\nObject\n\nTo investigate the significance of the difference between the means of two populations.\n\nLimitations\n\nIf the variance of the populations is known, a more powerful test is available: the Z-test for two population means (Test 2).\nThe test is accurate if the populations are normally distributed. If the populations are not normal, the test will give an approximate guide."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-equal-variance-two-tail",
     "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-equal-variance-two-tail",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "two sample T Test: equal variance, two-tail",
     "text": "two sample T Test: equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}}"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-and-unequal",
     "href": "materials/lect09-statinfer/slides.html#t-test-for-two-population-means-variances-unknown-and-unequal",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "t-test for two population means (variances unknown and unequal)",
     "text": "t-test for two population means (variances unknown and unequal)\n\nObject\n\nTo investigate the significance of the difference between the means of two populations.\n\nLimitations\n\nIf the variances of the populations are known, a more powerful test is available: the Z-test for two population means (Test 3).\nThe test is approximate if the populations are normally distributed or if the sample sizes are sufficiently large.\nThe test should only be used to test the hypothesis μ1 = μ2."
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-two-tail",
     "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-two-tail",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "two sample T Test: not equal variance, two-tail",
     "text": "two sample T Test: not equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}}"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-one-tail",
     "href": "materials/lect09-statinfer/slides.html#two-sample-t-test-not-equal-variance-one-tail",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "two sample T Test: not equal variance, one-tail",
     "text": "two sample T Test: not equal variance, one-tail\n H_0 : \\mu_{BMI_{diabetic}} \\leq \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} &gt; \\mu_{BMI_{nondiabetic}}"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
     "href": "materials/lect09-statinfer/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)",
     "text": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#comparing-bmi-among-race",
     "href": "materials/lect09-statinfer/slides.html#comparing-bmi-among-race",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "comparing BMI among Race",
     "text": "comparing BMI among Race"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#preparing-data",
     "href": "materials/lect09-statinfer/slides.html#preparing-data",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "preparing data",
     "text": "preparing data"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#box-plot",
     "href": "materials/lect09-statinfer/slides.html#box-plot",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "box plot",
     "text": "box plot"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#summarize-by-group",
     "href": "materials/lect09-statinfer/slides.html#summarize-by-group",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "summarize by group",
     "text": "summarize by group"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#analysis-of-varience",
     "href": "materials/lect09-statinfer/slides.html#analysis-of-varience",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Analysis of Varience",
     "text": "Analysis of Varience\n H_0 : \\mu_{BMI_{Asian}} = \\mu_{BMI_{Black}} = \\mu_{BMI_{White}} = \\mu_{BMI_{Mexican}} = \\mu_{BMI_{Hispanic}}"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#post-hoc",
     "href": "materials/lect09-statinfer/slides.html#post-hoc",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Post-hoc",
     "text": "Post-hoc\n\n\nPost-hoc analysis via pairwise comparisons"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#model",
     "href": "materials/lect09-statinfer/slides.html#model",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Model",
     "text": "Model\n BMI = \\beta_0 + \\beta_1 Age"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#assumptions",
     "href": "materials/lect09-statinfer/slides.html#assumptions",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Assumptions",
     "text": "Assumptions\n\nNon-linearity\nHeteroscedasticity\nOutlier values\nNormality of residuals"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#non-linearity",
     "href": "materials/lect09-statinfer/slides.html#non-linearity",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Non-linearity",
     "text": "Non-linearity"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#heteroscedasticity",
     "href": "materials/lect09-statinfer/slides.html#heteroscedasticity",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Heteroscedasticity",
     "text": "Heteroscedasticity"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#normality-of-residuals",
     "href": "materials/lect09-statinfer/slides.html#normality-of-residuals",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Normality of residuals",
     "text": "Normality of residuals"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#plot",
     "href": "materials/lect09-statinfer/slides.html#plot",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "plot",
     "text": "plot"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#fitting",
     "href": "materials/lect09-statinfer/slides.html#fitting",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Fitting",
     "text": "Fitting"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#model-diagnostics",
     "href": "materials/lect09-statinfer/slides.html#model-diagnostics",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "Model Diagnostics",
     "text": "Model Diagnostics"
   },
   {
     "objectID": "materials/lect09-statinfer/slides.html#references",
     "href": "materials/lect09-statinfer/slides.html#references",
-    "title": "Statistical Inference practices",
+    "title": "9. Statistical Inference practices",
     "section": "References",
     "text": "References\n\nhttps://sparkbyexamples.com/r-programming/select-rows-in-r/\nhttps://4va.github.io/biodatasci/\nhttps://bioconnector.github.io/"
   },
@@ -371,46 +371,18 @@
     "text": "Data integrity\nmaintain a clear and complete record of data acquired. sufficient detail to permit examination for the purpose of replicating the research, responding to questions that may result from unintentional error or misinterpretation, establishing authenticity of the records, and confirming the validity of the conclusions. destruction of research records or the failure to maintain and produce research records 1\nhttp://www.provost.pitt.edu/documents/GUIDELINES%20FOR%20ETHICAL%20PRACTICES%20IN%20RESEARCH-FINALrevised2-March%202011.pdf"
   },
   {
-    "objectID": "materials/lect08-data/slides.html#data-integrity-standard-practice-data-recording",
-    "href": "materials/lect08-data/slides.html#data-integrity-standard-practice-data-recording",
+    "objectID": "materials/lect08-data/slides.html#use-and-mis-use",
+    "href": "materials/lect08-data/slides.html#use-and-mis-use",
     "title": "Data integrity",
-    "section": "Data integrity: standard practice Data recording",
-    "text": "Data integrity: standard practice Data recording\n\nRecord data in ink in an proper notebook\nProper notebook\n\nindexed\nconsecutively numbered pages\npermanently bound\n\nEntries should not be erased\n\nuse a thin line cross\ninitialed dated correction written separately\nan explanatory note, near the original entry or in the margin"
-  },
-  {
-    "objectID": "materials/lect08-data/slides.html#data-integrity-1",
-    "href": "materials/lect08-data/slides.html#data-integrity-1",
-    "title": "Data integrity",
-    "section": "Data integrity",
-    "text": "Data integrity\n\nAll pages of a notebook should be dated and initialed.\nprintouts from instruments or computers,\n\nlabeled and pasted into the notebook or,\nstored securely and referenced in the notebook as to storage location."
-  },
-  {
-    "objectID": "materials/lect08-data/slides.html#example-notebook",
-    "href": "materials/lect08-data/slides.html#example-notebook",
-    "title": "Data integrity",
-    "section": "example notebook",
-    "text": "example notebook"
-  },
-  {
-    "objectID": "materials/lect08-data/slides.html#use-and-mis-use-i",
-    "href": "materials/lect08-data/slides.html#use-and-mis-use-i",
-    "title": "Data integrity",
-    "section": "Use and Mis-use I",
-    "text": "Use and Mis-use I\n\nNegative result data\nLarge background Do not: withholding of information about confounding factors. If some data should be disregarded for a stated reason, confirmed by an approved statistical test for neglecting outliers, the reason should be stated in the published accounts.\n\nAny intentional or reckless disregard for the truth in reporting observations may be considered to be an act of research misconduct."
-  },
-  {
-    "objectID": "materials/lect08-data/slides.html#use-and-mis-use-ii",
-    "href": "materials/lect08-data/slides.html#use-and-mis-use-ii",
-    "title": "Data integrity",
-    "section": "Use and Mis-use II",
-    "text": "Use and Mis-use II\nThe use of photo-images not to misrepresent the underlying data.\nDo not\n\nadd or delete any part of the image: a band\ndifferentially adjust the intensity\nlabel an image from one experiment as representing a different experiment\nsplice image without using a line indicating the deletion, or to juxtapose pieces from different image onto a single image."
+    "section": "Use and Mis-use",
+    "text": "Use and Mis-use\n\nNegative result data\nLarge background Do not: withholding of information about confounding factors. If some data should be disregarded for a stated reason, confirmed by an approved statistical test for neglecting outliers, the reason should be stated in the published accounts.\n\nAny intentional or reckless disregard for the truth in reporting observations may be considered to be an act of research misconduct."
   },
   {
     "objectID": "materials/lect08-data/slides.html#data-cleansing",
     "href": "materials/lect08-data/slides.html#data-cleansing",
     "title": "Data integrity",
     "section": "Data cleansing",
-    "text": "Data cleansing\n\n\nDirty data - Invalid\n- Inaccurate\n- Incomplete\n- Inconsistent\n- Duplicate entries - Incorrectly formatted\n\nClean data - Valid - Accurate - Complete - Consistent - Unique - Uniform"
+    "text": "Data cleansing\n\n\nDirty data\n\nInvalid\n\nInaccurate\n\nIncomplete\n\nInconsistent\n\nDuplicate entries\nIncorrectly formatted\n\n\nClean data\n\nValid\nAccurate\nComplete\nConsistent\nUnique\nUniform"
   },
   {
     "objectID": "materials/lect08-data/slides.html#example-data-validation",
@@ -483,11 +455,228 @@
     "text": "Data protection\n\nanonymization\naccess control\navoid share drive"
   },
   {
-    "objectID": "materials/lect08-data/slides.html#references",
-    "href": "materials/lect08-data/slides.html#references",
+    "objectID": "materials/lect08-data/slides.html#the-titanic-dataset",
+    "href": "materials/lect08-data/slides.html#the-titanic-dataset",
     "title": "Data integrity",
-    "section": "References",
-    "text": "References\n\nhttps://sparkbyexamples.com/r-programming/select-rows-in-r/\nhttps://4va.github.io/biodatasci/\nhttps://bioconnector.github.io/"
+    "section": "The Titanic Dataset",
+    "text": "The Titanic Dataset\nKaggle Titanic Dataset download\nObjective: Predict whether a passenger survived the Titanic disaster.\nThis is a Binary Classification Problem: - Target: Survived (0 = No, 1 = Yes)\n\n\n\n\nFeature\nType\nDescription\n\n\n\n\nPclass\nOrdinal\nPassenger class (1, 2, 3)\n\n\nSex\nCategorical\nmale / female\n\n\nAge\nContinuous\nAge in years\n\n\nSibSp\nInteger\n# siblings/spouses aboard\n\n\nParch\nInteger\n# parents/children aboard\n\n\nFare\nContinuous\nTicket fare\n\n\nEmbarked\nCategorical\nPort (C, Q, S)"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#tidier.jl",
+    "href": "materials/lect08-data/slides.html#tidier.jl",
+    "title": "Data integrity",
+    "section": "Tidier.jl",
+    "text": "Tidier.jl\n\n@filter: Filter rows based on conditions\n@select: Select specific columns\n@mutate: Create or transform columns\n@summarize: Aggregate data (mean, sum, etc.)\n@group_by: Group data for operations\n@chain: Combine multiple steps (from Chain.jl)"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#tidier.jl-installation",
+    "href": "materials/lect08-data/slides.html#tidier.jl-installation",
+    "title": "Data integrity",
+    "section": "Tidier.jl installation",
+    "text": "Tidier.jl installation\nusing Pkg\nPkg.add(\"Tidier\")\nPkg.add(\"TidierFiles\")\nPkg.add(\"TidierPlots\")"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#loading-libraries",
+    "href": "materials/lect08-data/slides.html#loading-libraries",
+    "title": "Data integrity",
+    "section": "Loading libraries",
+    "text": "Loading libraries\n\n\nCode\nusing Tidier\nusing TidierFiles"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#load-data",
+    "href": "materials/lect08-data/slides.html#load-data",
+    "title": "Data integrity",
+    "section": "Load Data",
+    "text": "Load Data\n\n\nCode\n# Load data\ndf = read_csv(\"titanic.csv\")\n\n# Inspect\nprintln(\"Shape: \", size(df))\nprintln(\"\\nFirst 5 rows:\")\nfirst(df, 5)\n\n\nShape: (891, 12)\n\nFirst 5 rows:\n\n\n5×12 DataFrame\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.925\nmissing\nS\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.05\nmissing\nS"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#glimpse-of-data",
+    "href": "materials/lect08-data/slides.html#glimpse-of-data",
+    "title": "Data integrity",
+    "section": "Glimpse of Data",
+    "text": "Glimpse of Data\n\n\nCode\n# Summary statistics\n@glimpse df\n\n\nRows: 891\nColumns: 12\n.PassengerId   Int64          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,\n.Survived      Int64          0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0,\n.Pclass        Int64          3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2, 3,\n.Name          String         Braund, Mr. Owen Harris, Cumings, Mrs. John Bradle\n.Sex           InlineStrings.String7male, female, female, female, male, male, ma\n.Age           Union{Missing, Float64}22.0, 38.0, 26.0, 35.0, 35.0, missing, 54.\n.SibSp         Int64          1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0, 4,\n.Parch         Int64          0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0, 1,\n.Ticket        InlineStrings.String31A/5 21171, PC 17599, STON/O2. 3101282, 1138\n.Fare          Float64        7.25, 71.2833, 7.925, 53.1, 8.05, 8.4583, 51.8625,\n.Cabin         Union{Missing, InlineStrings.String15}missing, C85, missing, C123\n.Embarked      Union{Missing, InlineStrings.String1}S, C, S, S, S, Q, S, S, S, C"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#cleaning-up-column-names",
+    "href": "materials/lect08-data/slides.html#cleaning-up-column-names",
+    "title": "Data integrity",
+    "section": "Cleaning up column names",
+    "text": "Cleaning up column names\n\n\nCode\n# Clean column names\n@chain df begin\n    @clean_names()\nend\n\n\n891×12 DataFrame866 rows omitted\n\n\n\nRow\npassenger_id\nsurvived\npclass\nname\nsex\nage\nsib_sp\nparch\nticket\nfare\ncabin\nembarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.925\nmissing\nS\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.05\nmissing\nS\n\n\n6\n6\n0\n3\nMoran, Mr. James\nmale\nmissing\n0\n0\n330877\n8.4583\nmissing\nQ\n\n\n7\n7\n0\n1\nMcCarthy, Mr. Timothy J\nmale\n54.0\n0\n0\n17463\n51.8625\nE46\nS\n\n\n8\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.075\nmissing\nS\n\n\n9\n9\n1\n3\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n27.0\n0\n2\n347742\n11.1333\nmissing\nS\n\n\n10\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC\n\n\n11\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n1\n1\nPP 9549\n16.7\nG6\nS\n\n\n12\n12\n1\n1\nBonnell, Miss. Elizabeth\nfemale\n58.0\n0\n0\n113783\n26.55\nC103\nS\n\n\n13\n13\n0\n3\nSaundercock, Mr. William Henry\nmale\n20.0\n0\n0\nA/5. 2151\n8.05\nmissing\nS\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n880\n880\n1\n1\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\nfemale\n56.0\n0\n1\n11767\n83.1583\nC50\nC\n\n\n881\n881\n1\n2\nShelley, Mrs. William (Imanita Parrish Hall)\nfemale\n25.0\n0\n1\n230433\n26.0\nmissing\nS\n\n\n882\n882\n0\n3\nMarkun, Mr. Johann\nmale\n33.0\n0\n0\n349257\n7.8958\nmissing\nS\n\n\n883\n883\n0\n3\nDahlberg, Miss. Gerda Ulrika\nfemale\n22.0\n0\n0\n7552\n10.5167\nmissing\nS\n\n\n884\n884\n0\n2\nBanfield, Mr. Frederick James\nmale\n28.0\n0\n0\nC.A./SOTON 34068\n10.5\nmissing\nS\n\n\n885\n885\n0\n3\nSutehall, Mr. Henry Jr\nmale\n25.0\n0\n0\nSOTON/OQ 392076\n7.05\nmissing\nS\n\n\n886\n886\n0\n3\nRice, Mrs. William (Margaret Norton)\nfemale\n39.0\n0\n5\n382652\n29.125\nmissing\nQ\n\n\n887\n887\n0\n2\nMontvila, Rev. Juozas\nmale\n27.0\n0\n0\n211536\n13.0\nmissing\nS\n\n\n888\n888\n1\n1\nGraham, Miss. Margaret Edith\nfemale\n19.0\n0\n0\n112053\n30.0\nB42\nS\n\n\n889\n889\n0\n3\nJohnston, Miss. Catherine Helen \"Carrie\"\nfemale\nmissing\n1\n2\nW./C. 6607\n23.45\nmissing\nS\n\n\n890\n890\n1\n1\nBehr, Mr. Karl Howell\nmale\n26.0\n0\n0\n111369\n30.0\nC148\nC\n\n\n891\n891\n0\n3\nDooley, Mr. Patrick\nmale\n32.0\n0\n0\n370376\n7.75\nmissing\nQ"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#select-specific-columns",
+    "href": "materials/lect08-data/slides.html#select-specific-columns",
+    "title": "Data integrity",
+    "section": "Select specific columns",
+    "text": "Select specific columns\n\n\nCode\n# Select only Name and Age columns\n@chain df begin\n    @select(Name, Age)\nend\n\n\n891×2 DataFrame866 rows omitted\n\n\n\nRow\nName\nAge\n\n\n\nString\nFloat64?\n\n\n\n\n1\nBraund, Mr. Owen Harris\n22.0\n\n\n2\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\n38.0\n\n\n3\nHeikkinen, Miss. Laina\n26.0\n\n\n4\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\n35.0\n\n\n5\nAllen, Mr. William Henry\n35.0\n\n\n6\nMoran, Mr. James\nmissing\n\n\n7\nMcCarthy, Mr. Timothy J\n54.0\n\n\n8\nPalsson, Master. Gosta Leonard\n2.0\n\n\n9\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\n27.0\n\n\n10\nNasser, Mrs. Nicholas (Adele Achem)\n14.0\n\n\n11\nSandstrom, Miss. Marguerite Rut\n4.0\n\n\n12\nBonnell, Miss. Elizabeth\n58.0\n\n\n13\nSaundercock, Mr. William Henry\n20.0\n\n\n⋮\n⋮\n⋮\n\n\n880\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\n56.0\n\n\n881\nShelley, Mrs. William (Imanita Parrish Hall)\n25.0\n\n\n882\nMarkun, Mr. Johann\n33.0\n\n\n883\nDahlberg, Miss. Gerda Ulrika\n22.0\n\n\n884\nBanfield, Mr. Frederick James\n28.0\n\n\n885\nSutehall, Mr. Henry Jr\n25.0\n\n\n886\nRice, Mrs. William (Margaret Norton)\n39.0\n\n\n887\nMontvila, Rev. Juozas\n27.0\n\n\n888\nGraham, Miss. Margaret Edith\n19.0\n\n\n889\nJohnston, Miss. Catherine Helen \"Carrie\"\nmissing\n\n\n890\nBehr, Mr. Karl Howell\n26.0\n\n\n891\nDooley, Mr. Patrick\n32.0"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#select-column-by-range",
+    "href": "materials/lect08-data/slides.html#select-column-by-range",
+    "title": "Data integrity",
+    "section": "Select column by range",
+    "text": "Select column by range\n\n\nCode\n# Select columns from Name to Age\n@chain df begin\n    @select(Name:Age)\nend\n\n\n891×3 DataFrame866 rows omitted\n\n\n\nRow\nName\nSex\nAge\n\n\n\nString\nString7\nFloat64?\n\n\n\n\n1\nBraund, Mr. Owen Harris\nmale\n22.0\n\n\n2\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n\n\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n\n\n4\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n\n\n5\nAllen, Mr. William Henry\nmale\n35.0\n\n\n6\nMoran, Mr. James\nmale\nmissing\n\n\n7\nMcCarthy, Mr. Timothy J\nmale\n54.0\n\n\n8\nPalsson, Master. Gosta Leonard\nmale\n2.0\n\n\n9\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n27.0\n\n\n10\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n\n\n11\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n\n\n12\nBonnell, Miss. Elizabeth\nfemale\n58.0\n\n\n13\nSaundercock, Mr. William Henry\nmale\n20.0\n\n\n⋮\n⋮\n⋮\n⋮\n\n\n880\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\nfemale\n56.0\n\n\n881\nShelley, Mrs. William (Imanita Parrish Hall)\nfemale\n25.0\n\n\n882\nMarkun, Mr. Johann\nmale\n33.0\n\n\n883\nDahlberg, Miss. Gerda Ulrika\nfemale\n22.0\n\n\n884\nBanfield, Mr. Frederick James\nmale\n28.0\n\n\n885\nSutehall, Mr. Henry Jr\nmale\n25.0\n\n\n886\nRice, Mrs. William (Margaret Norton)\nfemale\n39.0\n\n\n887\nMontvila, Rev. Juozas\nmale\n27.0\n\n\n888\nGraham, Miss. Margaret Edith\nfemale\n19.0\n\n\n889\nJohnston, Miss. Catherine Helen \"Carrie\"\nfemale\nmissing\n\n\n890\nBehr, Mr. Karl Howell\nmale\n26.0\n\n\n891\nDooley, Mr. Patrick\nmale\n32.0"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#select-the-first-5-columns-individually-by-number",
+    "href": "materials/lect08-data/slides.html#select-the-first-5-columns-individually-by-number",
+    "title": "Data integrity",
+    "section": "Select the first 5 columns individually by number",
+    "text": "Select the first 5 columns individually by number\n\n\nCode\n# Select the first 5 columns\n@chain df begin\n    @select(1:5)\nend\n\n\n891×5 DataFrame866 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\n\n\n\nInt64\nInt64\nInt64\nString\nString7\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n\n\n6\n6\n0\n3\nMoran, Mr. James\nmale\n\n\n7\n7\n0\n1\nMcCarthy, Mr. Timothy J\nmale\n\n\n8\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n\n\n9\n9\n1\n3\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n\n\n10\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n\n\n11\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n\n\n12\n12\n1\n1\nBonnell, Miss. Elizabeth\nfemale\n\n\n13\n13\n0\n3\nSaundercock, Mr. William Henry\nmale\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n880\n880\n1\n1\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\nfemale\n\n\n881\n881\n1\n2\nShelley, Mrs. William (Imanita Parrish Hall)\nfemale\n\n\n882\n882\n0\n3\nMarkun, Mr. Johann\nmale\n\n\n883\n883\n0\n3\nDahlberg, Miss. Gerda Ulrika\nfemale\n\n\n884\n884\n0\n2\nBanfield, Mr. Frederick James\nmale\n\n\n885\n885\n0\n3\nSutehall, Mr. Henry Jr\nmale\n\n\n886\n886\n0\n3\nRice, Mrs. William (Margaret Norton)\nfemale\n\n\n887\n887\n0\n2\nMontvila, Rev. Juozas\nmale\n\n\n888\n888\n1\n1\nGraham, Miss. Margaret Edith\nfemale\n\n\n889\n889\n0\n3\nJohnston, Miss. Catherine Helen \"Carrie\"\nfemale\n\n\n890\n890\n1\n1\nBehr, Mr. Karl Howell\nmale\n\n\n891\n891\n0\n3\nDooley, Mr. Patrick\nmale"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#select-columns-that-start-with-p",
+    "href": "materials/lect08-data/slides.html#select-columns-that-start-with-p",
+    "title": "Data integrity",
+    "section": "Select columns that start with “P”",
+    "text": "Select columns that start with “P”\n\n\nCode\n# Select columns that start with \"P\"\n@chain df begin\n    @select(starts_with(\"P\"))\nend\n\n\n891×3 DataFrame866 rows omitted\n\n\n\nRow\nPassengerId\nPclass\nParch\n\n\n\nInt64\nInt64\nInt64\n\n\n\n\n1\n1\n3\n0\n\n\n2\n2\n1\n0\n\n\n3\n3\n3\n0\n\n\n4\n4\n1\n0\n\n\n5\n5\n3\n0\n\n\n6\n6\n3\n0\n\n\n7\n7\n1\n0\n\n\n8\n8\n3\n1\n\n\n9\n9\n3\n2\n\n\n10\n10\n2\n0\n\n\n11\n11\n3\n1\n\n\n12\n12\n1\n0\n\n\n13\n13\n3\n0\n\n\n⋮\n⋮\n⋮\n⋮\n\n\n880\n880\n1\n1\n\n\n881\n881\n2\n1\n\n\n882\n882\n3\n0\n\n\n883\n883\n3\n0\n\n\n884\n884\n2\n0\n\n\n885\n885\n3\n0\n\n\n886\n886\n3\n5\n\n\n887\n887\n2\n0\n\n\n888\n888\n1\n0\n\n\n889\n889\n3\n2\n\n\n890\n890\n1\n0\n\n\n891\n891\n3\n0"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#slice-data",
+    "href": "materials/lect08-data/slides.html#slice-data",
+    "title": "Data integrity",
+    "section": "slice data",
+    "text": "slice data\n\n\nCode\n# Select first 10 rows\n@chain df begin\n    @slice(1:10)\nend\n\n\n10×12 DataFrame\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.925\nmissing\nS\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.05\nmissing\nS\n\n\n6\n6\n0\n3\nMoran, Mr. James\nmale\nmissing\n0\n0\n330877\n8.4583\nmissing\nQ\n\n\n7\n7\n0\n1\nMcCarthy, Mr. Timothy J\nmale\n54.0\n0\n0\n17463\n51.8625\nE46\nS\n\n\n8\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.075\nmissing\nS\n\n\n9\n9\n1\n3\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n27.0\n0\n2\n347742\n11.1333\nmissing\nS\n\n\n10\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#filtering-data-with-conditions",
+    "href": "materials/lect08-data/slides.html#filtering-data-with-conditions",
+    "title": "Data integrity",
+    "section": "filtering data with conditions",
+    "text": "filtering data with conditions\n\n\nCode\n# Filter passengers under 18 years old\n@chain df begin\n    @filter(Age &lt; 18)\nend\n\n\n113×12 DataFrame88 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.075\nmissing\nS\n\n\n2\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC\n\n\n3\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n1\n1\nPP 9549\n16.7\nG6\nS\n\n\n4\n15\n0\n3\nVestrom, Miss. Hulda Amanda Adolfina\nfemale\n14.0\n0\n0\n350406\n7.8542\nmissing\nS\n\n\n5\n17\n0\n3\nRice, Master. Eugene\nmale\n2.0\n4\n1\n382652\n29.125\nmissing\nQ\n\n\n6\n23\n1\n3\nMcGowan, Miss. Anna \"Annie\"\nfemale\n15.0\n0\n0\n330923\n8.0292\nmissing\nQ\n\n\n7\n25\n0\n3\nPalsson, Miss. Torborg Danira\nfemale\n8.0\n3\n1\n349909\n21.075\nmissing\nS\n\n\n8\n40\n1\n3\nNicola-Yarred, Miss. Jamila\nfemale\n14.0\n1\n0\n2651\n11.2417\nmissing\nC\n\n\n9\n44\n1\n2\nLaroche, Miss. Simonne Marie Anne Andree\nfemale\n3.0\n1\n2\nSC/Paris 2123\n41.5792\nmissing\nC\n\n\n10\n51\n0\n3\nPanula, Master. Juha Niilo\nmale\n7.0\n4\n1\n3101295\n39.6875\nmissing\nS\n\n\n11\n59\n1\n2\nWest, Miss. Constance Mirium\nfemale\n5.0\n1\n2\nC.A. 34651\n27.75\nmissing\nS\n\n\n12\n60\n0\n3\nGoodwin, Master. William Frederick\nmale\n11.0\n5\n2\nCA 2144\n46.9\nmissing\nS\n\n\n13\n64\n0\n3\nSkoog, Master. Harald\nmale\n4.0\n3\n2\n347088\n27.9\nmissing\nS\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n102\n820\n0\n3\nSkoog, Master. Karl Thorsten\nmale\n10.0\n3\n2\n347088\n27.9\nmissing\nS\n\n\n103\n825\n0\n3\nPanula, Master. Urho Abraham\nmale\n2.0\n4\n1\n3101295\n39.6875\nmissing\nS\n\n\n104\n828\n1\n2\nMallet, Master. Andre\nmale\n1.0\n0\n2\nS.C./PARIS 2079\n37.0042\nmissing\nC\n\n\n105\n831\n1\n3\nYasbeck, Mrs. Antoni (Selini Alexander)\nfemale\n15.0\n1\n0\n2659\n14.4542\nmissing\nC\n\n\n106\n832\n1\n2\nRichards, Master. George Sibley\nmale\n0.83\n1\n1\n29106\n18.75\nmissing\nS\n\n\n107\n842\n0\n2\nMudd, Mr. Thomas Charles\nmale\n16.0\n0\n0\nS.O./P.P. 3\n10.5\nmissing\nS\n\n\n108\n845\n0\n3\nCulumovic, Mr. Jeso\nmale\n17.0\n0\n0\n315090\n8.6625\nmissing\nS\n\n\n109\n851\n0\n3\nAndersson, Master. Sigvard Harald Elias\nmale\n4.0\n4\n2\n347082\n31.275\nmissing\nS\n\n\n110\n853\n0\n3\nBoulos, Miss. Nourelain\nfemale\n9.0\n1\n1\n2678\n15.2458\nmissing\nC\n\n\n111\n854\n1\n1\nLines, Miss. Mary Conover\nfemale\n16.0\n0\n1\nPC 17592\n39.4\nD28\nS\n\n\n112\n870\n1\n3\nJohnson, Master. Harold Theodor\nmale\n4.0\n1\n1\n347742\n11.1333\nmissing\nS\n\n\n113\n876\n1\n3\nNajib, Miss. Adele Kiamie \"Jane\"\nfemale\n15.0\n0\n0\n2667\n7.225\nmissing\nC"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#filter-passengers-in-1st-class",
+    "href": "materials/lect08-data/slides.html#filter-passengers-in-1st-class",
+    "title": "Data integrity",
+    "section": "Filter passengers in 1st class",
+    "text": "Filter passengers in 1st class\n\n\nCode\n@chain df begin\n    @filter(Cabin in [\"C123\", \"C124\", \"C125\"])\nend\n\n\n6×12 DataFrame\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n2\n138\n0\n1\nFutrelle, Mr. Jacques Heath\nmale\n37.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n3\n269\n1\n1\nGraham, Mrs. William Thompson (Edith Junkins)\nfemale\n58.0\n0\n1\nPC 17582\n153.463\nC125\nS\n\n\n4\n332\n0\n1\nPartner, Mr. Austen\nmale\n45.5\n0\n0\n113043\n28.5\nC124\nS\n\n\n5\n610\n1\n1\nShutes, Miss. Elizabeth W\nfemale\n40.0\n0\n0\nPC 17582\n153.463\nC125\nS\n\n\n6\n712\n0\n1\nKlaber, Mr. Herman\nmale\nmissing\n0\n0\n113028\n26.55\nC124\nS"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#filter-missing-values",
+    "href": "materials/lect08-data/slides.html#filter-missing-values",
+    "title": "Data integrity",
+    "section": "Filter missing values",
+    "text": "Filter missing values\n\n\nCode\n# Filter out rows with missing Age values\n@chain df begin\n    @filter(!ismissing(Age))\nend\n\n\n714×12 DataFrame689 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.925\nmissing\nS\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.05\nmissing\nS\n\n\n6\n7\n0\n1\nMcCarthy, Mr. Timothy J\nmale\n54.0\n0\n0\n17463\n51.8625\nE46\nS\n\n\n7\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.075\nmissing\nS\n\n\n8\n9\n1\n3\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n27.0\n0\n2\n347742\n11.1333\nmissing\nS\n\n\n9\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC\n\n\n10\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n1\n1\nPP 9549\n16.7\nG6\nS\n\n\n11\n12\n1\n1\nBonnell, Miss. Elizabeth\nfemale\n58.0\n0\n0\n113783\n26.55\nC103\nS\n\n\n12\n13\n0\n3\nSaundercock, Mr. William Henry\nmale\n20.0\n0\n0\nA/5. 2151\n8.05\nmissing\nS\n\n\n13\n14\n0\n3\nAndersson, Mr. Anders Johan\nmale\n39.0\n1\n5\n347082\n31.275\nmissing\nS\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n703\n878\n0\n3\nPetroff, Mr. Nedelio\nmale\n19.0\n0\n0\n349212\n7.8958\nmissing\nS\n\n\n704\n880\n1\n1\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\nfemale\n56.0\n0\n1\n11767\n83.1583\nC50\nC\n\n\n705\n881\n1\n2\nShelley, Mrs. William (Imanita Parrish Hall)\nfemale\n25.0\n0\n1\n230433\n26.0\nmissing\nS\n\n\n706\n882\n0\n3\nMarkun, Mr. Johann\nmale\n33.0\n0\n0\n349257\n7.8958\nmissing\nS\n\n\n707\n883\n0\n3\nDahlberg, Miss. Gerda Ulrika\nfemale\n22.0\n0\n0\n7552\n10.5167\nmissing\nS\n\n\n708\n884\n0\n2\nBanfield, Mr. Frederick James\nmale\n28.0\n0\n0\nC.A./SOTON 34068\n10.5\nmissing\nS\n\n\n709\n885\n0\n3\nSutehall, Mr. Henry Jr\nmale\n25.0\n0\n0\nSOTON/OQ 392076\n7.05\nmissing\nS\n\n\n710\n886\n0\n3\nRice, Mrs. William (Margaret Norton)\nfemale\n39.0\n0\n5\n382652\n29.125\nmissing\nQ\n\n\n711\n887\n0\n2\nMontvila, Rev. Juozas\nmale\n27.0\n0\n0\n211536\n13.0\nmissing\nS\n\n\n712\n888\n1\n1\nGraham, Miss. Margaret Edith\nfemale\n19.0\n0\n0\n112053\n30.0\nB42\nS\n\n\n713\n890\n1\n1\nBehr, Mr. Karl Howell\nmale\n26.0\n0\n0\n111369\n30.0\nC148\nC\n\n\n714\n891\n0\n3\nDooley, Mr. Patrick\nmale\n32.0\n0\n0\n370376\n7.75\nmissing\nQ"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#create-new-columns",
+    "href": "materials/lect08-data/slides.html#create-new-columns",
+    "title": "Data integrity",
+    "section": "Create new columns",
+    "text": "Create new columns\n\n\nCode\n# Create a new column for age group\n@chain df begin\n    @filter(!ismissing(Age))\n    @mutate(AgeGroup = ifelse(Age &lt; 18, \"Child\", \"Adult\"))\nend\n\n\n714×13 DataFrame689 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\nAgeGroup\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\nString\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\nAdult\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\nAdult\n\n\n3\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.925\nmissing\nS\nAdult\n\n\n4\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1\nC123\nS\nAdult\n\n\n5\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.05\nmissing\nS\nAdult\n\n\n6\n7\n0\n1\nMcCarthy, Mr. Timothy J\nmale\n54.0\n0\n0\n17463\n51.8625\nE46\nS\nAdult\n\n\n7\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.075\nmissing\nS\nChild\n\n\n8\n9\n1\n3\nJohnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)\nfemale\n27.0\n0\n2\n347742\n11.1333\nmissing\nS\nAdult\n\n\n9\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC\nChild\n\n\n10\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n1\n1\nPP 9549\n16.7\nG6\nS\nChild\n\n\n11\n12\n1\n1\nBonnell, Miss. Elizabeth\nfemale\n58.0\n0\n0\n113783\n26.55\nC103\nS\nAdult\n\n\n12\n13\n0\n3\nSaundercock, Mr. William Henry\nmale\n20.0\n0\n0\nA/5. 2151\n8.05\nmissing\nS\nAdult\n\n\n13\n14\n0\n3\nAndersson, Mr. Anders Johan\nmale\n39.0\n1\n5\n347082\n31.275\nmissing\nS\nAdult\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n703\n878\n0\n3\nPetroff, Mr. Nedelio\nmale\n19.0\n0\n0\n349212\n7.8958\nmissing\nS\nAdult\n\n\n704\n880\n1\n1\nPotter, Mrs. Thomas Jr (Lily Alexenia Wilson)\nfemale\n56.0\n0\n1\n11767\n83.1583\nC50\nC\nAdult\n\n\n705\n881\n1\n2\nShelley, Mrs. William (Imanita Parrish Hall)\nfemale\n25.0\n0\n1\n230433\n26.0\nmissing\nS\nAdult\n\n\n706\n882\n0\n3\nMarkun, Mr. Johann\nmale\n33.0\n0\n0\n349257\n7.8958\nmissing\nS\nAdult\n\n\n707\n883\n0\n3\nDahlberg, Miss. Gerda Ulrika\nfemale\n22.0\n0\n0\n7552\n10.5167\nmissing\nS\nAdult\n\n\n708\n884\n0\n2\nBanfield, Mr. Frederick James\nmale\n28.0\n0\n0\nC.A./SOTON 34068\n10.5\nmissing\nS\nAdult\n\n\n709\n885\n0\n3\nSutehall, Mr. Henry Jr\nmale\n25.0\n0\n0\nSOTON/OQ 392076\n7.05\nmissing\nS\nAdult\n\n\n710\n886\n0\n3\nRice, Mrs. William (Margaret Norton)\nfemale\n39.0\n0\n5\n382652\n29.125\nmissing\nQ\nAdult\n\n\n711\n887\n0\n2\nMontvila, Rev. Juozas\nmale\n27.0\n0\n0\n211536\n13.0\nmissing\nS\nAdult\n\n\n712\n888\n1\n1\nGraham, Miss. Margaret Edith\nfemale\n19.0\n0\n0\n112053\n30.0\nB42\nS\nAdult\n\n\n713\n890\n1\n1\nBehr, Mr. Karl Howell\nmale\n26.0\n0\n0\n111369\n30.0\nC148\nC\nAdult\n\n\n714\n891\n0\n3\nDooley, Mr. Patrick\nmale\n32.0\n0\n0\n370376\n7.75\nmissing\nQ\nAdult"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#summarize-data",
+    "href": "materials/lect08-data/slides.html#summarize-data",
+    "title": "Data integrity",
+    "section": "Summarize data",
+    "text": "Summarize data\n\n\nCode\n# Calculate average age of passengers\n@chain df begin\n    @filter(!ismissing(Age))\n    @summarize(AvgAge = mean(Age))\nend\n\n\n1×1 DataFrame\n\n\n\nRow\nAvgAge\n\n\n\nFloat64\n\n\n\n\n1\n29.6991"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#summarize-more-complex-statistics",
+    "href": "materials/lect08-data/slides.html#summarize-more-complex-statistics",
+    "title": "Data integrity",
+    "section": "Summarize more complex statistics",
+    "text": "Summarize more complex statistics\n\n\nCode\n# Calculate average age and fare by passenger class\n@chain df begin\n    @filter(!ismissing(Age))\n    @summarize(AvgAge = mean(Age), MedAge = median(Age))\nend\n\n\n1×2 DataFrame\n\n\n\nRow\nAvgAge\nMedAge\n\n\n\nFloat64\nFloat64\n\n\n\n\n1\n29.6991\n28.0"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#grouping-data",
+    "href": "materials/lect08-data/slides.html#grouping-data",
+    "title": "Data integrity",
+    "section": "Grouping data",
+    "text": "Grouping data\n\n\nCode\n# Calculate average age by passenger class\n@chain df begin\n    @filter(!ismissing(Age))\n    @group_by(Pclass)\n    @summarize(AvgAge = mean(Age))\nend\n\n\n3×2 DataFrame\n\n\n\nRow\nPclass\nAvgAge\n\n\n\nInt64\nFloat64\n\n\n\n\n1\n3\n25.1406\n\n\n2\n1\n38.2334\n\n\n3\n2\n29.8776"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#grouping-by-multiple-columns",
+    "href": "materials/lect08-data/slides.html#grouping-by-multiple-columns",
+    "title": "Data integrity",
+    "section": "Grouping by multiple columns",
+    "text": "Grouping by multiple columns\n\n\nCode\n# Calculate average age by passenger class and  gender\n@chain df begin\n    @filter(!ismissing(Age))\n    @group_by(Pclass, Sex)\n    @summarize(AvgAge = mean(Age))\nend\n\n\nGroupedDataFrame with 3 groups based on key: PclassFirst Group (2 rows): Pclass = 3\n\n\n\nRow\nPclass\nSex\nAvgAge\n\n\n\nInt64\nString7\nFloat64\n\n\n\n\n1\n3\nmale\n26.5076\n\n\n2\n3\nfemale\n21.75\n\n\n\n⋮Last Group (2 rows): Pclass = 2\n\n\n\nRow\nPclass\nSex\nAvgAge\n\n\n\nInt64\nString7\nFloat64\n\n\n\n\n1\n2\nfemale\n28.723\n\n\n2\n2\nmale\n30.7407"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#arranging-data",
+    "href": "materials/lect08-data/slides.html#arranging-data",
+    "title": "Data integrity",
+    "section": "Arranging data",
+    "text": "Arranging data\n\n\nCode\n# Arrange passengers by age in descending order\n@chain df begin\n    @filter(!ismissing(Age))\n    @arrange(Age)\nend\n\n\n714×12 DataFrame689 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n804\n1\n3\nThomas, Master. Assad Alexander\nmale\n0.42\n0\n1\n2625\n8.5167\nmissing\nC\n\n\n2\n756\n1\n2\nHamalainen, Master. Viljo\nmale\n0.67\n1\n1\n250649\n14.5\nmissing\nS\n\n\n3\n470\n1\n3\nBaclini, Miss. Helene Barbara\nfemale\n0.75\n2\n1\n2666\n19.2583\nmissing\nC\n\n\n4\n645\n1\n3\nBaclini, Miss. Eugenie\nfemale\n0.75\n2\n1\n2666\n19.2583\nmissing\nC\n\n\n5\n79\n1\n2\nCaldwell, Master. Alden Gates\nmale\n0.83\n0\n2\n248738\n29.0\nmissing\nS\n\n\n6\n832\n1\n2\nRichards, Master. George Sibley\nmale\n0.83\n1\n1\n29106\n18.75\nmissing\nS\n\n\n7\n306\n1\n1\nAllison, Master. Hudson Trevor\nmale\n0.92\n1\n2\n113781\n151.55\nC22 C26\nS\n\n\n8\n165\n0\n3\nPanula, Master. Eino Viljami\nmale\n1.0\n4\n1\n3101295\n39.6875\nmissing\nS\n\n\n9\n173\n1\n3\nJohnson, Miss. Eleanor Ileen\nfemale\n1.0\n1\n1\n347742\n11.1333\nmissing\nS\n\n\n10\n184\n1\n2\nBecker, Master. Richard F\nmale\n1.0\n2\n1\n230136\n39.0\nF4\nS\n\n\n11\n382\n1\n3\nNakid, Miss. Maria (\"Mary\")\nfemale\n1.0\n0\n2\n2653\n15.7417\nmissing\nC\n\n\n12\n387\n0\n3\nGoodwin, Master. Sidney Leonard\nmale\n1.0\n5\n2\nCA 2144\n46.9\nmissing\nS\n\n\n13\n789\n1\n3\nDean, Master. Bertram Vere\nmale\n1.0\n1\n2\nC.A. 2315\n20.575\nmissing\nS\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n703\n546\n0\n1\nNicholson, Mr. Arthur Ernest\nmale\n64.0\n0\n0\n693\n26.0\nmissing\nS\n\n\n704\n55\n0\n1\nOstby, Mr. Engelhart Cornelius\nmale\n65.0\n0\n1\n113509\n61.9792\nB30\nC\n\n\n705\n281\n0\n3\nDuane, Mr. Frank\nmale\n65.0\n0\n0\n336439\n7.75\nmissing\nQ\n\n\n706\n457\n0\n1\nMillet, Mr. Francis Davis\nmale\n65.0\n0\n0\n13509\n26.55\nE38\nS\n\n\n707\n34\n0\n2\nWheadon, Mr. Edward H\nmale\n66.0\n0\n0\nC.A. 24579\n10.5\nmissing\nS\n\n\n708\n673\n0\n2\nMitchell, Mr. Henry Michael\nmale\n70.0\n0\n0\nC.A. 24580\n10.5\nmissing\nS\n\n\n709\n746\n0\n1\nCrosby, Capt. Edward Gifford\nmale\n70.0\n1\n1\nWE/P 5735\n71.0\nB22\nS\n\n\n710\n117\n0\n3\nConnors, Mr. Patrick\nmale\n70.5\n0\n0\n370369\n7.75\nmissing\nQ\n\n\n711\n97\n0\n1\nGoldschmidt, Mr. George B\nmale\n71.0\n0\n0\nPC 17754\n34.6542\nA5\nC\n\n\n712\n494\n0\n1\nArtagaveytia, Mr. Ramon\nmale\n71.0\n0\n0\nPC 17609\n49.5042\nmissing\nC\n\n\n713\n852\n0\n3\nSvensson, Mr. Johan\nmale\n74.0\n0\n0\n347060\n7.775\nmissing\nS\n\n\n714\n631\n1\n1\nBarkworth, Mr. Algernon Henry Wilson\nmale\n80.0\n0\n0\n27042\n30.0\nA23\nS"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#arranging-data-descending",
+    "href": "materials/lect08-data/slides.html#arranging-data-descending",
+    "title": "Data integrity",
+    "section": "Arranging data descending",
+    "text": "Arranging data descending\n\n\nCode\n# Arrange passengers by age in descending order\n@chain df begin\n    @filter(!ismissing(Age))\n    @arrange(desc(Age))\nend\n\n\n714×12 DataFrame689 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n631\n1\n1\nBarkworth, Mr. Algernon Henry Wilson\nmale\n80.0\n0\n0\n27042\n30.0\nA23\nS\n\n\n2\n852\n0\n3\nSvensson, Mr. Johan\nmale\n74.0\n0\n0\n347060\n7.775\nmissing\nS\n\n\n3\n97\n0\n1\nGoldschmidt, Mr. George B\nmale\n71.0\n0\n0\nPC 17754\n34.6542\nA5\nC\n\n\n4\n494\n0\n1\nArtagaveytia, Mr. Ramon\nmale\n71.0\n0\n0\nPC 17609\n49.5042\nmissing\nC\n\n\n5\n117\n0\n3\nConnors, Mr. Patrick\nmale\n70.5\n0\n0\n370369\n7.75\nmissing\nQ\n\n\n6\n673\n0\n2\nMitchell, Mr. Henry Michael\nmale\n70.0\n0\n0\nC.A. 24580\n10.5\nmissing\nS\n\n\n7\n746\n0\n1\nCrosby, Capt. Edward Gifford\nmale\n70.0\n1\n1\nWE/P 5735\n71.0\nB22\nS\n\n\n8\n34\n0\n2\nWheadon, Mr. Edward H\nmale\n66.0\n0\n0\nC.A. 24579\n10.5\nmissing\nS\n\n\n9\n55\n0\n1\nOstby, Mr. Engelhart Cornelius\nmale\n65.0\n0\n1\n113509\n61.9792\nB30\nC\n\n\n10\n281\n0\n3\nDuane, Mr. Frank\nmale\n65.0\n0\n0\n336439\n7.75\nmissing\nQ\n\n\n11\n457\n0\n1\nMillet, Mr. Francis Davis\nmale\n65.0\n0\n0\n13509\n26.55\nE38\nS\n\n\n12\n439\n0\n1\nFortune, Mr. Mark\nmale\n64.0\n1\n4\n19950\n263.0\nC23 C25 C27\nS\n\n\n13\n546\n0\n1\nNicholson, Mr. Arthur Ernest\nmale\n64.0\n0\n0\n693\n26.0\nmissing\nS\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n703\n184\n1\n2\nBecker, Master. Richard F\nmale\n1.0\n2\n1\n230136\n39.0\nF4\nS\n\n\n704\n382\n1\n3\nNakid, Miss. Maria (\"Mary\")\nfemale\n1.0\n0\n2\n2653\n15.7417\nmissing\nC\n\n\n705\n387\n0\n3\nGoodwin, Master. Sidney Leonard\nmale\n1.0\n5\n2\nCA 2144\n46.9\nmissing\nS\n\n\n706\n789\n1\n3\nDean, Master. Bertram Vere\nmale\n1.0\n1\n2\nC.A. 2315\n20.575\nmissing\nS\n\n\n707\n828\n1\n2\nMallet, Master. Andre\nmale\n1.0\n0\n2\nS.C./PARIS 2079\n37.0042\nmissing\nC\n\n\n708\n306\n1\n1\nAllison, Master. Hudson Trevor\nmale\n0.92\n1\n2\n113781\n151.55\nC22 C26\nS\n\n\n709\n79\n1\n2\nCaldwell, Master. Alden Gates\nmale\n0.83\n0\n2\n248738\n29.0\nmissing\nS\n\n\n710\n832\n1\n2\nRichards, Master. George Sibley\nmale\n0.83\n1\n1\n29106\n18.75\nmissing\nS\n\n\n711\n470\n1\n3\nBaclini, Miss. Helene Barbara\nfemale\n0.75\n2\n1\n2666\n19.2583\nmissing\nC\n\n\n712\n645\n1\n3\nBaclini, Miss. Eugenie\nfemale\n0.75\n2\n1\n2666\n19.2583\nmissing\nC\n\n\n713\n756\n1\n2\nHamalainen, Master. Viljo\nmale\n0.67\n1\n1\n250649\n14.5\nmissing\nS\n\n\n714\n804\n1\n3\nThomas, Master. Assad Alexander\nmale\n0.42\n0\n1\n2625\n8.5167\nmissing\nC"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#arranging-by-multiple-columns",
+    "href": "materials/lect08-data/slides.html#arranging-by-multiple-columns",
+    "title": "Data integrity",
+    "section": "Arranging by multiple columns",
+    "text": "Arranging by multiple columns\n\n\nCode\n# Arrange passengers by class and then age\n@chain df begin\n    @filter(!ismissing(Age))\n    @arrange(Pclass, Age)\nend\n\n\n714×12 DataFrame689 rows omitted\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n306\n1\n1\nAllison, Master. Hudson Trevor\nmale\n0.92\n1\n2\n113781\n151.55\nC22 C26\nS\n\n\n2\n298\n0\n1\nAllison, Miss. Helen Loraine\nfemale\n2.0\n1\n2\n113781\n151.55\nC22 C26\nS\n\n\n3\n446\n1\n1\nDodge, Master. Washington\nmale\n4.0\n0\n2\n33638\n81.8583\nA34\nS\n\n\n4\n803\n1\n1\nCarter, Master. William Thornton II\nmale\n11.0\n1\n2\n113760\n120.0\nB96 B98\nS\n\n\n5\n436\n1\n1\nCarter, Miss. Lucile Polk\nfemale\n14.0\n1\n2\n113760\n120.0\nB96 B98\nS\n\n\n6\n690\n1\n1\nMadill, Miss. Georgette Alexandra\nfemale\n15.0\n0\n1\n24160\n211.338\nB5\nS\n\n\n7\n330\n1\n1\nHippach, Miss. Jean Gertrude\nfemale\n16.0\n0\n1\n111361\n57.9792\nB18\nC\n\n\n8\n505\n1\n1\nMaioni, Miss. Roberta\nfemale\n16.0\n0\n0\n110152\n86.5\nB79\nS\n\n\n9\n854\n1\n1\nLines, Miss. Mary Conover\nfemale\n16.0\n0\n1\nPC 17592\n39.4\nD28\nS\n\n\n10\n308\n1\n1\nPenasco y Castellana, Mrs. Victor de Satode (Maria Josefa Perez de Soto y Vallejo)\nfemale\n17.0\n1\n0\nPC 17758\n108.9\nC65\nC\n\n\n11\n551\n1\n1\nThayer, Mr. John Borland Jr\nmale\n17.0\n0\n2\n17421\n110.883\nC70\nC\n\n\n12\n782\n1\n1\nDick, Mrs. Albert Adrian (Vera Gillespie)\nfemale\n17.0\n1\n0\n17474\n57.0\nB20\nS\n\n\n13\n312\n1\n1\nRyerson, Miss. Emily Borie\nfemale\n18.0\n2\n2\nPC 17608\n262.375\nB57 B59 B63 B66\nC\n\n\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n⋮\n\n\n703\n598\n0\n3\nJohnson, Mr. Alfred\nmale\n49.0\n0\n0\nLINE\n0.0\nmissing\nS\n\n\n704\n483\n0\n3\nRouse, Mr. Richard Henry\nmale\n50.0\n0\n0\nA/5 3594\n8.05\nmissing\nS\n\n\n705\n223\n0\n3\nGreen, Mr. George Henry\nmale\n51.0\n0\n0\n21440\n8.05\nmissing\nS\n\n\n706\n407\n0\n3\nWidegren, Mr. Carl/Charles Peter\nmale\n51.0\n0\n0\n347064\n7.75\nmissing\nS\n\n\n707\n632\n0\n3\nLundahl, Mr. Johan Svensson\nmale\n51.0\n0\n0\n347743\n7.0542\nmissing\nS\n\n\n708\n153\n0\n3\nMeo, Mr. Alfonzo\nmale\n55.5\n0\n0\nA.5. 11206\n8.05\nmissing\nS\n\n\n709\n95\n0\n3\nCoxon, Mr. Daniel\nmale\n59.0\n0\n0\n364500\n7.25\nmissing\nS\n\n\n710\n327\n0\n3\nNysveen, Mr. Johan Hansen\nmale\n61.0\n0\n0\n345364\n6.2375\nmissing\nS\n\n\n711\n484\n1\n3\nTurkula, Mrs. (Hedwig)\nfemale\n63.0\n0\n0\n4134\n9.5875\nmissing\nS\n\n\n712\n281\n0\n3\nDuane, Mr. Frank\nmale\n65.0\n0\n0\n336439\n7.75\nmissing\nQ\n\n\n713\n117\n0\n3\nConnors, Mr. Patrick\nmale\n70.5\n0\n0\n370369\n7.75\nmissing\nQ\n\n\n714\n852\n0\n3\nSvensson, Mr. Johan\nmale\n74.0\n0\n0\n347060\n7.775\nmissing\nS"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#distinct-values",
+    "href": "materials/lect08-data/slides.html#distinct-values",
+    "title": "Data integrity",
+    "section": "Distinct values",
+    "text": "Distinct values\n\n\nCode\n# Get distinct passenger classes\n@chain df begin\n    @distinct(Pclass)\nend\n\n\n3×12 DataFrame\n\n\n\nRow\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\nInt64\nInt64\nInt64\nString\nString7\nFloat64?\nInt64\nInt64\nString31\nFloat64\nString15?\nString1?\n\n\n\n\n1\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.25\nmissing\nS\n\n\n2\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Thayer)\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n3\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nmissing\nC"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#load-tidierplots",
+    "href": "materials/lect08-data/slides.html#load-tidierplots",
+    "title": "Data integrity",
+    "section": "load TidierPlots",
+    "text": "load TidierPlots\n\n\nCode\nusing TidierPlots"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#bar-plot-of-passenger-class-distribution",
+    "href": "materials/lect08-data/slides.html#bar-plot-of-passenger-class-distribution",
+    "title": "Data integrity",
+    "section": "Bar plot of passenger class distribution",
+    "text": "Bar plot of passenger class distribution\n\n\nCode\n# Bar plot of passenger class distribution\n@chain df begin\n    ggplot(@aes(x = Pclass))\n        geom_bar()\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_bar\n\ndata: inherits from plot\n\nx: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#histogram-of-passenger-ages",
+    "href": "materials/lect08-data/slides.html#histogram-of-passenger-ages",
+    "title": "Data integrity",
+    "section": "Histogram of passenger ages",
+    "text": "Histogram of passenger ages\n\n\nCode\n# Histogram of passenger ages\n@chain df begin\n    ggplot(@aes(x = Age))\n        geom_histogram(binwidth = 5)\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_histogram\n\ndata: inherits from plot\n\nx: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#box-plot-of-fare-by-passenger-class",
+    "href": "materials/lect08-data/slides.html#box-plot-of-fare-by-passenger-class",
+    "title": "Data integrity",
+    "section": "Box plot of fare by passenger class",
+    "text": "Box plot of fare by passenger class\n\n\nCode\n# Box plot of fare by passenger class\n@chain df begin\n    ggplot(@aes(x = Pclass, y = Fare))\n        geom_boxplot()\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_boxplot\n\ndata: inherits from plot\n\nx: not specified \n\ny: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#scatter-plot-of-age-vs-fare",
+    "href": "materials/lect08-data/slides.html#scatter-plot-of-age-vs-fare",
+    "title": "Data integrity",
+    "section": "Scatter plot of age vs fare",
+    "text": "Scatter plot of age vs fare\n\n\nCode\n# Scatter plot of age vs fare\n@chain df begin\n    ggplot(@aes(x = Age, y = Fare))\n        geom_point()\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_point\n\ndata: inherits from plot\n\nx: not specified \n\ny: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#scatter-plot-of-age-vs-fare-colored-by-survival",
+    "href": "materials/lect08-data/slides.html#scatter-plot-of-age-vs-fare-colored-by-survival",
+    "title": "Data integrity",
+    "section": "Scatter plot of age vs fare colored by survival",
+    "text": "Scatter plot of age vs fare colored by survival\n\n\nCode\n# Scatter plot of age vs fare colored by survival\n@chain df begin\n    ggplot(@aes(x = Age, y = Fare, color = Survived))\n        geom_point()\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_point\n\ndata: inherits from plot\n\nx: not specified \n\ny: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#smooth-scatter-plot-of-age-vs-fare-colored-by-survival",
+    "href": "materials/lect08-data/slides.html#smooth-scatter-plot-of-age-vs-fare-colored-by-survival",
+    "title": "Data integrity",
+    "section": "smooth scatter plot of age vs fare colored by survival",
+    "text": "smooth scatter plot of age vs fare colored by survival\n\n\nCode\n# Smooth scatter plot of age vs fare colored by survival\n@chain df begin\n    ggplot(@aes(x = Age, y = Fare, color = Survived))\n        geom_point()\n        geom_smooth(method = \"loess\")\nend\n\n\n\nheight: 400\n\nwidth: 600\n\n\n\ngeom_point\n\ndata: inherits from plot\n\nx: not specified \n\ny: not specified \n\n\n\ngeom_smooth\n\ndata: inherits from plot\n\nx: not specified \n\ny: not specified"
+  },
+  {
+    "objectID": "materials/lect08-data/slides.html#tile-plot-of-survival-rate-by-age-group-and-passenger-class",
+    "href": "materials/lect08-data/slides.html#tile-plot-of-survival-rate-by-age-group-and-passenger-class",
+    "title": "Data integrity",
+    "section": "tile plot of survival rate by age group and passenger class",
+    "text": "tile plot of survival rate by age group and passenger class\n# Create age groups\n@chain df begin\n    @filter(!ismissing(Age))\n    @mutate(AgeGroup = ifelse(Age &lt; 18, 0, 1))\n    @group_by(AgeGroup, Pclass)\n    @summarize(SurvivalRate = mean(Survived))\n    ggplot(@aes(x = AgeGroup, y = Pclass, z = SurvivalRate))\n        geom_tile()\nend"
   },
   {
     "objectID": "materials/lect07-ml/slides.html#what-is-artificial-intelligence",
@@ -641,7 +830,7 @@
     "href": "materials/lect07-ml/slides.html#the-titanic-dataset",
     "title": "Machine Learning",
     "section": "The Titanic Dataset",
-    "text": "The Titanic Dataset\nKaggle Titanic Dataset\nObjective: Predict whether a passenger survived the Titanic disaster.\nThis is a Binary Classification Problem: - Target: Survived (0 = No, 1 = Yes)\n\n\n\n\nFeature\nType\nDescription\n\n\n\n\nPclass\nOrdinal\nPassenger class (1, 2, 3)\n\n\nSex\nCategorical\nmale / female\n\n\nAge\nContinuous\nAge in years\n\n\nSibSp\nInteger\n# siblings/spouses aboard\n\n\nParch\nInteger\n# parents/children aboard\n\n\nFare\nContinuous\nTicket fare\n\n\nEmbarked\nCategorical\nPort (C, Q, S)"
+    "text": "The Titanic Dataset\nKaggle Titanic Dataset download\nObjective: Predict whether a passenger survived the Titanic disaster.\nThis is a Binary Classification Problem: - Target: Survived (0 = No, 1 = Yes)\n\n\n\n\nFeature\nType\nDescription\n\n\n\n\nPclass\nOrdinal\nPassenger class (1, 2, 3)\n\n\nSex\nCategorical\nmale / female\n\n\nAge\nContinuous\nAge in years\n\n\nSibSp\nInteger\n# siblings/spouses aboard\n\n\nParch\nInteger\n# parents/children aboard\n\n\nFare\nContinuous\nTicket fare\n\n\nEmbarked\nCategorical\nPort (C, Q, S)"
   },
   {
     "objectID": "materials/lect07-ml/slides.html#step-1-load-and-inspect-data",
@@ -782,11 +971,11 @@
   {
     "objectID": "materials/lect08-data/index.html",
     "href": "materials/lect08-data/index.html",
-    "title": "8. Data Integrity",
+    "title": "8. Data Integrity and Exploratory Data Analysis",
     "section": "",
-    "text": "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle. It is a critical aspect to the design, implementation and usage of any system which stores, processes or retrieves data.\n\nFull Screen",
+    "text": "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle. It is a critical aspect to the design, implementation and usage of any system which stores, processes or retrieves data.\n\ntitanic.csv\nFull Screen",
     "crumbs": [
-      "8. Data Integrity"
+      "8. Data Integrity and Exploratory Data Analysis"
     ]
   },
   {
