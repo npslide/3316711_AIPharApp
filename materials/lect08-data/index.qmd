@@ -1,8 +1,10 @@
 ---
-title: "8. Data Integrity"
+title: "8. Data Integrity and Exploratory Data Analysis"
 ---
 
 > Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle. It is a critical aspect to the design, implementation and usage of any system which stores, processes or retrieves data.
+
+[titanic.csv](titanic.csv)
 
 [Full Screen](slides.qmd)
 ```{=html}

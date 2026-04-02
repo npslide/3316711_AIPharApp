@@ -490,7 +490,7 @@ evaluate!(mach, resampling=CV(nfolds=5), measure=accuracy)
 
 ## The Titanic Dataset
 
-[Kaggle Titanic Dataset](titanic.csv)
+[Kaggle Titanic Dataset download](titanic.csv)
 
 **Objective:** Predict whether a passenger survived the Titanic disaster.
 

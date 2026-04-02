@@ -1,17 +1,20 @@
 ---
-title: "Statistical Inference practices"
+title: "9. Statistical Inference practices"
 subtitle: "3316712 AI Computational Pharmaceutical Sciences"
 author: Natapol Pornputtapong, PhD
 institute: Chulalongkorn University
 date: today # today | last-modified
 date-format: "DD MMM YYYY" # see https://momentjs.com/docs/#/displaying/format/
 pdf-engine: xelatex
+execute:
+  echo: true
 format:
   rxquarto-revealjs:
     self-contained: false # set to true to produce a single HTML file
     transition: none # none | fade | slide | convex | concave | zoom
     background-transition: none
     scrollable: true
+    code-fold: true
 ---
 
 # Statistical testing
@@ -240,29 +243,21 @@ When the same hypothesis is tested in different studies; if P of Drug ‘A’ is
 
 ## library installation
 
-- tidyverse
-  - tibble
-  - tribble
-  - readr
-  - tidyr
-  - dplyr
-  - ...
-- tidymodels
-  - infer
-  
-```{julia}
-#| eval: false
+
+
+```julia
 using Pkg
-Pkg.add(["Tidier", "CSV", "DataFrames", "HypothesisTests", "GLM", "CairoMakie", "Distributions", "AnovaGLM"])
+Pkg.add(["Tidier", "TidierFiles", "TidierPlots", "HypothesisTests", "GLM", "CairoMakie", "Distributions", "AnovaGLM"])
 ```
 
 ## calling library
 
 ```{julia}
 #| code-fold: true
+#| echo: true
 #| code-summary: "Show the code"
 
-using Tidier, CSV, DataFrames, HypothesisTests, GLM, CairoMakie, Distributions, AnovaGLM
+using Tidier, TidierFiles, TidierPlots, HypothesisTests, GLM, CairoMakie, Distributions, AnovaGLM
 ```
 
 ## The NHANES data
@@ -303,19 +298,66 @@ using Tidier, CSV, DataFrames, HypothesisTests, GLM, CairoMakie, Distributions, 
 | SmokingStatus      | Smoking status: Current Former or Never.                                                                                                                                                 |
 
 
-## import data to tibbles
+## import data to dataframe
 
 ```{julia}
-nh = CSV.read("nhanes.csv", DataFrame)
+#| echo: true
+#| 
+nh = read_csv("nhanes.csv", missingstring="NA")
 nh
 ```
 
-## view tibbles
+## view dataframe
 
 ```{julia}
-#| eval: false
+#| echo: true
+#| eval: true
 # In Julia, you can just type 'nh' or use a viewer in VS Code
+
 nh
+```
+
+## summary of dataframe
+```{julia}
+#| echo: true
+#| eval: true
+describe(nh)
+```
+
+
+## Drop missing value
+```{julia}
+@chain nh begin
+    @drop_missing()
+end
+```
+
+## fill missing value
+
+direction: A string containing the method to use for filling missing values. Options include: 
+- "down" (last observation carried forward)
+- "up" (next observation carried backward).
+
+```{julia}
+@chain nh begin
+    @fill_missing(BMI, "down")
+end
+```
+
+## replace missing value
+
+```{julia}
+@chain nh begin
+    @mutate(BMI = replace_missing(BMI, 25))
+end
+```
+
+## replace missing with calculated value
+
+```{julia}
+@chain nh begin
+    @mutate(BMI = replace_missing(BMI, mean(skipmissing(BMI))))
+end
 ```
 
 ## normality test: Shapiro-Wilk test of normality
@@ -323,30 +365,65 @@ nh
 $$ H_0 : data distribution = normal distribution $$
 $$ H_1 : data distribution \neq normal distribution $$
 
+:::{.callout-warning}
+
+W-statistic will be accurate but returned p-values may not be reliable if either of these apply:
+
+Sample size is large (N > 2000) or small (N < 20)
+Too much data is censored (censored / N > 0.8)
+:::
+
+
 ```{julia}
+#| eval: true
 bmi_yes = @chain nh begin
+    @drop_missing(BMI)
     @filter(Diabetes == "Yes")
     @pull(BMI)
-    filter(!isnan, _)
 end
-ShapiroWilkTest(bmi_yes)
+
+HypothesisTests.ShapiroWilkTest(bmi_yes)
 ```
 
-## Bartlett Test of Homogeneity of Variances
+## normality test: Kolmogorov-Smirnov test
+
+$$ H_0 : data distribution = normal distribution $$
+$$ H_1 : data distribution \neq normal distribution $$
+
+
+```{julia}
+#| eval: true
+bmi_yes = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Diabetes == "Yes")
+    @pull(BMI)
+end
+HypothesisTests.ExactOneSampleKSTest(bmi_yes, Distributions.Normal(0, 1))
+```
+
+
+## Levene Test of Homogeneity of Variances
 
 $$ H_0 : Var_{diabetes} = Var_{nondiabetes} $$
 $$ H_1 : Var_{diabetes} \neq Var_{nondiabetes} $$
 
 ```{julia}
-# HypothesisTests.jl uses LeveneTest for homogeneity of variances
-bmi_groups = @chain nh begin
-    @filter(Age >= 18 && !ismissing(Diabetes))
-    @group_by(Diabetes)
-    @summarize(bmis = [filter(!isnan, BMI)])
-    @pull(bmis)
+bmi_diab_yes = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Diabetes == "Yes")
+    @pull(BMI)
 end
-LeveneTest(bmi_groups...)
+
+bmi_diab_no = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Diabetes == "No")
+    @pull(BMI)
+end
+
+HypothesisTests.LeveneTest(bmi_diab_yes, bmi_diab_no)
 ```
+
+
 
 ## t-test for a population mean (variance unknown)
 
@@ -362,36 +439,36 @@ LeveneTest(bmi_groups...)
 
 ## one sample T Test
 
-$$ H_0 : \mu_{BMI_{diabetic}} = 25 $$ 
-$$ H_1 : \mu_{BMI_{diabetic}} \neq 25 $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} = 25 $$ 
+$$ H_1 : \mu_{BMI_{adult,diabetic}} \neq 25 $$
 
 ```{julia}
 bmi_adults = @chain nh begin
+    @drop_missing(BMI)
     @filter(Age >= 18)
     @pull(BMI)
-    filter(!isnan, _)
 end
-OneSampleTTest(bmi_adults, 25)
+HypothesisTests.OneSampleTTest(bmi_adults, 25)
 ```
 
 ## one sample T Test: inferiority test
 
-$$ H_0 : \mu_{BMI_{diabetic}} \geq 25 $$ 
-$$ H_1 : \mu_{BMI_{diabetic}} < 25 $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} \geq 25 $$ 
+$$ H_1 : \mu_{BMI_{adult,diabetic}} < 25 $$
 
 ```{julia}
-test = OneSampleTTest(bmi_adults, 25)
-pvalue(test, tail=:left)
+test = HypothesisTests.OneSampleTTest(bmi_adults, 25)
+HypothesisTests.pvalue(test, tail=:left)
 ```
 
 ## one sample T Test: superiority test
 
-$$ H_0 : \mu_{BMI_{diabetic}} \leq 25 $$ 
-$$ H_1 : \mu_{BMI_{diabetic}} > 25 $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} \leq 25 $$ 
+$$ H_1 : \mu_{BMI_{adult,diabetic}} > 25 $$
 
 ```{julia}
-test = OneSampleTTest(bmi_adults, 25)
-pvalue(test, tail=:right)
+test = HypothesisTests.OneSampleTTest(bmi_adults, 25)
+HypothesisTests.pvalue(test, tail=:right)
 ```
 
 ## t-test for two population means (variances unknown but equal)
@@ -405,13 +482,26 @@ pvalue(test, tail=:right)
 
 ## two sample T Test: equal variance, two-tail
 
-$$ H_0 : \mu_{BMI_{diabetic}} = \mu_{BMI_{nondiabetic}} $$
-$$ H_1 : \mu_{BMI_{diabetic}} \neq \mu_{BMI_{nondiabetic}} $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} = \mu_{BMI_{adult,nondiabetic}} $$
+$$ H_1 : \mu_{BMI_{adult,diabetic}} \neq \mu_{BMI_{adult,nondiabetic}} $$
 
 ```{julia}
-group_yes = @chain nh begin @filter(Age >= 18 && Diabetes == "Yes") @pull(BMI) filter(!isnan, _) end
-group_no = @chain nh begin @filter(Age >= 18 && Diabetes == "No") @pull(BMI) filter(!isnan, _) end
-EqualVarianceTTest(group_yes, group_no)
+group_yes = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Age >= 18 && Diabetes == "Yes") 
+    @pull(BMI)
+end
+
+group_no = @chain nh begin 
+    @drop_missing(BMI)
+    @filter(Age >= 18 && Diabetes == "No") 
+    @pull(BMI) 
+end
+
+HypothesisTests.EqualVarianceTTest(
+    group_yes, 
+    group_no
+)
 ```
 
 ## t-test for two population means (variances unknown and unequal)
@@ -426,30 +516,35 @@ EqualVarianceTTest(group_yes, group_no)
 
 ## two sample T Test: not equal variance, two-tail
 
-$$ H_0 : \mu_{BMI_{diabetic}} = \mu_{BMI_{nondiabetic}} $$
-$$ H_1 : \mu_{BMI_{diabetic}} \neq \mu_{BMI_{nondiabetic}} $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} = \mu_{BMI_{adult,nondiabetic}} $$
+$$ H_1 : \mu_{BMI_{adult,diabetic}} \neq \mu_{BMI_{adult,nondiabetic}} $$
 
 ```{julia}
-UnequalVarianceTTest(group_yes, group_no)
+HypothesisTests.UnequalVarianceTTest(
+    group_yes, 
+    group_no
+)
 ```
 
 ## two sample T Test: not equal variance, one-tail
 
-$$ H_0 : \mu_{BMI_{diabetic}} \leq \mu_{BMI_{nondiabetic}} $$
-$$ H_1 : \mu_{BMI_{diabetic}} > \mu_{BMI_{nondiabetic}} $$
+$$ H_0 : \mu_{BMI_{adult,diabetic}} \leq \mu_{BMI_{adult,nondiabetic}} $$
+$$ H_1 : \mu_{BMI_{adult,diabetic}} > \mu_{BMI_{adult,nondiabetic}} $$
 
 ```{julia}
-test = UnequalVarianceTTest(group_yes, group_no)
-pvalue(test, tail=:right)
+test = HypothesisTests.UnequalVarianceTTest(group_yes, group_no)
+HypothesisTests.pvalue(test, tail=:right)
 ```
 
 ## Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)
 
+replacement for two sample T Test when the data is not normal
+
 ```{julia}
-MannWhitneyUTest(group_yes, group_no)
+HypothesisTests.MannWhitneyUTest(group_yes, group_no)
 ```
 
-# ANOVA
+# Analysis of Varience (ANOVA)
 
 ## comparing BMI among Race
 
@@ -460,49 +555,73 @@ unique(nh.Race)
 ## preparing data
 
 ```{julia}
-nhaov = @chain nh begin
-    @filter(Race != "Other" && !ismissing(Diabetes) && !isnan(BMI))
-    @mutate(
-        Race = factor(Race),
-        Diabetes = factor(Diabetes)
-    )
+BMI_asian = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Race == "Asian" && !ismissing(Diabetes))
+    @pull(BMI)
 end
-nhaov
-```
 
-## box plot
+BMI_black = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Race == "Black" && !ismissing(Diabetes))
+    @pull(BMI)
+end
 
-```{julia}
-@ggplot(nhaov, aes(x = Race, y = BMI, color = Race)) +
-    @geom_boxplot() +
-    @facet_grid(cols = Diabetes)
-```
+BMI_white = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Race == "White" && !ismissing(Diabetes))
+    @pull(BMI)
+end
 
-## summarize by group
+BMI_hispanic = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Race == "Hispanic" && !ismissing(Diabetes))
+    @pull(BMI)
+end
 
-```{julia}
-@chain nhaov begin
-    @group_by(Race, Diabetes)
-    @summarize(mean = mean(BMI))
-    @ungroup()
+BMI_mexican = @chain nh begin
+    @drop_missing(BMI)
+    @filter(Race == "Mexican" && !ismissing(Diabetes))
+    @pull(BMI)
 end
 ```
 
-## Analysis of Varience
+## requirement check
 
-$$ H_0 : \mu_{BMI_{Asian}} = \mu_{BMI_{Black}} = \mu_{BMI_{White}} = \mu_{BMI_{Mexican}} = \mu_{BMI_{Hispanic}} $$
+1. normality: Shapiro-Wilk test of normality
+2. homogeneity of variance: Levene Test of Homogeneity of Variances
+
+## anova
 
 ```{julia}
-model = lm(@formula(BMI ~ Race), nhaov)
-AnovaGLM.anova(model)
+anova_result = HypothesisTests.OneWayANOVATest(BMI_asian, BMI_black, BMI_white, BMI_hispanic, BMI_mexican)
+```
+
+## boxplot
+```{julia}
+@chain nh begin
+    @drop_missing(BMI)
+    @filter(!ismissing(Diabetes) && Race in ["Asian", "Black", "White", "Hispanic", "Mexican"])
+    ggplot(@aes(x = Race, y = BMI))
+        geom_boxplot(show_notch=true)
+end
+```
+
+## boxplot
+
+```{julia}
+@chain nh begin
+    @drop_missing(BMI)
+    @filter(!ismissing(Diabetes) && Race in ["Asian", "Black", "White", "Hispanic", "Mexican"])
+    ggplot(@aes(x = Race, y = BMI, color = Diabetes, dodge = Diabetes))
+        geom_boxplot()
+end
 ```
 
 ## Post-hoc
-
 ```{julia}
-# For post-hoc tests in Julia, MultipleTesting.jl is commonly used.
-# Tukey HSD can be performed via pairwise comparisons with p-value adjustments.
-println("Post-hoc analysis via pairwise comparisons")
+#| eval: false
+using MultipleTesting
 ```
 
 # simple linear regression
@@ -535,15 +654,22 @@ $$ BMI = \beta_0 + \beta_1 Age $$
 ## plot
 
 ```{julia}
-@ggplot(nh, aes(x = BMI, y = Age)) + 
-    @geom_point() + 
-    @geom_smooth(method = "lm")
+@chain nh begin
+    @drop_missing(BMI)
+    ggplot(@aes(x = BMI, y = Age))
+        geom_point()
+        geom_smooth(method = "lm")
+end
 ```
 
 ## Fitting
 
 ```{julia}
-model_reg = lm(@formula(BMI ~ Age), nh)
+nh_clean = @chain nh begin
+    @drop_missing(BMI)
+    @drop_missing(Age)
+end
+model_reg = lm(@formula(BMI ~ Age), nh_clean)
 model_reg
 ```
 
@@ -551,14 +677,13 @@ model_reg
 
 ```{julia}
 # Model diagnostics can be visualized by plotting residuals
-res = residuals(model_reg)
-fitted = predict(model_reg)
+diag = DataFrame(:res => residuals(model_reg), :fitted => predict(model_reg))
 
-f = Figure()
-ax1 = Axis(f[1, 1], title="Residuals vs Fitted", xlabel="Fitted values", ylabel="Residuals")
-scatter!(ax1, fitted, res)
-hlines!(ax1, 0, linestyle=:dash, color=:red)
-f
+@chain diag begin
+    ggplot(@aes(x = fitted, y = res))
+        geom_point()
+        labs(title = "Residuals vs Fitted", x = "Fitted values", y = "Residuals")
+end
 ```
 
 ## References

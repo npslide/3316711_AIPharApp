@@ -6,12 +6,15 @@ institute: Chulalongkorn University
 date: today # today | last-modified
 date-format: "DD MMM YYYY" # see https://momentjs.com/docs/#/displaying/format/
 pdf-engine: xelatex
+execute:
+    echo: true
 format:
-  rxquarto-revealjs:
-    self-contained: false # set to true to produce a single HTML file
-    transition: none # none | fade | slide | convex | concave | zoom
-    background-transition: none
-    scrollable: true
+    rxquarto-revealjs:
+        self-contained: false # set to true to produce a single HTML file
+        transition: none # none | fade | slide | convex | concave | zoom
+        background-transition: none
+        scrollable: true
+        code-fold: true
 ---
 
 ## Ethical on Data
@@ -41,48 +44,13 @@ sufficient detail to permit examination for the purpose of replicating the resea
 destruction of research records or the failure to maintain and produce research records ^[http://www.provost.pitt.edu/documents/GUIDELINES%20FOR%20ETHICAL%20PRACTICES%20IN%20RESEARCH-FINALrevised2-March%202011.pdf
 ]
 
-## Data integrity: standard practice Data recording
-
-- Record data in ink in an proper notebook
-- Proper notebook
-  - indexed
-  - consecutively numbered pages
-  - permanently bound
-- Entries should not be erased 
-  - use a thin line cross
-  - initialed dated correction written separately
-  - an explanatory note, near the original entry or in the margin
-  
-## Data integrity
-
-- All pages of a notebook should be dated and initialed. 
-- printouts from instruments or computers, 
-  - labeled and pasted into the notebook or, 
-  - stored securely and referenced in the notebook as to storage location. 
-
-
-## example notebook
-
-![](../assets/notebook_1.jpg){fig-align="center"}
-
-## Use and Mis-use I
+## Use and Mis-use
 
 - Negative result data
 - Large background
 Do not: withholding of information about confounding factors. If some data should be disregarded for a stated reason, confirmed by an approved statistical test for neglecting outliers, the reason should be stated in the published accounts. 
 
 Any intentional or reckless disregard for the truth in reporting observations may be considered to be an act of research misconduct. 
-
-## Use and Mis-use II
-
-The use of photo-images not to misrepresent the underlying data.
-
-**Do not**
-
-- add or delete any part of the image: a band
-- differentially adjust the intensity
-- label an image from one experiment as representing a different experiment
-- splice image without using a line indicating the deletion, or to juxtapose pieces from different image onto a single image.
 
 ## Data cleansing
 
@@ -91,6 +59,7 @@ The use of photo-images not to misrepresent the underlying data.
 ::: {.column width="50%"}
 
 **Dirty data**
+
 - Invalid	
 - Inaccurate	
 - Incomplete	
@@ -103,6 +72,7 @@ The use of photo-images not to misrepresent the underlying data.
 ::: {.column width="50%"}
 
 **Clean data**
+
 - Valid
 - Accurate
 - Complete
@@ -186,10 +156,10 @@ Research data obtained in studies performed at the University and/or by employee
 
 - Stored securely for at least five years after completion
 - Deposited in a national or international databank
-  - X-ray crystallographic data on protein structures, 
-  - human genomic
-  - proteomic data
-  - DNA microarray data.
+    - X-ray crystallographic data on protein structures, 
+    - human genomic
+    - proteomic data
+    - DNA microarray data.
 
 ## Data privacy
 
@@ -204,8 +174,300 @@ Research data obtained in studies performed at the University and/or by employee
 - access control
 - avoid share drive
 
-## References
+# Data Preprocessing with Tidier.jl
 
--   https://sparkbyexamples.com/r-programming/select-rows-in-r/
--   https://4va.github.io/biodatasci/
--   https://bioconnector.github.io/
+## The Titanic Dataset
+
+[Kaggle Titanic Dataset download](titanic.csv)
+
+**Objective:** Predict whether a passenger survived the Titanic disaster.
+
+**This is a Binary Classification Problem:**
+- Target: `Survived` (0 = No, 1 = Yes)
+
+::: {style="font-size:0.65em; "}
+| Feature | Type | Description |
+|---|---|---|
+| `Pclass` | Ordinal | Passenger class (1, 2, 3) |
+| `Sex` | Categorical | male / female |
+| `Age` | Continuous | Age in years |
+| `SibSp` | Integer | # siblings/spouses aboard |
+| `Parch` | Integer | # parents/children aboard |
+| `Fare` | Continuous | Ticket fare |
+| `Embarked` | Categorical | Port (C, Q, S) |
+:::
+
+## Tidier.jl
+
+-   `@filter`: Filter rows based on conditions
+-   `@select`: Select specific columns
+-   `@mutate`: Create or transform columns
+-   `@summarize`: Aggregate data (mean, sum, etc.)
+-   `@group_by`: Group data for operations
+-   `@chain`: Combine multiple steps (from Chain.jl)
+
+## Tidier.jl installation
+
+```julia
+using Pkg
+Pkg.add("Tidier")
+Pkg.add("TidierFiles")
+Pkg.add("TidierPlots")
+```
+
+# Data Preprocessing with Tidier.jl
+
+## Loading libraries
+```{julia}
+using Tidier
+using TidierFiles
+``` 
+
+## Load Data
+
+```{julia}
+# Load data
+df = read_csv("titanic.csv")
+
+# Inspect
+println("Shape: ", size(df))
+println("\nFirst 5 rows:")
+first(df, 5)
+```
+
+## Glimpse of Data
+
+```{julia}
+# Summary statistics
+@glimpse df
+```
+
+## Cleaning up column names
+```{julia}
+# Clean column names
+@chain df begin
+    @clean_names()
+end
+```
+
+## Select specific columns
+```{julia}
+# Select only Name and Age columns
+@chain df begin
+    @select(Name, Age)
+end
+```
+
+## Select column by range
+```{julia}
+# Select columns from Name to Age
+@chain df begin
+    @select(Name:Age)
+end
+```
+
+## Select the first 5 columns individually by number
+```{julia}
+# Select the first 5 columns
+@chain df begin
+    @select(1:5)
+end
+```
+
+## Select columns that start with "P"
+```{julia}
+# Select columns that start with "P"
+@chain df begin
+    @select(starts_with("P"))
+end
+```
+
+## slice data
+```{julia}
+# Select first 10 rows
+@chain df begin
+    @slice(1:10)
+end
+```
+
+## filtering data with conditions
+
+```{julia}
+# Filter passengers under 18 years old
+@chain df begin
+    @filter(Age < 18)
+end
+```
+
+## Filter passengers in 1st class
+```{julia}
+@chain df begin
+    @filter(Cabin in ["C123", "C124", "C125"])
+end
+```
+
+## Filter missing values
+```{julia}
+# Filter out rows with missing Age values
+@chain df begin
+    @filter(!ismissing(Age))
+end
+```
+
+## Create new columns
+```{julia}
+# Create a new column for age group
+@chain df begin
+    @filter(!ismissing(Age))
+    @mutate(AgeGroup = ifelse(Age < 18, "Child", "Adult"))
+end
+```
+
+## Summarize data
+```{julia}
+# Calculate average age of passengers
+@chain df begin
+    @filter(!ismissing(Age))
+    @summarize(AvgAge = mean(Age))
+end
+```
+
+## Summarize more complex statistics
+```{julia}
+# Calculate average age and fare by passenger class
+@chain df begin
+    @filter(!ismissing(Age))
+    @summarize(AvgAge = mean(Age), MedAge = median(Age))
+end
+```
+
+## Grouping data
+```{julia}
+# Calculate average age by passenger class
+@chain df begin
+    @filter(!ismissing(Age))
+    @group_by(Pclass)
+    @summarize(AvgAge = mean(Age))
+end
+```
+
+## Grouping by multiple columns
+```{julia}
+# Calculate average age by passenger class and  gender
+@chain df begin
+    @filter(!ismissing(Age))
+    @group_by(Pclass, Sex)
+    @summarize(AvgAge = mean(Age))
+end
+```
+
+## Arranging data
+```{julia}
+# Arrange passengers by age in descending order
+@chain df begin
+    @filter(!ismissing(Age))
+    @arrange(Age)
+end
+```
+## Arranging data descending
+```{julia}
+# Arrange passengers by age in descending order
+@chain df begin
+    @filter(!ismissing(Age))
+    @arrange(desc(Age))
+end
+```
+
+## Arranging by multiple columns
+```{julia}
+# Arrange passengers by class and then age
+@chain df begin
+    @filter(!ismissing(Age))
+    @arrange(Pclass, Age)
+end
+```
+
+## Distinct values
+```{julia}
+# Get distinct passenger classes
+@chain df begin
+    @distinct(Pclass)
+end
+```
+
+# Data visualization with TidierPlots.jl
+
+## load TidierPlots
+```{julia}
+using TidierPlots
+```
+
+## Bar plot of passenger class distribution
+```{julia}
+# Bar plot of passenger class distribution
+@chain df begin
+    ggplot(@aes(x = Pclass))
+        geom_bar()
+end
+```
+
+## Histogram of passenger ages
+```{julia}
+# Histogram of passenger ages
+@chain df begin
+    ggplot(@aes(x = Age))
+        geom_histogram(binwidth = 5)
+end
+```
+
+## Box plot of fare by passenger class
+```{julia}
+# Box plot of fare by passenger class
+@chain df begin
+    ggplot(@aes(x = Pclass, y = Fare))
+        geom_boxplot()
+end
+```
+
+## Scatter plot of age vs fare
+```{julia}
+# Scatter plot of age vs fare
+@chain df begin
+    ggplot(@aes(x = Age, y = Fare))
+        geom_point()
+end
+```
+
+## Scatter plot of age vs fare colored by survival
+```{julia}
+# Scatter plot of age vs fare colored by survival
+@chain df begin
+    ggplot(@aes(x = Age, y = Fare, color = Survived))
+        geom_point()
+end
+```
+
+## smooth scatter plot of age vs fare colored by survival
+```{julia}
+#| warning: false
+
+# Smooth scatter plot of age vs fare colored by survival
+@chain df begin
+    ggplot(@aes(x = Age, y = Fare, color = Survived))
+        geom_point()
+        geom_smooth(method = "loess")
+end
+```
+
+## tile plot of survival rate by age group and passenger class
+```julia
+# Create age groups
+@chain df begin
+    @filter(!ismissing(Age))
+    @mutate(AgeGroup = ifelse(Age < 18, 0, 1))
+    @group_by(AgeGroup, Pclass)
+    @summarize(SurvivalRate = mean(Survived))
+    ggplot(@aes(x = AgeGroup, y = Pclass, z = SurvivalRate))
+        geom_tile()
+end
+```
